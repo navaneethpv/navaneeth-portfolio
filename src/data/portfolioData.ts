@@ -115,7 +115,7 @@ export const portfolioData: PortfolioData = {
     tagline: "Frontend Developer • React • Next.js • TypeScript",
     titleLines: ["Building", "Modern", "Web Experiences."],
     description:
-      "I'm a Frontend Developer passionate about building modern, responsive, and high-performance web applications. I specialize in React, Next.js, TypeScript, and Tailwind CSS, creating scalable, accessible, and user-friendly interfaces with a strong focus on clean architecture, performance, and exceptional user experience.",
+      "Crafting pixel-perfect, high-performance web applications with React, Next.js, and modern TypeScript architecture. Dedicated to building smooth, interactive user experiences with clean, scalable code.",
     portraitImage:
       "./profile.png",
     location: "Wayanad, Kerala, India",
