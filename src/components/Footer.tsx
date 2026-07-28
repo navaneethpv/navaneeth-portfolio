@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
 
   return (
     <footer className="border-t border-border bg-card/20 py-12 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-heading font-black text-xs tracking-tighter">
             {personal.logoLetter}

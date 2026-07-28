@@ -9,7 +9,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
   return (
-    <section id="about" className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border">
+    <section id="about" className="w-full px-6 py-24 md:py-32 border-t border-border">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left side: Bio & Info */}
         <div className="lg:col-span-7 space-y-8">
@@ -46,13 +46,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
 
         {/* Right side: Image & Quick Details */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="relative rounded-xl border border-border bg-card overflow-hidden aspect-[4/3] shadow-lg">
+          <div className="relative w-full aspect-4/3 rounded-2xl border border-border bg-card overflow-hidden group shadow-2xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.bioImage}
               alt="Workspace"
-              className="w-full h-full object-cover grayscale contrast-110"
+              className="w-full h-full object-cover grayscale contrast-110 object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60"></div>
           </div>
 
           <div className="p-6 rounded-xl border border-border bg-card/30 space-y-4">

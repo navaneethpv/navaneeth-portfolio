@@ -126,7 +126,7 @@ export const portfolioData: PortfolioData = {
       "I'm continuously improving my skills by building real-world projects and learning backend technologies including Node.js, Express.js, MongoDB, Docker, and cloud deployment."
     ],
     bioImage:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "./profile.png",
     stats: [
       { label: "Projects", value: "10+" },
       { label: "Technologies", value: "12+" },

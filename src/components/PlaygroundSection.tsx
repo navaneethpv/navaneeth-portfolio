@@ -30,7 +30,7 @@ export const PlaygroundSection: React.FC = () => {
   };
 
   return (
-    <section id="playground" className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border">
+    <section id="playground" className="w-full px-6 py-24 md:py-32 border-t border-border">
       <div className="space-y-16">
         {/* Title */}
         <div className="space-y-4 max-w-xl">
@@ -49,7 +49,7 @@ export const PlaygroundSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Experiment 1: Interactive Custom Cursor Simulator */}
           <div className="p-6 rounded-xl border border-border bg-card/40 flex flex-col justify-between h-80 relative overflow-hidden group hover:border-muted-foreground/40 transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div className="absolute inset-0 bg-linear-to-tr from-foreground/5 to-transparent rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
             <div>
               <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
                 [ Custom Cursor ]
@@ -133,9 +133,9 @@ export const PlaygroundSection: React.FC = () => {
             </div>
 
             {/* Interactive Preview Area */}
-            <div className="h-32 border border-border/60 rounded-lg bg-background/50 relative flex items-center justify-center overflow-hidden [perspective:500px]">
+            <div className="h-32 border border-border/60 rounded-lg bg-background/50 relative flex items-center justify-center overflow-hidden perspective-[500px]">
               <div
-                className="w-24 h-16 rounded bg-gradient-to-tr from-zinc-800 to-zinc-700 border border-border flex flex-col justify-between p-3 shadow-2xl transition-transform duration-200 ease-out"
+                className="w-24 h-16 rounded bg-linear-to-tr from-zinc-800 to-zinc-700 border border-border flex flex-col justify-between p-3 shadow-2xl transition-transform duration-200 ease-out"
                 style={{
                   transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
                 }}

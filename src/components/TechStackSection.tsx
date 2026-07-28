@@ -10,7 +10,7 @@ interface TechStackSectionProps {
 
 export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack }) => {
   return (
-    <section id="skills" className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border">
+    <section id="skills" className="w-full px-6 py-24 md:py-32 border-t border-border">
       <div className="space-y-16">
         {/* Title */}
         <div className="space-y-4 max-w-xl">

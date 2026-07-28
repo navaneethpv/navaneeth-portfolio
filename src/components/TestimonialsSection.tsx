@@ -9,8 +9,12 @@ interface TestimonialsSectionProps {
 }
 
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials }) => {
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
+
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border">
+    <section className="w-full px-6 py-24 md:py-32 border-t border-border">
       <div className="space-y-16">
         {/* Title */}
         <div className="space-y-4 max-w-xl">
@@ -38,6 +42,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-muted overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={item.avatar}
                     alt={item.author}

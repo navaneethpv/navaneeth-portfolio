@@ -11,7 +11,7 @@ interface ProjectsSectionProps {
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   return (
-    <section id="projects" className="max-w-7xl mx-auto px-6 py-24 md:py-32 space-y-24">
+    <section id="projects" className="w-full px-6 py-24 md:py-32 space-y-24">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-4">
@@ -47,7 +47,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                   <span className="text-xs font-mono text-muted-foreground">
                     [ {project.number} ]
                   </span>
-                  <div className="h-[1px] w-12 bg-border"></div>
+                  <div className="flex-1 h-px bg-border max-w-[2rem] hidden sm:block"></div>
                   <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono">
                     {project.category}
                   </span>
@@ -107,12 +107,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                 }`}
               >
                 <div className="relative rounded-xl border border-border bg-card overflow-hidden group-hover:border-muted-foreground/40 transition-colors duration-500 shadow-xl">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="w-full aspect-16/10 object-cover grayscale contrast-125 brightness-90 opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent opacity-80"></div>
                 </div>
               </div>
             </div>

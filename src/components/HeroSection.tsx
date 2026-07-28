@@ -12,7 +12,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
   return (
     <section
       id="hero"
-      className="relative max-w-7xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-36 flex flex-col justify-between"
+      className="relative w-full px-6 pt-16 pb-24 md:pt-24 md:pb-36 flex flex-col justify-between"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left side: Headline & CTAs */}
@@ -27,7 +27,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-none text-foreground">
             {personal.titleLines[0]}
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-muted-foreground to-foreground/40">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-foreground via-muted-foreground to-foreground/40">
               {personal.titleLines[1]}
             </span>
             <br />
@@ -57,12 +57,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
         {/* Right side: Portrait Image Container */}
         <div className="lg:col-span-5 relative flex justify-center">
           {/* Background decorative elements */}
-          <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-transparent rounded-[2rem] blur-2xl opacity-30 pointer-events-none"></div>
+          <div className="absolute -inset-4 bg-linear-to-tr from-primary/10 to-transparent rounded-4xl blur-2xl opacity-30 pointer-events-none"></div>
           <div className="absolute -top-8 -left-8 w-16 h-16 border border-border/40 rounded-full flex items-center justify-center opacity-40">
             <Icon icon="lucide:sparkles" className="text-muted-foreground text-lg" />
           </div>
 
-          <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl border border-border bg-card overflow-hidden group shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+          <div className="relative w-full max-w-sm aspect-4/5 rounded-2xl border border-border bg-card overflow-hidden group shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.portraitImage}
               alt={personal.name}
@@ -70,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
             />
 
             {/* Editorial Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60"></div>
             <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground font-mono">
@@ -102,7 +103,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
             className="text-muted-foreground text-sm animate-bounce"
           />
         </div>
-        <div className="flex-1 h-[1px] bg-border"></div>
+        <div className="w-8 h-px bg-border"></div>
         <div className="flex gap-6 text-xs font-mono text-muted-foreground">
           <span>[ {personal.versionTag} ]</span>
           <span>[ {personal.accoladeTag} ]</span>

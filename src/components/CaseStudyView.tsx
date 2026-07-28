@@ -27,17 +27,17 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
   return (
     <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#202020_1px,transparent_1px),linear-gradient(to_bottom,#202020_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[linear-gradient(to_right,#202020_1px,transparent_1px),linear-gradient(to_bottom,#202020_1px,transparent_1px)] opacity-20 pointer-events-none"></div>
 
       {/* Navbar */}
       <Navbar personal={personal} isCaseStudy={true} />
 
       {/* Case Study Header / Hero */}
-      <header className="relative max-w-7xl mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-20 space-y-12">
+      <header className="relative w-full px-6 pt-16 pb-12 md:pt-24 md:pb-20 space-y-12">
         {/* Breadcrumb / Meta */}
         <div className="flex items-center gap-3">
           <span className="text-xs font-mono text-muted-foreground">[ CASE STUDY ]</span>
-          <div className="h-[1px] w-12 bg-border"></div>
+          <div className="w-full h-px bg-border my-6"></div>
           <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono">
             {caseStudy.breadcrumbCategory}
           </span>
@@ -108,19 +108,20 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
       </header>
 
       {/* Large Immersive Mockup Image */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
+      <section className="w-full px-6 pb-20">
         <div className="relative rounded-2xl border border-border bg-card overflow-hidden shadow-2xl">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={project.image}
             alt={project.title}
-            className="w-full aspect-[16/9] object-cover grayscale contrast-110 brightness-95"
+            className="w-full aspect-video object-cover grayscale contrast-125 brightness-90 opacity-90 transition-opacity duration-700 hover:opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
         </div>
       </section>
 
       {/* Challenge & Solution Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <section className="w-full px-6 py-20 border-t border-border grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         {/* Challenge */}
         <div className="lg:col-span-6 space-y-6">
           <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
@@ -153,7 +154,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
       </section>
 
       {/* Interactive Code / Design Snippet Showcase */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border space-y-12">
+      <section className="w-full px-6 py-20 border-t border-border space-y-12">
         <div className="space-y-4 max-w-xl">
           <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
             [ 03 / IMPLEMENTATION ]
@@ -248,7 +249,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
       </section>
 
       {/* Key Features Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border space-y-16">
+      <section className="w-full px-6 py-20 border-t border-border space-y-16">
         <div className="space-y-4 max-w-xl">
           <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
             [ 04 / KEY FEATURES ]
