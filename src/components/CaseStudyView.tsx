@@ -16,7 +16,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
   const { caseStudy } = project;
 
   // Interactive Task state simulator
-  const [tasks, setTasks] = useState<InteractiveTask[]>(caseStudy.interactiveSandbox);
+  const [tasks, setTasks] = useState<InteractiveTask[]>(caseStudy.interactiveSandbox || []);
 
   const toggleTask = (taskId: string) => {
     setTasks((prev) =>
@@ -26,281 +26,329 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
 
   return (
     <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
+      
+      {/* Top Global Navbar */}
+      <Navbar personal={personal} isCaseStudy={true} />
 
-      <div className="mx-[5%] lg:mx-[20%]">
-        {/* Navbar */}
-        <Navbar personal={personal} isCaseStudy={true} />
-
+      <main className="w-full">
         {/* Case Study Header / Hero */}
-        <header className="relative w-full px-6 pt-16 pb-12 md:pt-24 md:pb-20 space-y-12">
-          {/* Breadcrumb / Meta */}
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-mono text-muted-foreground">[ CASE STUDY ]</span>
-            <div className="w-full h-px bg-border my-6"></div>
-            <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono">
-              {caseStudy.breadcrumbCategory}
-            </span>
-          </div>
+        <section className="w-full border-b border-border bg-background pt-12 pb-16 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto space-y-10">
+            
+            {/* Top Pill Category Badge */}
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-border px-4 py-1.5 bg-card rounded-full shadow-xs font-bold">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Case Study &bull; {caseStudy.breadcrumbCategory}</span>
+              </div>
 
-          {/* Title and Subtitle */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-8 space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter leading-none text-foreground">
-                {project.title}
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                {project.summary}
-              </p>
+              <Link
+                href="/#projects"
+                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-bold text-primary hover:text-accent transition-colors"
+              >
+                <Icon icon="lucide:arrow-left" className="text-sm" />
+                <span>Back to All Work</span>
+              </Link>
             </div>
 
-            {/* Quick Metrics */}
-            <div className="lg:col-span-4 flex justify-start lg:justify-end">
-              <div className="p-6 rounded-xl bento-card space-y-2 w-full max-w-xs">
-                <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-                  Key Metric Achieved
-                </span>
-                <div className="text-4xl font-heading font-black text-foreground">
-                  {caseStudy.keyMetric.value}
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  {caseStudy.keyMetric.label}
+            {/* Main Title & Key Metric 2-Column Lockup */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div className="lg:col-span-8 space-y-6">
+                <h1 className="text-5xl sm:text-7xl md:text-8xl font-heading font-extrabold tracking-tighter leading-none text-primary uppercase">
+                  {project.title}
+                </h1>
+                <p className="text-base md:text-xl text-secondary max-w-2xl leading-relaxed font-sans">
+                  {project.summary}
                 </p>
+
+                {/* Tech Stack Badges */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-card border border-border text-xs font-mono font-bold text-primary rounded-sm shadow-xs"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Metric Brutalist Card */}
+              <div className="lg:col-span-4 flex justify-start lg:justify-end">
+                <div className="p-6 md:p-7 border-2 border-primary bg-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.15)] rounded-md space-y-3 w-full max-w-sm">
+                  <span className="text-[10px] font-mono text-secondary uppercase tracking-widest font-bold block border-b border-border pb-2">
+                    Key Metric Achieved
+                  </span>
+                  <div className="text-4xl md:text-5xl font-heading font-extrabold text-primary">
+                    {caseStudy.keyMetric.value}
+                  </div>
+                  <p className="text-xs text-secondary leading-relaxed font-sans">
+                    {caseStudy.keyMetric.label}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Metadata Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border/60">
-            <div>
-              <span className="block text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-                Role
-              </span>
-              <span className="text-sm font-semibold text-foreground">
-                {caseStudy.role}
-              </span>
+            {/* Metadata Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t-2 border-border">
+              <div>
+                <span className="block text-[10px] font-mono text-secondary uppercase tracking-widest font-bold">
+                  Role
+                </span>
+                <span className="text-base font-heading font-bold text-primary">
+                  {caseStudy.role}
+                </span>
+              </div>
+              <div>
+                <span className="block text-[10px] font-mono text-secondary uppercase tracking-widest font-bold">
+                  Timeline
+                </span>
+                <span className="text-base font-heading font-bold text-primary">
+                  {caseStudy.timeline}
+                </span>
+              </div>
+              <div>
+                <span className="block text-[10px] font-mono text-secondary uppercase tracking-widest font-bold">
+                  Client / Company
+                </span>
+                <span className="text-base font-heading font-bold text-primary">
+                  {caseStudy.client}
+                </span>
+              </div>
+              <div>
+                <span className="block text-[10px] font-mono text-secondary uppercase tracking-widest font-bold">
+                  Deliverables
+                </span>
+                <span className="text-base font-heading font-bold text-primary">
+                  {caseStudy.deliverables}
+                </span>
+              </div>
             </div>
-            <div>
-              <span className="block text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-                Timeline
-              </span>
-              <span className="text-sm font-semibold text-foreground">
-                {caseStudy.timeline}
-              </span>
-            </div>
-            <div>
-              <span className="block text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-                Client / Company
-              </span>
-              <span className="text-sm font-semibold text-foreground">
-                {caseStudy.client}
-              </span>
-            </div>
-            <div>
-              <span className="block text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-                Deliverables
-              </span>
-              <span className="text-sm font-semibold text-foreground">
-                {caseStudy.deliverables}
-              </span>
-            </div>
-          </div>
-        </header>
 
-        {/* Large Immersive Mockup Image */}
-        <section className="w-full px-6 pb-20">
-          <div className="relative rounded-2xl bento-card overflow-hidden shadow-2xl">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full aspect-video object-cover transition-transform duration-500 hover:scale-105"
-            />
+          </div>
+        </section>
+
+        {/* Large Immersive Mockup Image Section */}
+        <section className="w-full border-b border-border bg-card/30 py-12 md:py-16 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="border-2 border-primary bg-card p-2 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full aspect-video object-cover rounded-sm transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </div>
           </div>
         </section>
 
         {/* Challenge & Solution Section */}
-        <section className="w-full px-6 py-20 border-t border-border grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Challenge */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-              [ 01 / THE CHALLENGE ]
+        <section className="w-full border-b border-border bg-background">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+            {/* Challenge */}
+            <div className="p-8 md:p-12 space-y-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent border border-accent/30 px-3 py-1 bg-accent/10 rounded-full inline-block">
+                01 &bull; The Challenge
+              </span>
+              <h2 className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-tighter text-primary">
+                {caseStudy.challenge.title}
+              </h2>
+              <div className="space-y-4">
+                {caseStudy.challenge.paragraphs.map((para, idx) => (
+                  <p key={idx} className="text-secondary text-sm md:text-base leading-relaxed font-sans">
+                    {para}
+                  </p>
+                ))}
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tight text-foreground">
-              {caseStudy.challenge.title}
-            </h2>
-            {caseStudy.challenge.paragraphs.map((para, idx) => (
-              <p key={idx} className="text-muted-foreground text-sm leading-relaxed">
-                {para}
-              </p>
-            ))}
-          </div>
 
-          {/* Solution */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-              [ 02 / THE SOLUTION ]
+            {/* Solution */}
+            <div className="p-8 md:p-12 space-y-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 px-3 py-1 bg-emerald-500/10 rounded-full inline-block">
+                02 &bull; The Solution
+              </span>
+              <h2 className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-tighter text-primary">
+                {caseStudy.solution.title}
+              </h2>
+              <div className="space-y-4">
+                {caseStudy.solution.paragraphs.map((para, idx) => (
+                  <p key={idx} className="text-secondary text-sm md:text-base leading-relaxed font-sans">
+                    {para}
+                  </p>
+                ))}
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tight text-foreground">
-              {caseStudy.solution.title}
-            </h2>
-            {caseStudy.solution.paragraphs.map((para, idx) => (
-              <p key={idx} className="text-muted-foreground text-sm leading-relaxed">
-                {para}
-              </p>
-            ))}
           </div>
         </section>
 
-        {/* Interactive Code / Design Snippet Showcase */}
-        <section className="w-full px-6 py-20 border-t border-border space-y-12">
-          <div className="space-y-4 max-w-xl">
-            <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-              [ 03 / IMPLEMENTATION ]
-            </div>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tight text-foreground">
-              Interactive State Engine
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Below is a simulated view of our optimistic state engine. Toggle the task state to see how the local cache updates instantly while the backend syncs.
-            </p>
-          </div>
-
-          {/* Interactive Component Card */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Interactive Sandbox (Left) */}
-            <div className="lg:col-span-6 p-6 rounded-xl bento-card flex flex-col justify-between space-y-6">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-muted-foreground">
-                  State Simulation Sandbox
+        {/* Interactive Code & Implementation Section */}
+        {caseStudy.codeSnippet && (
+          <section className="w-full border-b border-border bg-background py-16 px-4 md:px-8">
+            <div className="max-w-7xl mx-auto space-y-10">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full inline-block font-bold">
+                  03 &bull; Implementation &amp; Architecture
                 </span>
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="text-[10px] font-mono text-muted-foreground">
-                    Sync Engine Live
-                  </span>
-                </div>
+                <h2 className="text-4xl md:text-6xl font-heading font-extrabold uppercase tracking-tighter text-primary">
+                  Interactive Implementation
+                </h2>
               </div>
 
-              {/* Task List Simulator */}
-              <div className="space-y-3">
-                {tasks.map((task) => (
-                  <div
-                    key={task.id}
-                    className="p-4 rounded-lg border border-border bg-background flex items-center justify-between group hover:border-muted-foreground/40 transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="button"
-                        onClick={() => toggleTask(task.id)}
-                        className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors ${
-                          task.completed
-                            ? "bg-primary border-primary"
-                            : "border-border hover:bg-muted"
-                        }`}
-                      >
-                        {task.completed && (
-                          <Icon
-                            icon="lucide:check"
-                            className="text-xs text-primary-foreground"
-                          />
-                        )}
-                      </button>
-                      <span
-                        className={`text-xs font-medium ${
-                          task.completed
-                            ? "line-through text-muted-foreground"
-                            : "text-foreground"
-                        }`}
-                      >
-                        {task.title}
+              {/* 2-Column Code & Sandbox Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                {/* Interactive Sandbox (Left) */}
+                {tasks.length > 0 && (
+                  <div className="lg:col-span-6 border-2 border-primary bg-card p-6 md:p-8 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.15)] rounded-md flex flex-col justify-between space-y-6">
+                    <div className="flex items-center justify-between border-b border-border pb-4">
+                      <span className="text-xs font-mono font-bold uppercase text-primary">
+                        State Simulation Sandbox
                       </span>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold uppercase">
+                          Engine Active
+                        </span>
+                      </div>
                     </div>
-                    <span className="px-2 py-0.5 rounded bg-muted text-[9px] font-mono text-muted-foreground uppercase">
-                      {task.priority}
-                    </span>
+
+                    {/* Task List Simulator */}
+                    <div className="space-y-3">
+                      {tasks.map((task) => (
+                        <div
+                          key={task.id}
+                          className="p-4 rounded border-2 border-border bg-background flex items-center justify-between group hover:border-primary transition-all"
+                        >
+                          <div className="flex items-center gap-3">
+                            <button
+                              type="button"
+                              onClick={() => toggleTask(task.id)}
+                              className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
+                                task.completed
+                                  ? "bg-primary border-primary"
+                                  : "border-border hover:bg-card"
+                              }`}
+                            >
+                              {task.completed && (
+                                <Icon
+                                  icon="lucide:check"
+                                  className="text-xs text-primary-foreground"
+                                />
+                              )}
+                            </button>
+                            <span
+                              className={`text-xs font-mono font-bold ${
+                                task.completed
+                                  ? "line-through text-muted-foreground"
+                                  : "text-primary"
+                              }`}
+                            >
+                              {task.title}
+                            </span>
+                          </div>
+                          <span className="px-2 py-0.5 rounded bg-card border border-border text-[9px] font-mono text-secondary uppercase font-bold">
+                            {task.priority}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="text-[10px] text-muted-foreground font-mono">
+                      * Click checkboxes above to test optimistic state update mechanics.
+                    </p>
+                  </div>
+                )}
+
+                {/* Code Snippet Box (Right) */}
+                <div className={`${tasks.length > 0 ? "lg:col-span-6" : "lg:col-span-12"} border-2 border-primary bg-card shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden flex flex-col justify-between`}>
+                  <div className="bg-primary text-primary-foreground px-4 py-3 border-b border-primary flex items-center justify-between font-mono text-xs select-none">
+                    <div className="flex items-center gap-2">
+                      <span className="w-3 h-3 rounded-full bg-red-500 inline-block border border-black/20"></span>
+                      <span className="w-3 h-3 rounded-full bg-yellow-500 inline-block border border-black/20"></span>
+                      <span className="w-3 h-3 rounded-full bg-green-500 inline-block border border-black/20"></span>
+                      <span className="ml-2 font-bold opacity-90">{caseStudy.codeSnippet.filename}</span>
+                    </div>
+                  </div>
+                  <pre className="p-5 text-xs text-foreground font-mono overflow-x-auto leading-relaxed bg-background flex-1">
+                    <code>{caseStudy.codeSnippet.code}</code>
+                  </pre>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Key Features Grid Section */}
+        {caseStudy.keyFeatures && caseStudy.keyFeatures.length > 0 && (
+          <section className="w-full border-b border-border bg-background py-16 px-4 md:px-8">
+            <div className="max-w-7xl mx-auto space-y-12">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full inline-block font-bold">
+                  04 &bull; Key Features
+                </span>
+                <h2 className="text-4xl md:text-6xl font-heading font-extrabold uppercase tracking-tighter text-primary">
+                  Core Highlights
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {caseStudy.keyFeatures.map((feat, idx) => (
+                  <div
+                    key={idx}
+                    className="p-6 md:p-8 rounded-md bg-card border-2 border-border/80 hover:border-primary transition-all space-y-4 shadow-xs"
+                  >
+                    <div className="w-12 h-12 rounded bg-background border border-border flex items-center justify-center text-primary">
+                      <Icon icon={feat.icon} className="text-2xl" />
+                    </div>
+                    <h3 className="text-xl font-heading font-extrabold text-primary">
+                      {feat.title}
+                    </h3>
+                    <p className="text-secondary text-xs md:text-sm leading-relaxed font-sans">
+                      {feat.description}
+                    </p>
                   </div>
                 ))}
               </div>
-
-              <p className="text-[10px] text-muted-foreground font-mono">
-                * Click on the checkboxes above to simulate optimistic state mutations.
-              </p>
             </div>
+          </section>
+        )}
 
-            {/* Code Snippet (Right) */}
-            <div className="lg:col-span-6 rounded-xl bento-card overflow-hidden flex flex-col">
-              <div className="bg-background/80 px-4 py-3 border-b border-border flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
-                  <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                  <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
+        {/* Next Case Study Navigation CTA */}
+        {caseStudy.nextCaseStudySlug && (
+          <section className="w-full bg-card py-20 px-6 border-b border-border text-center">
+            <div className="max-w-3xl mx-auto space-y-6">
+              <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-4 py-1.5 bg-background rounded-full inline-block font-bold">
+                Up Next Case Study
+              </span>
+              
+              <Link
+                href={`/case-study/${caseStudy.nextCaseStudySlug}`}
+                className="block group space-y-4"
+              >
+                <h2 className="text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold tracking-tighter text-primary group-hover:text-accent transition-colors uppercase">
+                  {caseStudy.nextCaseStudyTitle}
+                </h2>
+                
+                <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-wider font-bold group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 border border-primary">
+                  <span>Explore Case Study</span>
+                  <Icon
+                    icon="lucide:arrow-right"
+                    className="text-sm group-hover:translate-x-1 transition-transform"
+                  />
                 </div>
-                <span className="text-[10px] font-mono text-muted-foreground">
-                  {caseStudy.codeSnippet.filename}
-                </span>
-              </div>
-              <pre className="p-6 text-xs text-muted-foreground font-mono overflow-x-auto leading-relaxed bg-background/30 flex-1">
-                <code>{caseStudy.codeSnippet.code}</code>
-              </pre>
+              </Link>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* Key Features Grid */}
-        <section className="w-full px-6 py-20 border-t border-border space-y-16">
-          <div className="space-y-4 max-w-xl">
-            <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-              [ 04 / KEY FEATURES ]
-            </div>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tight text-foreground">
-              Built for power users.
-            </h2>
-          </div>
+      </main>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {caseStudy.keyFeatures.map((feat, idx) => (
-              <div key={idx} className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bento-card flex items-center justify-center text-foreground">
-                  <Icon icon={feat.icon} className="text-xl" />
-                </div>
-                <h3 className="text-lg font-heading font-bold text-foreground">
-                  {feat.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {feat.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+      {/* Footer */}
+      <Footer personal={personal} isCaseStudy={true} />
 
-        {/* Next Case Study Link */}
-        <section className="bento-card py-24 px-6 border-x-0 border-b-0 rounded-none rounded-t-3xl border-t-white/10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-              [ UP NEXT ]
-            </span>
-            <Link
-              href={`/case-study/${caseStudy.nextCaseStudySlug}`}
-              className="block group"
-            >
-              <h2 className="text-4xl md:text-6xl font-heading font-black tracking-tighter text-foreground group-hover:text-muted-foreground transition-colors">
-                {caseStudy.nextCaseStudyTitle}
-              </h2>
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground group-hover:text-foreground transition-colors mt-4">
-                Read Next Case Study
-                <Icon
-                  icon="lucide:arrow-right"
-                  className="text-sm group-hover:translate-x-1 transition-transform"
-                />
-              </div>
-            </Link>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <Footer personal={personal} isCaseStudy={true} />
-      </div>
     </div>
   );
 };
+
