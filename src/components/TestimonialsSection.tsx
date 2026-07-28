@@ -31,7 +31,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-xl border border-border bg-card/40 space-y-6 relative"
+              className="p-8 rounded-xl glass-panel space-y-6 relative"
             >
               <Icon
                 icon="lucide:quote"

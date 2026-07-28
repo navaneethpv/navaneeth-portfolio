@@ -17,7 +17,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left side: Headline & CTAs */}
         <div className="lg:col-span-7 space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card/40 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card/20 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span className="text-[10px] uppercase tracking-widest font-mono text-muted-foreground">
               {personal.tagline}
@@ -60,7 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
           <div className="absolute -inset-4 bg-linear-to-tr from-primary/10 to-transparent rounded-4xl blur-2xl opacity-30 pointer-events-none"></div>
 
 
-          <div className="relative w-full max-w-md aspect-4/5 rounded-2xl border border-border bg-card overflow-hidden group shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+          <div className="relative w-full max-w-md aspect-4/5 rounded-2xl glass-panel overflow-hidden group transition-all duration-500 hover:scale-[1.02]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.portraitImage}

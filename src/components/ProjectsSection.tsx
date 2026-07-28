@@ -106,7 +106,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                   isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"
                 }`}
               >
-                <div className="relative rounded-xl border border-border bg-card overflow-hidden group-hover:border-muted-foreground/40 transition-colors duration-500 shadow-xl">
+                <div className="relative rounded-xl glass-panel overflow-hidden group-hover:border-white/20 transition-colors duration-500">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}

@@ -67,7 +67,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         <div className="lg:col-span-6">
           <form
             onSubmit={handleSubmit}
-            className="p-8 rounded-xl border border-border bg-card/40 space-y-6"
+            className="p-8 rounded-xl glass-panel space-y-6"
           >
             {submitted && (
               <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
@@ -85,7 +85,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full h-11 px-4 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-muted-foreground transition-colors"
+                  className="w-full h-11 px-4 bg-background/50 border border-white/5 rounded-lg text-sm text-foreground focus:outline-none focus:border-white/20 transition-colors backdrop-blur-sm"
                 />
               </div>
               <div className="space-y-2">
@@ -98,7 +98,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full h-11 px-4 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-muted-foreground transition-colors"
+                  className="w-full h-11 px-4 bg-background/50 border border-white/5 rounded-lg text-sm text-foreground focus:outline-none focus:border-white/20 transition-colors backdrop-blur-sm"
                 />
               </div>
             </div>
@@ -113,7 +113,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 required
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full h-11 px-4 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-muted-foreground transition-colors"
+                className="w-full h-11 px-4 bg-background/50 border border-white/5 rounded-lg text-sm text-foreground focus:outline-none focus:border-white/20 transition-colors backdrop-blur-sm"
               />
             </div>
 
@@ -127,7 +127,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full p-4 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-muted-foreground transition-colors resize-none"
+                className="w-full p-4 bg-background/50 border border-white/5 rounded-lg text-sm text-foreground focus:outline-none focus:border-white/20 transition-colors resize-none backdrop-blur-sm"
               ></textarea>
             </div>
 

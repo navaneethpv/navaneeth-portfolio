@@ -26,8 +26,11 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
 
   return (
     <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[linear-gradient(to_right,#202020_1px,transparent_1px),linear-gradient(to_bottom,#202020_1px,transparent_1px)] opacity-20 pointer-events-none"></div>
+      {/* Animated Glassmorphism Background Orbs */}
+      <div className="ambient-orb bg-primary/40 w-[600px] h-[600px] top-[-100px] left-[-200px]"></div>
+      <div className="ambient-orb bg-secondary/30 w-[800px] h-[800px] bottom-[-200px] right-[-300px]"></div>
+      <div className="ambient-orb bg-accent/20 w-[500px] h-[500px] top-[40%] left-[20%]"></div>
+      <div className="absolute inset-0 bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] opacity-40 pointer-events-none z-0"></div>
 
       <div className="mx-[5%] lg:mx-[20%]">
         {/* Navbar */}
@@ -57,7 +60,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
 
             {/* Quick Metrics */}
             <div className="lg:col-span-4 flex justify-start lg:justify-end">
-              <div className="p-6 rounded-xl border border-border bg-card/40 backdrop-blur-sm space-y-2 w-full max-w-xs">
+              <div className="p-6 rounded-xl glass-panel space-y-2 w-full max-w-xs">
                 <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
                   Key Metric Achieved
                 </span>
@@ -110,7 +113,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
 
         {/* Large Immersive Mockup Image */}
         <section className="w-full px-6 pb-20">
-          <div className="relative rounded-2xl border border-border bg-card overflow-hidden shadow-2xl">
+          <div className="relative rounded-2xl glass-panel overflow-hidden shadow-2xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
@@ -171,7 +174,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
           {/* Interactive Component Card */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Interactive Sandbox (Left) */}
-            <div className="lg:col-span-6 p-6 rounded-xl border border-border bg-card flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-6 p-6 rounded-xl glass-panel flex flex-col justify-between space-y-6">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-muted-foreground">
                   State Simulation Sandbox
@@ -231,7 +234,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
             </div>
 
             {/* Code Snippet (Right) */}
-            <div className="lg:col-span-6 rounded-xl border border-border bg-card overflow-hidden flex flex-col">
+            <div className="lg:col-span-6 rounded-xl glass-panel overflow-hidden flex flex-col">
               <div className="bg-background/80 px-4 py-3 border-b border-border flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
@@ -263,7 +266,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {caseStudy.keyFeatures.map((feat, idx) => (
               <div key={idx} className="space-y-4">
-                <div className="w-12 h-12 rounded-lg border border-border bg-card flex items-center justify-center text-foreground">
+                <div className="w-12 h-12 rounded-lg glass-panel flex items-center justify-center text-foreground">
                   <Icon icon={feat.icon} className="text-xl" />
                 </div>
                 <h3 className="text-lg font-heading font-bold text-foreground">
@@ -278,7 +281,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
         </section>
 
         {/* Next Case Study Link */}
-        <section className="border-t border-border bg-card/20 py-24 px-6">
+        <section className="glass-panel py-24 px-6 border-x-0 border-b-0 rounded-none rounded-t-3xl border-t-white/10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
               [ UP NEXT ]

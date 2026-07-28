@@ -31,7 +31,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             {personal.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl border border-border bg-card/40 backdrop-blur-sm"
+                className="p-4 rounded-xl glass-panel"
               >
                 <span className="block text-3xl font-heading font-black text-foreground">
                   {stat.value}
@@ -46,7 +46,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
 
         {/* Right side: Image & Quick Details */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="relative w-full aspect-4/3 rounded-2xl border border-border bg-card overflow-hidden group shadow-2xl">
+          <div className="relative w-full aspect-4/3 rounded-2xl glass-panel overflow-hidden group">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.bioImage}
@@ -56,7 +56,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60"></div>
           </div>
 
-          <div className="p-6 rounded-xl border border-border bg-card/30 space-y-4">
+          <div className="p-6 rounded-xl glass-panel space-y-4">
             <h4 className="text-sm font-heading font-bold text-foreground">
               Core Competencies
             </h4>

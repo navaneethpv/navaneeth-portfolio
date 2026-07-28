@@ -30,7 +30,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
           {techStack.map((tech) => (
             <div
               key={tech.id}
-              className="p-6 rounded-xl border border-border bg-card hover:bg-background hover:border-muted-foreground/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-40"
+              className="p-6 rounded-xl glass-panel hover:bg-background hover:border-muted-foreground/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-40"
             >
               <div className="flex justify-between items-start">
                 <Icon
