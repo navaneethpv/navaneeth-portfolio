@@ -241,50 +241,94 @@ export default clerkMiddleware(async (auth, req) => {
     {
       id: "eyoris-fashion",
       number: "02",
-      category: "E-commerce Web Application",
+      category: "AI-Powered E-Commerce Platform",
       title: "Eyoris Fashion",
       summary:
-        "A full-featured e-commerce platform for fashion apparel.",
-      techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+        "A modern luxury fashion e-commerce platform featuring AI visual search, multimodal Gemini catalog tagging, and high-performance full-stack architecture.",
+      techStack: [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Tailwind CSS",
+        "Google Gemini AI",
+        "Clerk Auth",
+        "Framer Motion",
+      ],
       image:
         "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80",
-      liveDemoUrl: "#",
-      githubUrl: "#",
+      liveDemoUrl: "https://eyoris-fashion.vercel.app",
+      githubUrl: "https://github.com/navaneethpv/Eyoris-Fashion",
       caseStudy: {
         breadcrumbCategory: "02 / EYORIS FASHION",
         keyMetric: {
-          value: "100%",
-          label: "Responsive and scalable e-commerce architecture.",
+          value: "< 500ms",
+          label: "Real-time AI visual search & structured tagging across 44,000+ catalog items.",
         },
-        role: "Frontend Developer",
-        timeline: "2024",
-        client: "Self Project",
-        deliverables: "Web App, E-commerce flows",
+        role: "Full Stack Developer & AI Engineer",
+        timeline: "2024 – 2025",
+        client: "Self Project / Production Showcase",
+        deliverables: "Monorepo Web App, RESTful API, AI Visual Search Engine, Admin Dashboard",
         challenge: {
-          title: "Building a performant shopping experience.",
+          title: "Building intuitive visual discovery and automated catalog indexing at scale.",
           paragraphs: [
-            "Creating seamless shopping cart flows and product discovery experiences requires careful state management and optimized rendering."
+            "Traditional e-commerce search relies heavily on text queries and manually tagged catalog attributes, creating friction when users search by style, visual aesthetics, or uploaded photos.",
+            "Building an automated pipeline capable of parsing raw customer uploads, recognizing precise garment categories, extracting dominant color palettes, and returning matching product variants with low latency required careful AI integration and optimized database queries.",
           ],
         },
         solution: {
-          title: "React & Tailwind CSS.",
+          title: "Multimodal AI Integration with Next.js 16, Google Gemini, and Express/MongoDB.",
           paragraphs: [
-            "Utilized modern React practices for state management and Tailwind CSS for rapid, responsive UI development."
+            "Engineered a full-stack monorepo featuring a Next.js 16 frontend with dynamic animations and an Express/MongoDB REST backend.",
+            "Integrated Google Gemini vision models using strict JSON schema enforcement to perform zero-shot visual categorization and dominant color extraction directly from uploaded images. Combined this with Clerk authentication, variant inventory tracking, and deterministic catalog seeding.",
           ],
         },
         codeSnippet: {
-          filename: "cartStore.ts",
-          code: `const useCart = () => {
-  // Cart state logic
+          filename: "visualSearchAI.ts",
+          code: `import { GoogleGenAI } from "@google/genai";
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+
+export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: string) => {
+  const response = await ai.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: [
+      bufferToGenerativePart(buffer, mimeType),
+      "Analyze this fashion image and return category, gender, and dominant color hex."
+    ],
+    config: {
+      responseMimeType: "application/json",
+      responseSchema: ANALYSIS_SCHEMA,
+    },
+  });
+
+  return JSON.parse(response.text);
 };`,
         },
         interactiveSandbox: [],
         keyFeatures: [
           {
+            icon: "lucide:sparkles",
+            title: "AI Visual Search",
+            description: "Upload any fashion image or snapshot to instantly find matching clothing items by category, color, and style.",
+          },
+          {
+            icon: "lucide:tags",
+            title: "Automated Gemini Tagging",
+            description: "Zero-shot catalog metadata generation enforcing structured JSON schemas for automated categorization.",
+          },
+          {
             icon: "lucide:shopping-bag",
-            title: "Shopping Cart",
-            description: "Full cart functionality.",
-          }
+            title: "Multi-Variant Inventory Engine",
+            description: "Comprehensive product management handling dynamic sizes, colors, SKUs, and real-time stock validation.",
+          },
+          {
+            icon: "lucide:shield-check",
+            title: "Auth & Admin Dashboard",
+            description: "Clerk-authenticated user management with role-based access control and live order tracking.",
+          },
         ],
         nextCaseStudySlug: "jcom-member-directory",
         nextCaseStudyTitle: "JCOM Member Directory",
@@ -293,157 +337,158 @@ export default clerkMiddleware(async (auth, req) => {
     {
       id: "jcom-member-directory",
       number: "03",
-      category: "Directory Application",
+      category: "Internship Project | Business Directory",
       title: "JCOM Member Directory",
       summary:
-        "A comprehensive directory for JCOM members to manage and find contacts.",
-      techStack: ["React", "Next.js", "TypeScript"],
+        "An internship project developed at Exouzia Technologies — a high-performance digital member directory and business networking platform for JCOM members, featuring instant real-time search, touch gesture navigation, and interactive profile cards.",
+      techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "React Router"],
       image:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
       liveDemoUrl: "#",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "03 / JCOM MEMBER DIRECTORY",
+        breadcrumbCategory: "03 / EXOUZIA INTERNSHIP - JCOM",
         keyMetric: {
-          value: "Fast",
-          label: "Quick member lookup and filtering.",
+          value: "100+",
+          label: "Member business profiles indexed with sub-millisecond search & gesture navigation.",
         },
-        role: "Frontend Developer",
+        role: "Frontend Developer Intern @ Exouzia",
         timeline: "2024",
-        client: "JCOM",
-        deliverables: "Web App, Directory System",
+        client: "JCOM Pattambi",
+        deliverables: "Internship Project, Web Application, Digital Profile Cards",
         challenge: {
-          title: "Handling large lists of members.",
+          title: "Building a production-ready client directory during internship at Exouzia.",
           paragraphs: [
-            "Needed an efficient way to display, filter, and search through many member profiles."
+            "As a Frontend Developer Intern at Exouzia, I was responsible for architecting a mobile-first directory for 100+ organization members. The challenge was ensuring sub-millisecond search filtering, immediate contact action buttons, and zero layout shifts across desktop and mobile devices."
           ],
         },
         solution: {
-          title: "Optimized Next.js rendering.",
+          title: "React 19, Vite & Framer Motion with Tailwind CSS v4.",
           paragraphs: [
-            "Used Next.js for fast initial load and effective caching strategies."
+            "Leveraged modern React 19 memoized state hooks (`useMemo`) for instant search execution, built custom horizontal touch swipe gesture handlers for intuitive mobile navigation, and applied Framer Motion for staggered list entrance animations."
           ],
         },
         codeSnippet: {
-          filename: "filterMembers.ts",
-          code: `const filterMembers = (query) => {
-  // Filtering logic
-};`,
+          filename: "MemberIndex.tsx",
+          code: `const filteredMembers = useMemo(() => {
+  if (!searchQuery.trim()) return members;
+  const query = searchQuery.toLowerCase().trim();
+  return members.filter((member) => {
+    const formattedIdx = String(member.id).padStart(2, "0");
+    return (
+      member.name.toLowerCase().includes(query) ||
+      member.slug.toLowerCase().includes(query) ||
+      formattedIdx.includes(query) ||
+      String(member.id).includes(query)
+    );
+  });
+}, [searchQuery]);`,
         },
         interactiveSandbox: [],
         keyFeatures: [
           {
-            icon: "lucide:users",
-            title: "Member Search",
-            description: "Advanced search and filtering capabilities.",
+            icon: "lucide:search",
+            title: "Real-Time Instant Search",
+            description: "Sub-millisecond fuzzy filtering across member names, company titles, IDs, and business categories.",
+          },
+          {
+            icon: "lucide:id-card",
+            title: "Digital Profile Cards",
+            description: "Interactive cards displaying business services, direct WhatsApp touchpoints, telephone dialing, and social links.",
+          },
+          {
+            icon: "lucide:touchpad",
+            title: "Touch & Gesture Navigation",
+            description: "Mobile-optimized horizontal swipe handlers enabling seamless touch navigation between directory lists and profile views.",
+          },
+          {
+            icon: "lucide:sparkles",
+            title: "Staggered Motion UI",
+            description: "Fluid entrance animations and responsive layout transitions powered by Lenis smooth scroll and Framer Motion.",
           }
         ],
-        nextCaseStudySlug: "asset-homes-website",
-        nextCaseStudyTitle: "Asset Homes Website",
+        nextCaseStudySlug: "asset-homes",
+        nextCaseStudyTitle: "Asset Homes Property Management",
       },
     },
     {
-      id: "asset-homes-website",
+      id: "asset-homes",
       number: "04",
-      category: "Corporate Website",
-      title: "Asset Homes Website",
+      category: "Internship Project | Real Estate & Property Management",
+      title: "Asset Homes Property Management",
       summary:
-        "A corporate website showcasing properties and services for Asset Homes.",
-      techStack: ["React", "Tailwind CSS"],
+        "A luxury real estate and property management web platform developed for Asset Homes LLC in Abu Dhabi & Al Ain — featuring GSAP scroll-triggered clip-path animations, Lenis inertia scrolling, interactive asset showcases, and responsive hero carousels.",
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Lenis", "Framer Motion"],
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-      liveDemoUrl: "#",
+        "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1200&q=80",
+      liveDemoUrl: "https://asset-homes.vercel.app/",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "03 / ASSET HOMES WEBSITE",
+        breadcrumbCategory: "04 / EXOUZIA INTERNSHIP - ASSET HOMES",
         keyMetric: {
-          value: "Modern",
-          label: "Sleek and professional design.",
+          value: "15+ Years",
+          label: "Of real estate management legacy digitized with GSAP scroll triggers & inertia scroll engine.",
         },
-        role: "Frontend Developer",
+        role: "Frontend Developer Intern @ Exouzia",
         timeline: "2024",
-        client: "Asset Homes",
-        deliverables: "Website",
+        client: "Asset Homes LLC, Abu Dhabi",
+        deliverables: "Web Application, Interactive Asset Showcase, Operational Roadmap",
         challenge: {
-          title: "Presenting properties elegantly.",
+          title: "Digitizing a premier real estate legacy with luxury aesthetics & zero scroll-jank.",
           paragraphs: [
-            "The client needed a way to showcase real estate effectively."
+            "Developing a mobile-first digital platform for Asset Homes Property Management LLC required presenting 15+ years of property management experience in Abu Dhabi and Al Ain. The main challenge was synchronizing smooth inertia scroll physics with high-performance GSAP ScrollTrigger animations without layout shifts or frame stuttering on low-power devices."
           ],
         },
         solution: {
-          title: "Visual-first approach.",
+          title: "Next.js 16 App Router, React 19, GSAP ScrollTrigger & Lenis Inertia Engine.",
           paragraphs: [
-            "Built a gallery-heavy site focusing on high-quality imagery and smooth transitions."
+            "Architected a Next.js web application utilizing React 19 client components, binding Lenis smooth scroll updates directly into GSAP's Ticker RAF loop to eliminate scroll desync. Built custom clip-path image reveal transitions, interactive property showcase cards, and a 3-second progress timer hero carousel using Framer Motion."
           ],
         },
         codeSnippet: {
-          filename: "gallery.tsx",
-          code: `const Gallery = () => {
-  // Gallery logic
-};`,
+          filename: "LenisProvider.tsx",
+          code: `useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Sync Lenis scroll updates with GSAP Ticker to prevent desync & frame jitter
+  function update(time: number) {
+    lenisRef.current?.lenis?.raf(time * 1000);
+  }
+
+  gsap.ticker.add(update);
+  gsap.ticker.lagSmoothing(0);
+  ScrollTrigger.refresh();
+
+  return () => {
+    gsap.ticker.remove(update);
+  };
+}, []);`,
         },
         interactiveSandbox: [],
         keyFeatures: [
           {
-            icon: "lucide:home",
-            title: "Property Showcase",
-            description: "Beautiful property listings.",
-          }
-        ],
-        nextCaseStudySlug: "malabar-heritage",
-        nextCaseStudyTitle: "Malabar Heritage",
-      },
-    },
-    {
-      id: "event-planner-website",
-      number: "05",
-      category: "Business Website",
-      title: "Event Planner Website",
-      summary:
-        "A professional platform for an event planning business.",
-      techStack: ["React", "TypeScript", "Tailwind"],
-      image:
-        "https://i.pinimg.com/736x/7d/40/cc/7d40cc042aed2a57eee48d98cb1b0258.jpg?auto=format&fit=crop&w=800&q=80",
-      liveDemoUrl: "#",
-      githubUrl: "#",
-      caseStudy: {
-        breadcrumbCategory: "05 / EVENT PLANNER WEBSITE",
-        keyMetric: {
-          value: "Elegant",
-          label: "Sophisticated and inviting design.",
-        },
-        role: "Frontend Developer",
-        timeline: "2024",
-        client: "Event Co.",
-        deliverables: "Website",
-        challenge: {
-          title: "Capturing the magic of events.",
-          paragraphs: [
-            "The site needed to look as good as the events they plan."
-          ],
-        },
-        solution: {
-          title: "Premium aesthetics.",
-          paragraphs: [
-            "Used refined typography and subtle animations."
-          ],
-        },
-        codeSnippet: {
-          filename: "booking.tsx",
-          code: `const BookingForm = () => {
-  // Form handling
-};`,
-        },
-        interactiveSandbox: [],
-        keyFeatures: [
+            icon: "lucide:sliders",
+            title: "Sync-Driven Hero Carousel",
+            description: "Auto-advancing 3-second progress bar slider with Framer Motion crossfade transitions and pause-on-hover capability.",
+          },
           {
-            icon: "lucide:calendar",
-            title: "Booking Integration",
-            description: "Easy scheduling.",
+            icon: "lucide:scroll",
+            title: "GSAP & Lenis Scroll Sync",
+            description: "Inertia-based smooth scrolling integrated with GSAP Ticker for scroll-triggered clip-path reveals and parallax scaling.",
+          },
+          {
+            icon: "lucide:building-2",
+            title: "Interactive Asset Showcase",
+            description: "Filterable property matrix showcasing luxury residential, commercial, and infrastructure management projects.",
+          },
+          {
+            icon: "lucide:map-pin",
+            title: "Operational Workflow Roadmap",
+            description: "Step-by-step interactive methodology detailing property onboarding, tenant services, and maintenance operations.",
           }
         ],
-        nextCaseStudySlug: "eyoris-fashion",
-        nextCaseStudyTitle: "Eyoris Fashion",
+        nextCaseStudySlug: "cm-college",
+        nextCaseStudyTitle: "CM College",
       },
     }
   ],
