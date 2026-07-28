@@ -117,11 +117,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
               alt={personal.name}
               className="w-full h-full object-cover rounded-xs transition-transform duration-500 group-hover:scale-105"
             />
-            
-            {/* Corner Badge */}
-            <div className="absolute top-5 left-5 bg-background border border-border px-3 py-1 text-[10px] font-mono font-bold text-primary uppercase tracking-widest rounded shadow-xs">
-              Navaneeth PV
-            </div>
           </div>
 
           {/* Floating Availability Badge */}
