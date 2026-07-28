@@ -117,7 +117,7 @@ export const portfolioData: PortfolioData = {
     description:
       "I'm a Frontend Developer passionate about building modern, responsive, and high-performance web applications. I specialize in React, Next.js, TypeScript, and Tailwind CSS, creating scalable, accessible, and user-friendly interfaces with a strong focus on clean architecture, performance, and exceptional user experience.",
     portraitImage:
-      "https://uxmagic.blob.core.windows.net/public/agent-images/img-hero-portrait-1784636829830-i5jgzb4h0p.png",
+      "./profile.png",
     location: "Wayanad, Kerala, India",
     bioTitle: "About Me",
     bioParagraphs: [
@@ -126,7 +126,7 @@ export const portfolioData: PortfolioData = {
       "I'm continuously improving my skills by building real-world projects and learning backend technologies including Node.js, Express.js, MongoDB, Docker, and cloud deployment."
     ],
     bioImage:
-      "./profile.png",
+      "./profile1.jpeg",
     stats: [
       { label: "Projects", value: "10+" },
       { label: "Technologies", value: "12+" },

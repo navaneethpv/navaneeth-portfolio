@@ -19,35 +19,37 @@ export default function Home() {
       {/* Minimalist Grid Background */}
       <div className="absolute inset-0 bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[linear-gradient(to_right,#202020_1px,transparent_1px),linear-gradient(to_bottom,#202020_1px,transparent_1px)] opacity-20 pointer-events-none"></div>
 
-      {/* Floating Navbar */}
-      <Navbar personal={personal} />
+      <div className="mx-[5%] lg:mx-[5%]">
+        {/* Floating Navbar */}
+        <Navbar personal={personal} />
 
-      {/* Hero Section */}
-      <HeroSection personal={personal} />
+        {/* Hero Section */}
+        <HeroSection personal={personal} />
 
-      {/* Featured Projects */}
-      <ProjectsSection projects={projects} />
+        {/* Featured Projects */}
+        <ProjectsSection projects={projects} />
 
-      {/* About Section */}
-      <AboutSection personal={personal} />
+        {/* About Section */}
+        <AboutSection personal={personal} />
 
-      {/* Tech Stack */}
-      <TechStackSection techStack={techStack} />
+        {/* Tech Stack */}
+        <TechStackSection techStack={techStack} />
 
-      {/* Experience Timeline */}
-      <ExperienceSection experience={experience} />
+        {/* Experience Timeline */}
+        <ExperienceSection experience={experience} />
 
-      {/* Playground Section */}
-      <PlaygroundSection />
+        {/* Playground Section */}
+        <PlaygroundSection />
 
-      {/* Testimonials */}
-      <TestimonialsSection testimonials={testimonials} />
+        {/* Testimonials */}
+        <TestimonialsSection testimonials={testimonials} />
 
-      {/* Contact Section */}
-      <ContactSection personal={personal} />
+        {/* Contact Section */}
+        <ContactSection personal={personal} />
 
-      {/* Footer */}
-      <Footer personal={personal} />
+        {/* Footer */}
+        <Footer personal={personal} />
+      </div>
     </div>
   );
 }
