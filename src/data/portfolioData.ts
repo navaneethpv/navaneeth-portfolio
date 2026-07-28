@@ -110,279 +110,363 @@ export interface PortfolioData {
 
 export const portfolioData: PortfolioData = {
   personal: {
-    name: "Kaelen.dev",
-    logoLetter: "K",
-    tagline: "Available for contract & senior roles",
-    titleLines: ["Crafting", "Digital", "Experiences."],
+    name: "Navaneeth PV",
+    logoLetter: "N",
+    tagline: "Frontend Developer • React • Next.js • TypeScript",
+    titleLines: ["Building", "Modern", "Web Experiences."],
     description:
-      "Frontend Engineer specializing in highly interactive, design-driven web applications. Crafting immersive user interfaces with modern frameworks, robust architectures, and pixel-perfect precision.",
+      "I'm a Frontend Developer passionate about building modern, responsive, and high-performance web applications. I specialize in React, Next.js, TypeScript, and Tailwind CSS, creating scalable, accessible, and user-friendly interfaces with a strong focus on clean architecture, performance, and exceptional user experience.",
     portraitImage:
       "https://uxmagic.blob.core.windows.net/public/agent-images/img-hero-portrait-1784636829830-i5jgzb4h0p.png",
-    location: "San Francisco, CA",
-    bioTitle: "Engineering with design-level intent.",
+    location: "Wayanad, Kerala, India",
+    bioTitle: "About Me",
     bioParagraphs: [
-      "I am a senior frontend developer who operates at the intersection of robust engineering and high-end visual design. Over the last 6+ years, I have worked with hyper-growth startups and creative agencies to build digital products that aren't just fast, but feel incredible to use.",
-      "My philosophy is heavily inspired by Apple, Linear, and Vercel: software should be clean, fast, and completely focused on user delight. I specialize in crafting performant architectures, smooth page transitions, and highly accessible user interfaces.",
+      "I'm a Frontend Developer passionate about building modern, responsive, and high-performance web applications.",
+      "I specialize in React, Next.js, TypeScript, and Tailwind CSS, creating scalable, accessible, and user-friendly interfaces with a strong focus on clean architecture, performance, and exceptional user experience.",
+      "I'm continuously improving my skills by building real-world projects and learning backend technologies including Node.js, Express.js, MongoDB, Docker, and cloud deployment."
     ],
     bioImage:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     stats: [
-      { label: "Shipped Apps", value: "24+" },
-      { label: "Technologies", value: "15+" },
-      { label: "Years Exp", value: "6+" },
-      { label: "Coffee ☕", value: "9.2k+" },
+      { label: "Projects", value: "10+" },
+      { label: "Technologies", value: "12+" },
+      { label: "Internship", value: "1+" },
+      { label: "Frontend Focus", value: "100%" },
     ],
     competencies: [
-      "Advanced React & Next.js Architecture",
-      "Design Systems & Component Libraries",
-      "WebGL, Three.js & Shader Dev",
-      "Performance Optimization & Core Web Vitals",
+      "React & Next.js",
+      "TypeScript",
+      "Responsive Web Design",
+      "Tailwind CSS",
+      "REST API Integration",
+      "Performance Optimization",
+      "Accessibility",
+      "Git & GitHub",
+      "UI Implementation",
+      "Modern Frontend Development"
     ],
     contactTitle: "Let's Build Something Great.",
     contactSubtitle:
-      "Whether you have a specific product project in mind, a senior role to fill, or just want to chat about high-end design systems — my inbox is always open.",
-    copyrightYear: "2024",
-    versionTag: "PORTFOLIO v4.0",
-    accoladeTag: "AWWWARDS NOMINEE",
+      "I'm open to internships, frontend developer roles, freelance projects, and exciting collaborations.",
+    copyrightYear: "2026",
+    versionTag: "PORTFOLIO v1.0",
+    accoladeTag: "FRONTEND DEVELOPER",
     socials: [
-      { name: "GitHub", icon: "lucide:github", url: "https://github.com" },
-      { name: "LinkedIn", icon: "lucide:linkedin", url: "https://linkedin.com" },
-      { name: "Email", icon: "lucide:mail", url: "mailto:hello@kaelen.dev" },
-      { name: "Website", icon: "lucide:globe", url: "https://kaelen.dev" },
+      { name: "GitHub", icon: "lucide:github", url: "https://github.com/navaneethpv-dev" },
+      { name: "LinkedIn", icon: "lucide:linkedin", url: "https://www.linkedin.com/in/navaneethpv-dev" },
+      { name: "Email", icon: "lucide:mail", url: "mailto:navaneethpv550@gmail.com" },
+      { name: "Website", icon: "lucide:globe", url: "#" },
     ],
   },
   projects: [
     {
-      id: "aether-task-management",
+      id: "eyoris-fashion",
       number: "01",
-      category: "Web Application",
-      title: "Aether Task Management",
+      category: "E-commerce Web Application",
+      title: "Eyoris Fashion",
       summary:
-        "A highly interactive, Linear-inspired project management application built for modern development teams. Features real-time state synchronization, multi-keyboard shortcut navigation, and rich interactive canvas views.",
-      techStack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Zustand"],
+        "A full-featured e-commerce platform for fashion apparel.",
+      techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       image:
-        "https://uxmagic.blob.core.windows.net/public/agent-images/img-project-1-1784636845082-w5euld5slf.png",
+        "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80",
       liveDemoUrl: "#",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "01 / AETHER TASK MANAGEMENT",
+        breadcrumbCategory: "01 / EYORIS FASHION",
         keyMetric: {
-          value: "+40%",
-          label: "Faster loading and rendering times compared to legacy platforms.",
+          value: "100%",
+          label: "Responsive and scalable e-commerce architecture.",
         },
-        role: "Lead Frontend Engineer",
-        timeline: "4 Months (2023)",
-        client: "Linear Tech Inc.",
-        deliverables: "Web App, Design System, API",
+        role: "Frontend Developer",
+        timeline: "2024",
+        client: "Self Project",
+        deliverables: "Web App, E-commerce flows",
         challenge: {
-          title: "The latency of modern project management.",
+          title: "Building a performant shopping experience.",
           paragraphs: [
-            "Most productivity tools suffer from severe performance bottlenecks when handling large, nested project lists and real-time state synchronizations. Teams frequently complain about delayed state updates, cluttered interfaces, and poor keyboard accessibility.",
-            "The goal was to build a tool that felt as instantaneous as a local text editor, with robust offline capabilities, elegant visual hierarchy, and instant keyboard shortcuts.",
+            "Creating seamless shopping cart flows and product discovery experiences requires careful state management and optimized rendering."
           ],
         },
         solution: {
-          title: "Optimistic state & canvas-based rendering.",
+          title: "React & Tailwind CSS.",
           paragraphs: [
-            "We implemented an optimistic state synchronization architecture using Zustand and custom React hooks, updating the client UI instantaneously while syncing with the server in the background.",
-            "For complex project boards, we utilized highly optimized React rendering patterns alongside CSS container queries to ensure fluid interactions even with thousands of concurrent cards.",
+            "Utilized modern React practices for state management and Tailwind CSS for rapid, responsive UI development."
           ],
         },
         codeSnippet: {
-          filename: "useOptimisticSync.ts",
-          code: `const useOptimisticSync = (taskId: string) => {
-  const { updateTask, syncQueue } = useTaskStore();
-
-  return useCallback(async (updates) => {
-    // 1. Mutate local state instantly
-    updateTask(taskId, updates);
-
-    // 2. Push to background sync queue
-    syncQueue.push({
-      id: taskId,
-      payload: updates,
-      timestamp: Date.now()
-    });
-  }, [taskId]);
+          filename: "cartStore.ts",
+          code: `const useCart = () => {
+  // Cart state logic
 };`,
         },
-        interactiveSandbox: [
-          {
-            id: "1",
-            title: "Refactor Core Canvas Rendering Pipeline",
-            priority: "High",
-            completed: false,
-          },
-          {
-            id: "2",
-            title: "Implement Multi-Keyboard Shortcut Listener",
-            priority: "Medium",
-            completed: false,
-          },
-          {
-            id: "3",
-            title: "Configure WebGL Shader Cache Strategy",
-            priority: "Low",
-            completed: false,
-          },
-        ],
+        interactiveSandbox: [],
         keyFeatures: [
           {
-            icon: "lucide:zap",
-            title: "Sub-100ms Interactions",
-            description:
-              "Every click, toggle, and view change completes under 100ms, conforming to strict industrial performance guidelines.",
-          },
-          {
-            icon: "lucide:keyboard",
-            title: "Keyboard First",
-            description:
-              "Full keyboard control allows power users to navigate, create, assign, and search tasks without ever lifting their hands.",
-          },
-          {
-            icon: "lucide:wifi-off",
-            title: "Offline Ready",
-            description:
-              "Automatic local caching enables seamless offline use, syncing conflict-free the moment connection is re-established.",
-          },
+            icon: "lucide:shopping-bag",
+            title: "Shopping Cart",
+            description: "Full cart functionality.",
+          }
         ],
-        nextCaseStudySlug: "helios-creative-canvas",
-        nextCaseStudyTitle: "Helios Creative Canvas",
+        nextCaseStudySlug: "jcom-member-directory",
+        nextCaseStudyTitle: "JCOM Member Directory",
       },
     },
     {
-      id: "helios-creative-canvas",
+      id: "jcom-member-directory",
       number: "02",
-      category: "Interactive WebGL",
-      title: "Helios Creative Canvas",
+      category: "Directory Application",
+      title: "JCOM Member Directory",
       summary:
-        "An infinite vector diagramming and creative layout tool built with custom WebGL shaders and Three.js. Allows high-performance rendering of millions of dynamic vector paths at 120fps.",
-      techStack: ["Three.js", "React Three Fiber", "GLSL Shaders", "Vite"],
+        "A comprehensive directory for JCOM members to manage and find contacts.",
+      techStack: ["React", "Next.js", "TypeScript"],
       image:
-        "https://uxmagic.blob.core.windows.net/public/agent-images/img-project-2-1784636853599-djiq2h21lzc.png",
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
       liveDemoUrl: "#",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "02 / HELIOS CREATIVE CANVAS",
+        breadcrumbCategory: "02 / JCOM MEMBER DIRECTORY",
         keyMetric: {
-          value: "120fps",
-          label: "Ultra smooth vector rendering across 10,000+ simultaneous viewport elements.",
+          value: "Fast",
+          label: "Quick member lookup and filtering.",
         },
-        role: "Senior WebGL Engineer",
-        timeline: "6 Months (2023)",
-        client: "Helios Space",
-        deliverables: "WebGL Canvas Core, Shader Engine, Web Platform",
+        role: "Frontend Developer",
+        timeline: "2024",
+        client: "JCOM",
+        deliverables: "Web App, Directory System",
         challenge: {
-          title: "DOM bottlenecks in infinite canvas design applications.",
+          title: "Handling large lists of members.",
           paragraphs: [
-            "Standard HTML DOM and SVG rendering trees become exponentially sluggish when rendering thousands of complex vector shapes simultaneously during pan and zoom operations.",
-            "Helios needed a hardware-accelerated rendering pipeline capable of maintaining a buttery smooth 120fps frame rate while processing complex bezier curves, drop shadows, and blending modes.",
+            "Needed an efficient way to display, filter, and search through many member profiles."
           ],
         },
         solution: {
-          title: "Custom GPU shaders & instanced WebGL buffers.",
+          title: "Optimized Next.js rendering.",
           paragraphs: [
-            "We developed a custom GPU instancing architecture in Three.js and custom GLSL vertex/fragment shaders to process vector path math directly on the GPU.",
-            "By decoupling geometry computation from the main UI thread using Web Workers, users can pan, zoom, and transform millions of paths without experiencing frame drops.",
+            "Used Next.js for fast initial load and effective caching strategies."
           ],
         },
         codeSnippet: {
-          filename: "instancedShaderBuffer.ts",
-          code: `const useInstancedPathBuffer = (pathCount: number) => {
-  const bufferRef = useRef<THREE.InstancedBufferAttribute>();
-
-  useFrame(({ clock }) => {
-    if (bufferRef.current) {
-      // Compute vertex displacement on GPU thread
-      bufferRef.current.needsUpdate = true;
-    }
-  });
-
-  return { bufferRef };
+          filename: "filterMembers.ts",
+          code: `const filterMembers = (query) => {
+  // Filtering logic
 };`,
         },
-        interactiveSandbox: [
-          {
-            id: "1",
-            title: "Compile Custom Fragment Shaders",
-            priority: "High",
-            completed: true,
-          },
-          {
-            id: "2",
-            title: "Initialize WebGL Context & Instanced Mesh",
-            priority: "High",
-            completed: false,
-          },
-          {
-            id: "3",
-            title: "Bind Quadtree Spatial Indexing Worker",
-            priority: "Medium",
-            completed: false,
-          },
-        ],
+        interactiveSandbox: [],
         keyFeatures: [
           {
-            icon: "lucide:zap",
-            title: "120 FPS Rendering",
-            description:
-              "Hardware-accelerated GLSL shader engine built to maintain native display refresh rates.",
-          },
-          {
-            icon: "lucide:sparkles",
-            title: "Infinite Zoom",
-            description:
-              "Spatial quadtree indexing algorithm enabling seamless pan and infinite zoom levels.",
-          },
-          {
-            icon: "lucide:globe",
-            title: "Real-time Canvas Sync",
-            description:
-              "Multi-cursor collaborative drawing canvas powered by WebSockets and CRDT algorithms.",
-          },
+            icon: "lucide:users",
+            title: "Member Search",
+            description: "Advanced search and filtering capabilities.",
+          }
         ],
-        nextCaseStudySlug: "aether-task-management",
-        nextCaseStudyTitle: "Aether Task Management",
+        nextCaseStudySlug: "asset-homes-website",
+        nextCaseStudyTitle: "Asset Homes Website",
       },
     },
+    {
+      id: "asset-homes-website",
+      number: "03",
+      category: "Corporate Website",
+      title: "Asset Homes Website",
+      summary:
+        "A corporate website showcasing properties and services for Asset Homes.",
+      techStack: ["React", "Tailwind CSS"],
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+      liveDemoUrl: "#",
+      githubUrl: "#",
+      caseStudy: {
+        breadcrumbCategory: "03 / ASSET HOMES WEBSITE",
+        keyMetric: {
+          value: "Modern",
+          label: "Sleek and professional design.",
+        },
+        role: "Frontend Developer",
+        timeline: "2024",
+        client: "Asset Homes",
+        deliverables: "Website",
+        challenge: {
+          title: "Presenting properties elegantly.",
+          paragraphs: [
+            "The client needed a way to showcase real estate effectively."
+          ],
+        },
+        solution: {
+          title: "Visual-first approach.",
+          paragraphs: [
+            "Built a gallery-heavy site focusing on high-quality imagery and smooth transitions."
+          ],
+        },
+        codeSnippet: {
+          filename: "gallery.tsx",
+          code: `const Gallery = () => {
+  // Gallery logic
+};`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:home",
+            title: "Property Showcase",
+            description: "Beautiful property listings.",
+          }
+        ],
+        nextCaseStudySlug: "malabar-heritage",
+        nextCaseStudyTitle: "Malabar Heritage",
+      },
+    },
+    {
+      id: "malabar-heritage",
+      number: "04",
+      category: "Cultural Website",
+      title: "Malabar Heritage",
+      summary:
+        "A website highlighting the cultural heritage and tourism of Malabar.",
+      techStack: ["Next.js", "React", "CSS"],
+      image:
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80",
+      liveDemoUrl: "#",
+      githubUrl: "#",
+      caseStudy: {
+        breadcrumbCategory: "04 / MALABAR HERITAGE",
+        keyMetric: {
+          value: "Engaging",
+          label: "Immersive storytelling experience.",
+        },
+        role: "Frontend Developer",
+        timeline: "2024",
+        client: "Cultural Board",
+        deliverables: "Website",
+        challenge: {
+          title: "Storytelling through web.",
+          paragraphs: [
+            "We needed to convey the rich history of the Malabar region interactively."
+          ],
+        },
+        solution: {
+          title: "Interactive timelines.",
+          paragraphs: [
+            "Implemented scrolling animations and interactive elements."
+          ],
+        },
+        codeSnippet: {
+          filename: "timeline.tsx",
+          code: `const Timeline = () => {
+  // Timeline animations
+};`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:map",
+            title: "Interactive Maps",
+            description: "Explore the region digitally.",
+          }
+        ],
+        nextCaseStudySlug: "event-planner-website",
+        nextCaseStudyTitle: "Event Planner Website",
+      },
+    },
+    {
+      id: "event-planner-website",
+      number: "05",
+      category: "Business Website",
+      title: "Event Planner Website",
+      summary:
+        "A professional platform for an event planning business.",
+      techStack: ["React", "TypeScript", "Tailwind"],
+      image:
+        "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80",
+      liveDemoUrl: "#",
+      githubUrl: "#",
+      caseStudy: {
+        breadcrumbCategory: "05 / EVENT PLANNER WEBSITE",
+        keyMetric: {
+          value: "Elegant",
+          label: "Sophisticated and inviting design.",
+        },
+        role: "Frontend Developer",
+        timeline: "2024",
+        client: "Event Co.",
+        deliverables: "Website",
+        challenge: {
+          title: "Capturing the magic of events.",
+          paragraphs: [
+            "The site needed to look as good as the events they plan."
+          ],
+        },
+        solution: {
+          title: "Premium aesthetics.",
+          paragraphs: [
+            "Used refined typography and subtle animations."
+          ],
+        },
+        codeSnippet: {
+          filename: "booking.tsx",
+          code: `const BookingForm = () => {
+  // Form handling
+};`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:calendar",
+            title: "Booking Integration",
+            description: "Easy scheduling.",
+          }
+        ],
+        nextCaseStudySlug: "eyoris-fashion",
+        nextCaseStudyTitle: "Eyoris Fashion",
+      },
+    }
   ],
   techStack: [
     { id: "01", name: "React", category: "Framework", icon: "logos:react" },
-    { id: "02", name: "Next.js", category: "Meta-framework", icon: "logos:nextjs-icon" },
-    { id: "03", name: "TypeScript", category: "Type Safety", icon: "logos:typescript-icon" },
-    { id: "04", name: "Tailwind", category: "Styling", icon: "logos:tailwindcss-icon" },
-    { id: "05", name: "Node.js", category: "Runtime", icon: "logos:nodejs-icon" },
-    { id: "06", name: "MongoDB", category: "Database", icon: "logos:mongodb-icon" },
-    { id: "07", name: "Docker", category: "DevOps", icon: "logos:docker-icon" },
-    { id: "08", name: "AWS", category: "Cloud Hosting", icon: "logos:aws" },
-    { id: "09", name: "Framer Motion", category: "Animation", icon: "logos:framer" },
-    { id: "10", name: "GSAP", category: "Tween Engine", icon: "lucide:sparkles" },
+    { id: "02", name: "Next.js", category: "Framework", icon: "logos:nextjs-icon" },
+    { id: "03", name: "TypeScript", category: "Language", icon: "logos:typescript-icon" },
+    { id: "04", name: "JavaScript", category: "Language", icon: "logos:javascript" },
+    { id: "05", name: "Tailwind CSS", category: "Styling", icon: "logos:tailwindcss-icon" },
+    { id: "06", name: "Node.js", category: "Backend", icon: "logos:nodejs-icon" },
+    { id: "07", name: "Express.js", category: "Backend", icon: "logos:express" },
+    { id: "08", name: "MongoDB", category: "Database", icon: "logos:mongodb-icon" },
+    { id: "09", name: "Git", category: "Version Control", icon: "logos:git-icon" },
+    { id: "10", name: "GitHub", category: "Version Control", icon: "logos:github-icon" },
+    { id: "11", name: "Framer Motion", category: "Animation", icon: "logos:framer" },
+    { id: "12", name: "Figma", category: "Design", icon: "logos:figma" },
   ],
   experience: [
     {
-      period: "2022 — Present",
-      role: "Senior Frontend Engineer",
-      company: "Linear Tech Inc.",
+      period: "July 2026 – Present",
+      role: "Frontend Developer Intern",
+      company: "Exouzia Protech Academy",
       description:
-        "Led the rewrite of the core interactive workspace canvas, resulting in a 40% improvement in load times and rendering performance. Spearheaded the creation of the internal Design System used across 4 product teams.",
+        "Building responsive web applications and developing modern UI using Next.js and TypeScript. Collaborating on client projects to improve UI/UX and overall performance.",
       alignment: "right",
     },
     {
-      period: "2020 — 2022",
-      role: "Frontend Engineer",
-      company: "Vercel (Remote)",
+      period: "October 2024 – February 2026",
+      role: "Frontend / Full Stack Projects",
+      company: "Self Learning & Personal Projects",
       description:
-        "Developed and maintained key templates and developer tools for the Next.js ecosystem. Collaborated closely with the design team to build elegant, high-fidelity landing pages and documentation hubs.",
+        "Built real-world React and Next.js applications while working with REST APIs and implementing authentication systems. Developed responsive UIs with Tailwind CSS, focusing on clean code and performance.",
       alignment: "left",
     },
     {
-      period: "2018 — 2020",
-      role: "UI/UX Developer",
-      company: "Stripe Agency",
+      period: "2023 – 2026",
+      role: "Bachelor of Computer Applications (BCA)",
+      company: "University of Calicut",
       description:
-        "Designed and developed interactive payment funnels and web flow templates for high-profile clients. Mastered CSS animations, SVG manipulation, and client-side performance optimization.",
+        "Pursuing higher education in computer science applications.",
       alignment: "right",
     },
+    {
+      period: "2021 – 2023",
+      role: "Higher Secondary (Science)",
+      company: "AMMR GHSS Nalloornad",
+      description:
+        "Completed higher secondary education focusing on science subjects.",
+      alignment: "left",
+    }
   ],
   playground: [
     {
@@ -404,20 +488,5 @@ export const portfolioData: PortfolioData = {
       type: "tilt",
     },
   ],
-  testimonials: [
-    {
-      quote:
-        "\"Kaelen possesses a rare combination of pure visual aesthetic taste and deep, bulletproof technical execution. He completely rebuilt our customer-facing site from scratch, exceeding our performance goals and making our brand look premium.\"",
-      author: "Marcus Aurelius",
-      role: "VP of Product, Linear Tech",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    },
-    {
-      quote:
-        "\"Working with Kaelen was a masterclass in collaboration. He didn't just take specifications and build them; he asked critical questions, designed beautiful solutions on the fly, and delivered ahead of schedule. Highly recommended.\"",
-      author: "Elena Rostova",
-      role: "Co-Founder, Helios Space",
-      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    },
-  ],
+  testimonials: [],
 };
