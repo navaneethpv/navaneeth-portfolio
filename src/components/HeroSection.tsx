@@ -58,11 +58,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
         <div className="lg:col-span-5 relative flex justify-center">
           {/* Background decorative elements */}
           <div className="absolute -inset-4 bg-linear-to-tr from-primary/10 to-transparent rounded-4xl blur-2xl opacity-30 pointer-events-none"></div>
-          <div className="absolute -top-8 -left-8 w-16 h-16 border border-border/40 rounded-full flex items-center justify-center opacity-40">
-            <Icon icon="lucide:sparkles" className="text-muted-foreground text-lg" />
-          </div>
 
-          <div className="relative w-full max-w-sm aspect-4/5 rounded-2xl border border-border bg-card overflow-hidden group shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+
+          <div className="relative w-full max-w-md aspect-4/5 rounded-2xl border border-border bg-card overflow-hidden group shadow-2xl transition-all duration-500 hover:scale-[1.02]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.portraitImage}
