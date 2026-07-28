@@ -159,8 +159,88 @@ export const portfolioData: PortfolioData = {
   },
   projects: [
     {
-      id: "eyoris-fashion",
+      id: "cm-college",
       number: "01",
+      category: "Educational Web Platform",
+      title: "CM College",
+      summary:
+        "A full-featured web platform and administrative portal for CM College, powering digital admissions, academic resources, department hubs, and dynamic institutional content management.",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Clerk", "Framer Motion", "ImageKit"],
+      image:
+        "https://ik.imagekit.io/1yxtj9qun/About/Untitled%20design.png?updatedAt=1768755140239?auto=format&fit=crop&w=800&q=80",
+      liveDemoUrl: "https://www.cmcollege.in",
+      githubUrl: "#",
+      caseStudy: {
+        breadcrumbCategory: "01 / CM COLLEGE",
+        keyMetric: {
+          value: "100%",
+          label: "Digitized institutional workflows & dynamic portal administration.",
+        },
+        role: "Full Stack Developer",
+        timeline: "2024",
+        client: "CM College",
+        deliverables: "Web Application, Admin Dashboard, Resource Hub",
+        challenge: {
+          title: "Architecting a secure, dynamic web portal for institutional workflows.",
+          paragraphs: [
+            "Developing a unified portal for an educational institution requires serving high-traffic public access to academic resources, news, and calendars while maintaining strict, role-based access control for administrative content management."
+          ],
+        },
+        solution: {
+          title: "Next.js App Router, Clerk RBAC & MongoDB.",
+          paragraphs: [
+            "Leveraged Next.js App Router with MongoDB & Mongoose for scalable dynamic content delivery, coupled with Clerk authentication and custom JWT metadata validation to secure administrative routes and server actions."
+          ],
+        },
+        codeSnippet: {
+          filename: "middleware.ts",
+          code: `import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
+
+const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
+
+export default clerkMiddleware(async (auth, req) => {
+  if (isAdminRoute(req)) {
+    const { userId, sessionClaims, redirectToSignIn } = await auth();
+    if (!userId) return redirectToSignIn();
+
+    let role = (sessionClaims as any)?.metadata?.role;
+    if (role !== "admin") {
+      return NextResponse.redirect(new URL("/", req.url));
+    }
+  }
+});`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:shield-check",
+            title: "Role-Based Admin Portal",
+            description: "Protected administration area for dynamic management of announcements, admissions, news, and faculty records.",
+          },
+          {
+            icon: "lucide:book-open",
+            title: "Question Bank & Resource Hub",
+            description: "Searchable digital archive for past question papers and study resources stored via optimized ImageKit CDN.",
+          },
+          {
+            icon: "lucide:graduation-cap",
+            title: "Admissions & Department Portals",
+            description: "Dynamic admission status management and comprehensive department pages with enquiry workflows.",
+          },
+          {
+            icon: "lucide:sparkles",
+            title: "Fluid Micro-Interactions",
+            description: "Smooth page transitions and responsive user experience powered by Lenis smooth scroll and Framer Motion.",
+          }
+        ],
+        nextCaseStudySlug: "eyoris-fashion",
+        nextCaseStudyTitle: "Eyoris Fashion",
+      },
+    },
+    {
+      id: "eyoris-fashion",
+      number: "02",
       category: "E-commerce Web Application",
       title: "Eyoris Fashion",
       summary:
@@ -171,7 +251,7 @@ export const portfolioData: PortfolioData = {
       liveDemoUrl: "#",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "01 / EYORIS FASHION",
+        breadcrumbCategory: "02 / EYORIS FASHION",
         keyMetric: {
           value: "100%",
           label: "Responsive and scalable e-commerce architecture.",
@@ -212,7 +292,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "jcom-member-directory",
-      number: "02",
+      number: "03",
       category: "Directory Application",
       title: "JCOM Member Directory",
       summary:
@@ -223,7 +303,7 @@ export const portfolioData: PortfolioData = {
       liveDemoUrl: "#",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "02 / JCOM MEMBER DIRECTORY",
+        breadcrumbCategory: "03 / JCOM MEMBER DIRECTORY",
         keyMetric: {
           value: "Fast",
           label: "Quick member lookup and filtering.",
@@ -264,7 +344,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "asset-homes-website",
-      number: "03",
+      number: "04",
       category: "Corporate Website",
       title: "Asset Homes Website",
       summary:
