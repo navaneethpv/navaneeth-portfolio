@@ -35,7 +35,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         </h2>
         <div className="text-right hidden md:block">
           <span className="font-script text-5xl text-accent -rotate-6 inline-block">
-            Let's Talk
+            Let&apos;s Talk
           </span>
         </div>
       </div>
@@ -93,7 +93,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none focus:border-primary transition-colors rounded-none shadow-none placeholder:text-secondary"
+                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none transition-colors rounded-none shadow-none"
                   placeholder="John Doe"
                 />
               </div>
@@ -106,7 +106,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none focus:border-primary transition-colors rounded-none shadow-none placeholder:text-secondary"
+                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none focus:border-accent transition-colors rounded-none shadow-none placeholder:text-muted-foreground"
                   placeholder="john@example.com"
                 />
               </div>
@@ -121,7 +121,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 required
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none focus:border-primary transition-colors rounded-none shadow-none placeholder:text-secondary"
+                className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none focus:border-accent transition-colors rounded-none shadow-none placeholder:text-muted-foreground"
                 placeholder="Collaboration Inquiry"
               />
             </div>
@@ -135,7 +135,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full p-4 bg-background border-2 border-border text-sm text-primary focus:outline-none focus:border-primary transition-colors resize-none rounded-none shadow-none placeholder:text-secondary mt-2"
+                className="w-full p-4 bg-background border-2 border-border text-sm text-primary focus:outline-none focus:border-accent transition-colors resize-none rounded-none shadow-none placeholder:text-muted-foreground mt-2"
                 placeholder="Tell us about your project..."
               ></textarea>
             </div>

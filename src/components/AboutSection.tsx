@@ -34,7 +34,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
         </div>
 
         {/* Right side: Image & Quick Details */}
-        <div className="p-8 md:p-12 relative flex items-center justify-center min-h-[500px]">
+        <div className="p-8 md:p-12 relative flex items-center justify-center min-h-125">
           {/* Decorative Red Circle */}
           <div className="absolute top-1/4 right-1/4 w-32 h-32 md:w-48 md:h-48 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 z-0 mix-blend-multiply"></div>
           

@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
 
       {/* Mobile Menu */}
       {!isCaseStudy && mobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-background flex flex-col justify-center p-8 space-y-8 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-100 bg-background flex flex-col justify-center p-8 space-y-8 animate-in fade-in duration-200">
           <button
             type="button"
             className="absolute top-8 right-8 text-primary border border-border p-2 hover:bg-primary hover:text-primary-foreground transition-colors"

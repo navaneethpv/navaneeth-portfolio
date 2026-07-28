@@ -126,15 +126,15 @@ export { MyComponent, type MyComponentProps };`;
               <div className="p-4 md:p-5 font-mono text-xs md:text-sm bg-background text-foreground overflow-x-auto border-b border-border">
                 <pre className="leading-relaxed whitespace-pre overflow-x-auto text-foreground">
                   <code>
-                    <span className="text-purple-500 font-semibold">'use client'</span>;{"\n\n"}
-                    <span className="text-purple-500 font-semibold">import</span> * <span className="text-purple-500 font-semibold">as</span> React <span className="text-purple-500 font-semibold">from</span> <span className="text-emerald-500">'react'</span>;{"\n\n"}
+                    <span className="text-purple-500 font-semibold">&apos;use client&apos;</span>;{"\n\n"}
+                    <span className="text-purple-500 font-semibold">import</span> * <span className="text-purple-500 font-semibold">as</span> React <span className="text-purple-500 font-semibold">from</span> <span className="text-emerald-500">&apos;react&apos;</span>;{"\n\n"}
                     <span className="text-purple-500 font-semibold">type</span> <span className="text-yellow-500 font-semibold">MyComponentProps</span> = {"{\n"}
                     {"  "}myProps: <span className="text-cyan-500 font-semibold">string</span>;{"\n"}
-                    {"}"} &amp; React.ComponentProps&lt;<span className="text-emerald-500">'div'</span>&gt;;{"\n\n"}
+                    {"}"} &amp; React.ComponentProps&lt;<span className="text-emerald-500">&apos;div&apos;</span>&gt;;{"\n\n"}
                     <span className="text-purple-500 font-semibold">function</span> <span className="text-blue-500 font-bold">MyComponent</span>(props: <span className="text-yellow-500">MyComponentProps</span>) {"{\n"}
                     {"  "}<span className="text-purple-500 font-semibold">return</span> ({"\n"}
                     {"    "}&lt;<span className="text-accent font-semibold">div</span> {"{...props}"}&gt;{"\n"}
-                    {"      "}&lt;<span className="text-accent font-semibold">p</span>&gt;<span className="text-emerald-500 font-medium">Welcome to {personal.name}'s Portfolio</span>&lt;/<span className="text-accent font-semibold">p</span>&gt;{"\n"}
+                    {"      "}&lt;<span className="text-accent font-semibold">p</span>&gt;<span className="text-emerald-500 font-medium">Welcome to {personal.name}&apos;s Portfolio</span>&lt;/<span className="text-accent font-semibold">p</span>&gt;{"\n"}
                     {"    "}&lt;/<span className="text-accent font-semibold">div</span>&gt;{"\n"}
                     {"  "});{"\n"}
                     {"}"}{"\n\n"}
@@ -156,7 +156,7 @@ export { MyComponent, type MyComponentProps };`;
                   value={inputCommand}
                   onChange={(e) => setInputCommand(e.target.value)}
                   placeholder="Type command and press Enter..."
-                  className="flex-1 min-w-0 bg-transparent border-none outline-none font-mono text-xs text-foreground placeholder:text-muted-foreground/60 px-1 py-1"
+                  className="flex-1 min-w-0 bg-transparent outline-none font-mono text-xs text-foreground placeholder:text-muted-foreground/60 px-1 py-1"
                 />
                 <button
                   type="submit"
@@ -207,7 +207,7 @@ export { MyComponent, type MyComponentProps };`;
                     <div className="space-y-4">
                       <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/30 rounded text-xs font-mono font-bold text-accent">
                         <Icon icon="lucide:code-2" className="text-sm" />
-                        <span>{personal.name}'s Space</span>
+                        <span>{personal.name}&apos;s Space</span>
                       </div>
 
                       <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-primary leading-snug">
@@ -267,7 +267,7 @@ export { MyComponent, type MyComponentProps };`;
               <div key={i} className={`bg-primary ${w === 2 ? "w-2" : "w-1"} h-full`}></div>
             ))}
           </div>
-          <p className="text-[9px] font-mono uppercase text-secondary max-w-[200px]">
+          <p className="text-[9px] font-mono uppercase text-secondary max-w-50">
             {personal.tagline} &bull; {personal.location}
           </p>
         </div>

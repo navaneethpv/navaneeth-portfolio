@@ -3,8 +3,21 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
+interface SkillItem {
+  name: string;
+  icon: string;
+  status?: string;
+}
+
+interface SkillCategory {
+  title: string;
+  badge: string;
+  badgeColor: string;
+  skills: SkillItem[];
+}
+
 export const TechStackSection: React.FC = () => {
-  const categories = [
+  const categories: SkillCategory[] = [
     {
       title: "Frontend",
       badge: "Primary Focus",
