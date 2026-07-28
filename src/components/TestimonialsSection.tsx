@@ -29,7 +29,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
             <div className="space-y-6">
               <Icon icon="lucide:quote" className="text-border text-4xl" />
               <p className="text-sm md:text-base text-secondary leading-relaxed font-sans">
-                "{item.quote}"
+                &quot;{item.quote}&quot;
               </p>
             </div>
             

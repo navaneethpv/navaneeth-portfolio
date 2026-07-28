@@ -37,8 +37,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
         {/* Fake barcode / small text */}
         <div className="flex flex-col gap-2">
           <div className="flex gap-1 h-8">
-            {[...Array(15)].map((_, i) => (
-              <div key={i} className={`bg-primary w-${Math.floor(Math.random() * 2) + 1} h-full`}></div>
+            {[2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1].map((w, i) => (
+              <div key={i} className={`bg-primary ${w === 2 ? "w-2" : "w-1"} h-full`}></div>
             ))}
           </div>
           <p className="text-[9px] font-mono uppercase text-secondary max-w-[200px]">
