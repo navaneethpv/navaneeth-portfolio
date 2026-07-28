@@ -15,63 +15,97 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
 
   return (
     <>
-      <div className="w-full border-b border-border bg-card relative z-50">
-        <nav className="px-6 py-2 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-primary">
-          <div className="flex gap-6">
-            <Link href={isCaseStudy ? "/" : "#hero"} className="hover:text-accent transition-colors">
-              Home
+      <div className="w-full flex flex-col relative z-50">
+        {/* Ticker Tape */}
+        <div className="w-full bg-primary text-primary-foreground overflow-hidden py-2 border-b border-border flex whitespace-nowrap">
+          <div className="animate-[marquee_20s_linear_infinite] flex items-center text-[10px] font-mono uppercase tracking-[0.2em] font-bold">
+            <span className="mx-4">OPEN FOR NEW OPPORTUNITIES</span> • 
+            <span className="mx-4">AVAILABLE FOR FREELANCE</span> • 
+            <span className="mx-4">FRONTEND DEVELOPER</span> • 
+            <span className="mx-4">REACT SPECIALIST</span> • 
+            <span className="mx-4">OPEN FOR NEW OPPORTUNITIES</span> • 
+            <span className="mx-4">AVAILABLE FOR FREELANCE</span> • 
+            <span className="mx-4">FRONTEND DEVELOPER</span> • 
+            <span className="mx-4">REACT SPECIALIST</span> •
+            <span className="mx-4">OPEN FOR NEW OPPORTUNITIES</span> • 
+            <span className="mx-4">AVAILABLE FOR FREELANCE</span> • 
+            <span className="mx-4">FRONTEND DEVELOPER</span> • 
+            <span className="mx-4">REACT SPECIALIST</span>
+          </div>
+        </div>
+
+        {/* Main Nav */}
+        <nav className="p-6 md:p-8 flex items-center justify-between border-b-4 border-border bg-card">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="w-10 h-10 bg-primary flex items-center justify-center text-primary-foreground font-heading font-bold text-xl hover:bg-accent transition-colors">
+              {personal.logoLetter}
             </Link>
-            {!isCaseStudy && (
-              <a href="#about" className="hidden md:block hover:text-accent transition-colors">
-                About
-              </a>
-            )}
+            <span className="hidden sm:block text-xs font-mono uppercase tracking-widest text-primary font-bold">
+              {personal.name}
+            </span>
           </div>
 
-          <div className="flex gap-6">
+          <div className="hidden md:flex items-center gap-10 text-xs font-mono uppercase tracking-widest text-primary font-bold">
+            <Link href={isCaseStudy ? "/" : "#hero"} className="hover:text-accent transition-colors relative group">
+              Home
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
+            </Link>
             {!isCaseStudy && (
               <>
-                <a href="#projects" className="hidden md:block hover:text-accent transition-colors">
-                  Work
+                <a href="#about" className="hover:text-accent transition-colors relative group">
+                  About
+                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
                 </a>
-                <a href="#contact" className="hidden md:block hover:text-accent transition-colors">
+                <a href="#projects" className="hover:text-accent transition-colors relative group">
+                  Work
+                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
+                </a>
+                <a href="#contact" className="hover:text-accent transition-colors relative group">
                   Contact
+                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
                 </a>
               </>
             )}
-            
-            {/* Mobile menu toggle */}
-            <button
-              className="md:hidden text-primary"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <Icon icon="lucide:menu" />
-            </button>
           </div>
+
+          {/* Mobile menu toggle */}
+          <button
+            className="md:hidden text-primary hover:text-accent transition-colors p-2 border border-border"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <Icon icon="lucide:menu" className="text-xl" />
+          </button>
         </nav>
       </div>
 
       {/* Mobile Menu */}
       {!isCaseStudy && mobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-background flex flex-col justify-center p-8 border-[8px] border-card space-y-8 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] bg-background flex flex-col justify-center p-8 space-y-8 animate-in fade-in duration-200">
           <button
             type="button"
-            className="absolute top-6 right-6 text-primary"
+            className="absolute top-8 right-8 text-primary border border-border p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             <Icon icon="lucide:x" className="text-2xl" />
           </button>
-          <div className="flex flex-col space-y-6 text-center">
-            {["projects", "about", "skills", "experience", "contact"].map((item) => (
+          
+          <div className="flex flex-col space-y-8 text-center border-y border-border py-12">
+            {["home", "about", "projects", "skills", "experience", "contact"].map((item) => (
               <a
                 key={item}
-                href={`#${item}`}
-                className="font-heading text-4xl uppercase font-bold text-primary hover:text-accent transition-colors"
+                href={item === "home" ? "#hero" : `#${item}`}
+                className="font-heading text-5xl uppercase font-bold text-primary hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item}
               </a>
             ))}
+          </div>
+          
+          <div className="text-center pt-8">
+            <span className="text-[10px] font-mono text-secondary uppercase tracking-widest">
+              {personal.name} © {personal.copyrightYear}
+            </span>
           </div>
         </div>
       )}

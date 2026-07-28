@@ -17,7 +17,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             {personal.bioTitle}
           </h2>
 
-          <div className="space-y-6 text-sm md:text-base text-secondary leading-relaxed font-sans max-w-md relative z-10">
+          <div className="space-y-6 text-sm md:text-base text-secondary leading-relaxed font-sans max-w-2xl relative z-10">
             {personal.bioParagraphs.map((para, idx) => (
               <p key={idx}>{para}</p>
             ))}

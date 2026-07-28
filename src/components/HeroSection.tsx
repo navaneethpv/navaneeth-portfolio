@@ -11,11 +11,7 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
   return (
     <section id="hero" className="relative w-full border-b border-border overflow-hidden">
-      {/* Top Bar inside Hero */}
-      <div className="flex justify-between items-center px-6 py-4 border-b border-border text-xs font-mono uppercase tracking-widest text-primary">
-        <div>{personal.name}</div>
-        <div className="border border-border px-3 py-1 rounded-full">{new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
-      </div>
+
 
       <div className="relative w-full min-h-[70vh] flex flex-col items-center justify-center py-20">
         

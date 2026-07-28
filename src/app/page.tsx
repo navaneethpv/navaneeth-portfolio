@@ -14,10 +14,10 @@ export default function Home() {
   const { personal, projects, techStack, experience, testimonials } = portfolioData;
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-accent selection:text-accent-foreground p-4 md:p-8">
+    <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-accent selection:text-accent-foreground">
 
-      {/* Main bordered container framing the portfolio */}
-      <div className="max-w-[1600px] mx-auto border border-border bg-card shadow-2xl relative">
+      {/* Main container framing the portfolio */}
+      <div className="w-full bg-card relative">
         <Navbar personal={personal} />
 
         {/* Hero Section */}
