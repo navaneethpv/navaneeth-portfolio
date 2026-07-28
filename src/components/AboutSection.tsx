@@ -43,7 +43,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             <img
               src={personal.bioImage}
               alt="Workspace"
-              className="w-full h-full object-cover grayscale"
+              className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
             />
           </div>
 

@@ -105,7 +105,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-video object-cover grayscale"
+                    className="w-full aspect-video object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               </div>

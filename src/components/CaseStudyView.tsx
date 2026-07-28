@@ -113,7 +113,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
             <img
               src={project.image}
               alt={project.title}
-              className="w-full aspect-video object-cover grayscale contrast-125 brightness-90 opacity-90 transition-opacity duration-700 hover:opacity-100"
+              className="w-full aspect-video object-cover transition-transform duration-500 hover:scale-105"
             />
           </div>
         </section>
