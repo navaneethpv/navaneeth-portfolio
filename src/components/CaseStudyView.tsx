@@ -26,7 +26,6 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
 
   return (
     <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
-      <div className="absolute inset-0 bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[linear-gradient(to_right,#E5E7EB_1px,transparent_1px),linear-gradient(to_bottom,#E5E7EB_1px,transparent_1px)] opacity-60 pointer-events-none z-0"></div>
 
       <div className="mx-[5%] lg:mx-[20%]">
         {/* Navbar */}

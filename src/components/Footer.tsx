@@ -17,45 +17,45 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
   };
 
   return (
-    <footer className="bento-card py-12 px-6 border-x-0 border-b-0 rounded-none rounded-t-3xl border-t-white/10 mt-12">
-      <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-3">
-          <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-heading font-black text-xs tracking-tighter">
+    <footer className="py-12 px-6 border-t border-border mt-24">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex items-center gap-4">
+          <div className="w-8 h-8 bg-primary flex items-center justify-center text-primary-foreground font-heading font-medium text-sm">
             {personal.logoLetter}
           </div>
-          <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
+          <span className="text-[10px] font-mono text-secondary tracking-widest uppercase">
             {personal.name} © {personal.copyrightYear}
           </span>
         </div>
 
-        <div className="flex gap-8 text-xs font-mono text-muted-foreground">
+        <div className="flex flex-wrap justify-center gap-8 text-[10px] font-mono text-secondary uppercase tracking-widest">
           {isCaseStudy ? (
             <>
-              <Link href="/" className="hover:text-foreground transition-colors">
+              <Link href="/" className="hover:text-primary transition-colors">
                 Home
               </Link>
-              <Link href="/#projects" className="hover:text-foreground transition-colors">
+              <Link href="/#projects" className="hover:text-primary transition-colors">
                 Projects
               </Link>
-              <Link href="/#about" className="hover:text-foreground transition-colors">
+              <Link href="/#about" className="hover:text-primary transition-colors">
                 About
               </Link>
-              <Link href="/#contact" className="hover:text-foreground transition-colors">
+              <Link href="/#contact" className="hover:text-primary transition-colors">
                 Contact
               </Link>
             </>
           ) : (
             <>
-              <a href="#projects" className="hover:text-foreground transition-colors">
+              <a href="#projects" className="hover:text-primary transition-colors">
                 Projects
               </a>
-              <a href="#about" className="hover:text-foreground transition-colors">
+              <a href="#about" className="hover:text-primary transition-colors">
                 About
               </a>
-              <a href="#skills" className="hover:text-foreground transition-colors">
+              <a href="#skills" className="hover:text-primary transition-colors">
                 Skills
               </a>
-              <a href="#experience" className="hover:text-foreground transition-colors">
+              <a href="#experience" className="hover:text-primary transition-colors">
                 Experience
               </a>
             </>
@@ -65,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
         <a
           href="#hero"
           onClick={scrollToTop}
-          className="flex items-center gap-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors group"
+          className="flex items-center gap-2 text-[10px] font-mono text-secondary uppercase tracking-widest hover:text-primary transition-colors group"
         >
           Back to Top
           <Icon

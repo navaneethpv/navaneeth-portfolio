@@ -1,60 +1,66 @@
 "use client";
 
 import React from "react";
-import { Icon } from "@iconify/react";
 import { TechItem } from "@/data/portfolioData";
+import { motion } from "framer-motion";
 
 interface TechStackSectionProps {
   techStack: TechItem[];
 }
 
-export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack }) => {
+export const TechStackSection: React.FC<TechStackSectionProps> = () => {
+  const categories = [
+    {
+      title: "Frontend",
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    },
+    {
+      title: "Backend",
+      skills: ["Node.js", "Express.js", "MongoDB"],
+    },
+    {
+      title: "Tools",
+      skills: ["Git", "GitHub", "Docker", "Figma", "Framer Motion"],
+    },
+  ];
+
   return (
-    <section id="skills" className="w-full px-6 py-24 md:py-32 border-t border-border">
-      <div className="space-y-16">
+    <section id="skills" className="w-full px-6 py-32 md:py-48 max-w-7xl mx-auto border-t border-border">
+      <div className="space-y-24">
         {/* Title */}
-        <div className="space-y-4 max-w-xl">
-          <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-            [ 03 / ENGINE ]
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-border pb-12">
+          <div className="space-y-4">
+            <div className="text-[10px] font-mono text-secondary uppercase tracking-widest">
+              [ 03 / ENGINE ]
+            </div>
+            <h2 className="text-4xl md:text-5xl font-heading font-light tracking-tight text-primary">
+              Core Technologies
+            </h2>
           </div>
-          <h2 className="text-4xl md:text-6xl font-heading font-black tracking-tighter text-foreground">
-            Tech Stack
-          </h2>
-          <p className="text-muted-foreground text-sm">
-            Highly specialized in modern web technologies with an emphasis on performance, type safety, and rich animation.
+          <p className="text-secondary text-sm max-w-sm leading-relaxed font-sans font-light">
+            Highly specialized in modern web technologies with an emphasis on clean architecture and type safety.
           </p>
         </div>
 
-        {/* Floating Tech Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {techStack.map((tech) => (
-            <div
-              key={tech.id}
-              className="p-6 rounded-xl bento-card hover:bg-background hover:border-muted-foreground/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-40"
-            >
-              <div className="flex justify-between items-start">
-                <Icon
-                  icon={tech.icon}
-                  className={`text-3xl transition-all ${
-                    tech.icon.includes("nextjs") || tech.icon.includes("aws") || tech.icon.includes("framer")
-                      ? "invert grayscale group-hover:grayscale-0"
-                      : tech.icon.startsWith("lucide")
-                      ? "text-primary"
-                      : "grayscale group-hover:grayscale-0"
-                  }`}
-                />
-                <span className="text-[10px] font-mono text-muted-foreground">
-                  {tech.id}
-                </span>
-              </div>
-              <div>
-                <h4 className="font-heading font-bold text-sm text-foreground">
-                  {tech.name}
-                </h4>
-                <span className="text-[10px] text-muted-foreground font-mono">
-                  {tech.category}
-                </span>
-              </div>
+        {/* Minimalist Tech Lists */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          {categories.map((category, idx) => (
+            <div key={idx} className="space-y-8">
+              <h3 className="text-xs uppercase tracking-widest text-primary font-mono border-b border-border pb-4">
+                {category.title}
+              </h3>
+              <ul className="space-y-6 text-xl md:text-2xl font-heading font-light text-primary">
+                {category.skills.map((skill, sIdx) => (
+                  <motion.li 
+                    key={sIdx} 
+                    className="hover:text-accent transition-colors cursor-default"
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {skill}
+                  </motion.li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
