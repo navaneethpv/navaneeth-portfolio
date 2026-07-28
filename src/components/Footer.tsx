@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
   };
 
   return (
-    <footer className="glass-panel py-12 px-6 border-x-0 border-b-0 rounded-none rounded-t-3xl border-t-white/10 mt-12">
+    <footer className="bento-card py-12 px-6 border-x-0 border-b-0 rounded-none rounded-t-3xl border-t-white/10 mt-12">
       <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-heading font-black text-xs tracking-tighter">

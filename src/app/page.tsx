@@ -16,11 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
-      {/* Animated Glassmorphism Background Orbs */}
-      <div className="ambient-orb bg-primary/40 w-[600px] h-[600px] top-[-100px] left-[-200px]"></div>
-      <div className="ambient-orb bg-secondary/30 w-[800px] h-[800px] bottom-[-200px] right-[-300px]"></div>
-      <div className="ambient-orb bg-accent/20 w-[500px] h-[500px] top-[40%] left-[20%]"></div>
-      <div className="absolute inset-0 bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] opacity-40 pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[linear-gradient(to_right,#E5E7EB_1px,transparent_1px),linear-gradient(to_bottom,#E5E7EB_1px,transparent_1px)] opacity-60 pointer-events-none z-0"></div>
 
       <div className="mx-[5%] lg:mx-[5%]">
         {/* Floating Navbar */}

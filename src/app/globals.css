@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090909;
-  --foreground: #FAFAFA;
-  --primary: #FAFAFA;
-  --primary-foreground: #090909;
-  --secondary: #111111;
-  --secondary-foreground: #A1A1AA;
-  --tertiary: #FAFAFA;
-  --muted: #111111;
-  --muted-foreground: #A1A1AA;
-  --accent: #303030;
-  --accent-foreground: #FAFAFA;
-  --card: #111111;
-  --card-foreground: #FAFAFA;
+  --background: #F4F4F5;
+  --foreground: #09090B;
+  --primary: #0F172A;
+  --primary-foreground: #F8FAFC;
+  --secondary: #E4E4E7;
+  --secondary-foreground: #09090B;
+  --tertiary: #D4D4D8;
+  --muted: #E4E4E7;
+  --muted-foreground: #71717A;
+  --accent: #F4F4F5;
+  --accent-foreground: #09090B;
+  --card: #FFFFFF;
+  --card-foreground: #09090B;
   --destructive: #EF4444;
-  --border: #202020;
-  --input: #202020;
-  --ring: #FAFAFA;
+  --border: #E4E4E7;
+  --input: #E4E4E7;
+  --ring: #0F172A;
   --radius: 0.75rem;
   --font-sans: Inter, sans-serif;
   --font-heading: Satoshi, Inter, sans-serif;
@@ -63,7 +63,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -74,22 +74,14 @@ body {
   margin: 0;
 }
 
-.glass-panel {
-  background-color: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+.bento-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
-.ambient-orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 0;
+.bento-card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-color: #D4D4D8;
 }
 

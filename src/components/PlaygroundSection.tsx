@@ -48,7 +48,7 @@ export const PlaygroundSection: React.FC = () => {
         {/* Playground Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Experiment 1: Interactive Custom Cursor Simulator */}
-          <div className="p-6 rounded-xl glass-panel flex flex-col justify-between h-80 relative overflow-hidden group hover:border-white/20 transition-colors">
+          <div className="p-6 rounded-xl bento-card flex flex-col justify-between h-80 relative overflow-hidden group hover:border-white/20 transition-colors">
             <div className="absolute inset-0 bg-linear-to-tr from-foreground/5 to-transparent rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
             <div>
               <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
@@ -90,7 +90,7 @@ export const PlaygroundSection: React.FC = () => {
           </div>
 
           {/* Experiment 2: Interactive Glass Component */}
-          <div className="p-6 rounded-xl glass-panel flex flex-col justify-between h-80 relative overflow-hidden group hover:border-white/20 transition-colors">
+          <div className="p-6 rounded-xl bento-card flex flex-col justify-between h-80 relative overflow-hidden group hover:border-white/20 transition-colors">
             <div>
               <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
                 [ Glassmorphism ]
@@ -119,7 +119,7 @@ export const PlaygroundSection: React.FC = () => {
 
           {/* Experiment 3: Interactive 3D Card Simulator */}
           <div
-            className="p-6 rounded-xl glass-panel flex flex-col justify-between h-80 relative overflow-hidden group hover:border-white/20 transition-colors"
+            className="p-6 rounded-xl bento-card flex flex-col justify-between h-80 relative overflow-hidden group hover:border-white/20 transition-colors"
             onMouseMove={handleMouseMoveTilt}
             onMouseLeave={handleMouseLeaveTilt}
           >

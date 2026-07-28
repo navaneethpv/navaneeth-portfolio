@@ -106,14 +106,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                   isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"
                 }`}
               >
-                <div className="relative rounded-xl glass-panel overflow-hidden group-hover:border-white/20 transition-colors duration-500">
+                <div className="relative rounded-xl bento-card overflow-hidden group-hover:border-white/20 transition-colors duration-500">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full aspect-16/10 object-cover grayscale contrast-125 brightness-90 opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent opacity-80"></div>
                 </div>
               </div>
             </div>

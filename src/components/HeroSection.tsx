@@ -60,7 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
           <div className="absolute -inset-4 bg-linear-to-tr from-primary/10 to-transparent rounded-4xl blur-2xl opacity-30 pointer-events-none"></div>
 
 
-          <div className="relative w-full max-w-md aspect-4/5 rounded-2xl glass-panel overflow-hidden group transition-all duration-500 hover:scale-[1.02]">
+          <div className="relative w-full max-w-md aspect-4/5 rounded-2xl bento-card overflow-hidden group transition-all duration-500 hover:scale-[1.02]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.portraitImage}
@@ -69,7 +69,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
             />
 
             {/* Editorial Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60"></div>
             <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground font-mono">

@@ -67,7 +67,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         <div className="lg:col-span-6">
           <form
             onSubmit={handleSubmit}
-            className="p-8 rounded-xl glass-panel space-y-6"
+            className="p-8 rounded-xl bento-card space-y-6"
           >
             {submitted && (
               <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
