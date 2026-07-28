@@ -6,7 +6,6 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { TechStackSection } from "@/components/TechStackSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
-import { PlaygroundSection } from "@/components/PlaygroundSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
@@ -35,9 +34,6 @@ export default function Home() {
 
         {/* Experience Timeline */}
         <ExperienceSection experience={experience} />
-
-        {/* Playground Section */}
-        <PlaygroundSection />
 
         {/* Testimonials */}
         <TestimonialsSection testimonials={testimonials} />

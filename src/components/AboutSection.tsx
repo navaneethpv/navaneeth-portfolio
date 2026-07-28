@@ -38,7 +38,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
           {/* Decorative Red Circle */}
           <div className="absolute top-1/4 right-1/4 w-32 h-32 md:w-48 md:h-48 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 z-0 mix-blend-multiply"></div>
           
-          <div className="relative z-10 w-full max-w-sm aspect-3/4 border border-border p-2 bg-card">
+          <div className="relative z-10 w-full max-w-lg aspect-3/4 border border-border p-2 bg-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.bioImage}
