@@ -121,9 +121,9 @@ export const portfolioData: PortfolioData = {
     location: "Wayanad, Kerala, India",
     bioTitle: "About Me",
     bioParagraphs: [
-      "I'm a Frontend Developer passionate about building modern, responsive, and high-performance web applications.",
-      "I specialize in React, Next.js, TypeScript, and Tailwind CSS, creating scalable, accessible, and user-friendly interfaces with a strong focus on clean architecture, performance, and exceptional user experience.",
-      "I'm continuously improving my skills by building real-world projects and learning backend technologies including Node.js, Express.js, MongoDB, Docker, and cloud deployment."
+      "My journey into frontend development began with a curiosity for creating interactive experiences on the web. Today, I specialize in building modern applications using React, Next.js, TypeScript, and Tailwind CSS, focusing on responsive design, accessibility, and performance.",
+      "Every project is an opportunity to solve real problems, learn something new, and create interfaces that people genuinely enjoy using.",
+      "As I continue growing as a developer, I'm expanding my knowledge into backend technologies while staying committed to writing clean, scalable, and maintainable code."
     ],
     bioImage:
       "./profile1.jpeg",
