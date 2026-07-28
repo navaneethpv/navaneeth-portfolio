@@ -8,19 +8,6 @@ interface AboutSectionProps {
   personal: PersonalInfo;
 }
 
-const competencyIcons: Record<string, string> = {
-  "React & Next.js": "logos:react",
-  "TypeScript": "logos:typescript-icon",
-  "Responsive Web Design": "lucide:layout-template",
-  "Tailwind CSS": "logos:tailwindcss-icon",
-  "REST API Integration": "lucide:arrow-right-left",
-  "Performance Optimization": "lucide:zap",
-  "Accessibility": "lucide:eye",
-  "Git & GitHub": "logos:github-icon",
-  "UI Implementation": "lucide:palette",
-  "Modern Frontend Development": "lucide:code-2",
-};
-
 export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
   return (
     <section id="about" className="w-full border-b border-border bg-background">
@@ -71,35 +58,46 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             ))}
           </div>
 
-          {/* Competencies Grid */}
+          {/* Engineering Principles & Core Strengths */}
           <div className="space-y-4 pt-6 border-t border-border">
             <div className="flex items-center justify-between">
               <h3 className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
-                Core Competencies
+                Core Strengths &amp; Principles
               </h3>
               <span className="text-[10px] font-mono text-muted-foreground">
-                {personal.competencies.length} SKILLS INDEXED
+                6 PRINCIPLES
               </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {personal.competencies.map((item, idx) => {
-                const iconName = competencyIcons[item] || "lucide:check-circle-2";
+              {[
+                { title: "Clean Code Architecture", desc: "Modular, typed & maintainable React codebases", icon: "lucide:code-2" },
+                { title: "Responsive & Mobile-First", desc: "Fluid layouts for desktop, tablet & mobile devices", icon: "lucide:smartphone" },
+                { title: "UI/UX Precision", desc: "Pixel-perfect implementation of Figma designs", icon: "lucide:palette" },
+                { title: "API Integration", desc: "Seamless REST backend data fetching & state management", icon: "lucide:arrow-right-left" },
+                { title: "Performance Optimization", desc: "Fast load times, asset optimization & zero layout shifts", icon: "lucide:zap" },
+                { title: "Continuous Learning", desc: "Expanding full-stack backend skills with Node.js & MongoDB", icon: "lucide:sparkles" },
+              ].map((item, idx) => {
                 const numStr = String(idx + 1).padStart(2, "0");
                 return (
                   <div
                     key={idx}
-                    className="p-3 bg-card border border-border rounded-md hover:border-primary transition-all flex items-center justify-between group shadow-xs"
+                    className="p-3 bg-card border border-border rounded-md hover:border-primary transition-all flex items-start gap-3 group shadow-xs"
                   >
-                    <div className="flex items-center gap-3">
-                      <span className="text-[10px] font-mono text-muted-foreground font-bold">
-                        {numStr}
-                      </span>
-                      <span className="text-xs font-mono font-bold text-primary group-hover:text-accent transition-colors">
-                        {item}
-                      </span>
+                    <span className="text-[10px] font-mono text-muted-foreground font-bold mt-0.5">
+                      {numStr}
+                    </span>
+                    <div className="space-y-1 flex-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-primary group-hover:text-accent transition-colors">
+                          {item.title}
+                        </span>
+                        <Icon icon={item.icon} className="text-sm text-primary group-hover:scale-110 transition-transform shrink-0" />
+                      </div>
+                      <p className="text-[11px] font-sans text-secondary leading-snug">
+                        {item.desc}
+                      </p>
                     </div>
-                    <Icon icon={iconName} className="text-lg text-primary group-hover:scale-110 transition-transform shrink-0" />
                   </div>
                 );
               })}
