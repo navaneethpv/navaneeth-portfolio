@@ -2,7 +2,6 @@
 
 import React from "react";
 import { PersonalInfo } from "@/data/portfolioData";
-import { motion } from "framer-motion";
 
 interface AboutSectionProps {
   personal: PersonalInfo;
@@ -10,68 +9,48 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
   return (
-    <section id="about" className="w-full px-6 py-32 md:py-48 border-t border-border max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+    <section id="about" className="w-full border-b border-border">
+      <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border">
         {/* Left side: Bio & Info */}
-        <div className="lg:col-span-7 space-y-12">
-          <div className="flex items-center gap-4">
-            <span className="text-[10px] font-mono text-secondary uppercase tracking-widest">
-              [ 02 / BIOGRAPHY ]
-            </span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-heading font-light tracking-tight text-primary">
+        <div className="p-8 md:p-12 space-y-12 relative overflow-hidden">
+          <h2 className="text-6xl md:text-8xl font-heading font-bold uppercase tracking-tighter text-primary relative z-10">
             {personal.bioTitle}
           </h2>
 
-          <div className="space-y-6 text-base md:text-lg text-secondary leading-relaxed font-sans font-light">
+          <div className="space-y-6 text-sm md:text-base text-secondary leading-relaxed font-sans max-w-md relative z-10">
             {personal.bioParagraphs.map((para, idx) => (
               <p key={idx}>{para}</p>
             ))}
           </div>
-
-          {/* Statistics text-list */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-12 border-t border-border/50">
-            {personal.stats.map((stat, idx) => (
-              <div key={idx} className="space-y-2">
-                <span className="block text-4xl font-heading font-light text-primary">
-                  {stat.value}
-                </span>
-                <span className="block text-[10px] uppercase tracking-widest text-secondary font-mono">
-                  {stat.label}
-                </span>
-              </div>
+          
+          <ul className="space-y-4 text-xs uppercase tracking-widest text-primary font-mono pt-8 border-t border-border">
+            {personal.competencies.map((item, idx) => (
+              <li key={idx} className="flex items-center gap-3">
+                <span className="w-1 h-1 bg-accent rounded-full shrink-0"></span>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
         {/* Right side: Image & Quick Details */}
-        <div className="lg:col-span-5 space-y-12">
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative w-full aspect-4/3 p-2 bg-card border border-border shadow-sm overflow-hidden"
-          >
+        <div className="p-8 md:p-12 relative flex items-center justify-center min-h-[500px]">
+          {/* Decorative Red Circle */}
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 md:w-48 md:h-48 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 z-0 mix-blend-multiply"></div>
+          
+          <div className="relative z-10 w-full max-w-sm aspect-3/4 border border-border p-2 bg-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.bioImage}
               alt="Workspace"
-              className="w-full h-full object-cover grayscale-15 object-center transition-transform duration-700 hover:scale-105"
+              className="w-full h-full object-cover grayscale"
             />
-          </motion.div>
+          </div>
 
-          <div className="pt-8 border-t border-border/50">
-            <h4 className="text-xs uppercase tracking-widest text-primary font-mono mb-6">
-              Core Competencies
-            </h4>
-            <ul className="space-y-4 text-sm text-secondary font-sans font-light">
-              {personal.competencies.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="mt-1.5 w-1 h-1 bg-primary rounded-full shrink-0"></span>
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="absolute bottom-8 right-8 text-right z-20">
+            <span className="font-script text-6xl md:text-8xl text-accent -rotate-12 inline-block">
+              About
+            </span>
           </div>
         </div>
       </div>

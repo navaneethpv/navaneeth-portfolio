@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter_Tight, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Oswald, Caveat } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,9 +8,15 @@ const inter = Inter({
   display: "swap",
 });
 
-const interTight = Inter_Tight({
+const oswald = Oswald({
   subsets: ["latin"],
-  variable: "--font-inter-tight",
+  variable: "--font-oswald",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -33,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`light scroll-smooth ${inter.variable} ${interTight.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={`light scroll-smooth ${inter.variable} ${oswald.variable} ${caveat.variable} ${ibmPlexMono.variable}`}>
       <body className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground antialiased">
         {children}
       </body>

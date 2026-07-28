@@ -1,27 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F8F6F2;
+  --background: #F4F4F4;
   --foreground: #111111;
   --primary: #111111;
-  --primary-foreground: #FFFFFF;
-  --secondary: #555555;
+  --primary-foreground: #F4F4F4;
+  --secondary: #666666;
   --secondary-foreground: #FFFFFF;
-  --tertiary: #EFEAE2;
-  --muted: #EFEAE2;
-  --muted-foreground: #555555;
-  --accent: #3E5C47;
+  --tertiary: #E5E5E5;
+  --muted: #E5E5E5;
+  --muted-foreground: #666666;
+  --accent: #FF4B4B;
   --accent-foreground: #FFFFFF;
   --card: #FFFFFF;
   --card-foreground: #111111;
-  --destructive: #EF4444;
-  --border: #DDD8CF;
-  --input: #DDD8CF;
-  --ring: #3E5C47;
+  --destructive: #FF4B4B;
+  --border: #111111;
+  --input: #111111;
+  --ring: #FF4B4B;
   --radius: 0rem;
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Inter Tight', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-oswald), sans-serif;
+  --font-script: var(--font-caveat), cursive;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
   --shadow-offset-x: 0;
   --shadow-offset-y: 2;
   --shadow-blur: 4;
@@ -52,6 +53,7 @@
   --radius-lg: var(--radius);
   --font-family-sans: var(--font-sans);
   --font-family-heading: var(--font-heading);
+  --font-family-script: var(--font-script);
   --font-family-mono: var(--font-mono);
 }
 

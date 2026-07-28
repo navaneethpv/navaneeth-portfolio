@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { Project } from "@/data/portfolioData";
-import { motion } from "framer-motion";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -12,108 +11,103 @@ interface ProjectsSectionProps {
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   return (
-    <section id="projects" className="w-full px-6 py-32 md:py-48 max-w-7xl mx-auto">
+    <section id="projects" className="w-full border-b border-border">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-32 border-b border-border pb-12">
-        <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-heading font-light tracking-tight text-primary">
-            Selected Works
-          </h2>
+      <div className="p-8 md:p-12 border-b border-border flex justify-between items-end relative overflow-hidden">
+        <h2 className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary relative z-10">
+          The Work
+        </h2>
+        <span className="font-script text-5xl md:text-7xl text-accent -rotate-6 absolute left-1/4 top-1/3 z-20">
+          Portfolio
+        </span>
+        <div className="hidden md:flex flex-col text-right z-10">
+          <span className="font-mono text-xs uppercase tracking-widest">Est. 2024</span>
         </div>
-        <p className="text-secondary max-w-sm text-sm leading-relaxed font-sans font-light">
-          A curated selection of digital products, design systems, and frontend architectures built with modern stacks.
-        </p>
       </div>
 
       {/* Project List */}
-      <div className="space-y-48">
+      <div className="grid grid-cols-1 divide-y divide-border">
         {projects.map((project, index) => {
           const isEven = index % 2 === 0;
 
           return (
             <div
               key={project.id}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center group"
+              className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border"
             >
               {/* Content Column */}
               <div
-                className={`lg:col-span-5 space-y-8 ${
+                className={`p-8 md:p-12 flex flex-col justify-between space-y-12 ${
                   isEven ? "order-2 lg:order-1" : "order-2 lg:order-2"
                 }`}
               >
-                <div className="flex items-center gap-4">
-                  <span className="text-[10px] font-mono text-secondary">
-                    {project.number}
-                  </span>
-                  <div className="flex-1 h-px bg-border max-w-8 hidden sm:block"></div>
-                  <span className="text-[10px] uppercase tracking-widest text-secondary font-mono">
-                    {project.category}
-                  </span>
-                </div>
+                <div>
+                  <div className="flex items-center gap-4 mb-8">
+                    <span className="text-xs font-mono text-secondary">
+                      {project.number}
+                    </span>
+                    <span className="text-xs uppercase tracking-widest text-primary font-mono bg-primary text-primary-foreground px-2 py-1">
+                      {project.category}
+                    </span>
+                  </div>
 
-                <h3 className="text-3xl md:text-5xl font-heading font-light text-primary tracking-tight transition-colors">
-                  {project.title}
-                </h3>
+                  <h3 className="text-4xl md:text-6xl font-heading font-bold uppercase tracking-tighter text-primary mb-6">
+                    {project.title}
+                  </h3>
 
-                <p className="text-secondary text-sm md:text-base leading-relaxed font-light">
-                  {project.summary}
-                </p>
-
-                {/* Tech List (Editorial style) */}
-                <div className="pt-2">
-                  <p className="text-[10px] font-mono text-secondary uppercase tracking-widest leading-relaxed">
-                    <span className="mr-2 text-primary">Tech:</span>
-                    {project.techStack.join(" • ")}
+                  <p className="text-secondary text-sm leading-relaxed max-w-sm">
+                    {project.summary}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-8 pt-8 border-t border-border/50">
-                  <Link
-                    href={`/case-study/${project.id}`}
-                    className="group flex items-center gap-2 text-xs uppercase tracking-widest font-mono text-primary hover:text-accent transition-colors"
-                  >
-                    View Case Study
-                    <Icon icon="lucide:arrow-right" className="text-sm transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href={project.liveDemoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center gap-2 text-xs uppercase tracking-widest font-mono text-secondary hover:text-primary transition-colors"
-                  >
-                    Live Site
-                    <Icon icon="lucide:external-link" className="text-sm" />
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-secondary hover:text-primary transition-colors ml-auto"
-                    aria-label="GitHub Repository"
-                  >
-                    <Icon icon="lucide:github" className="text-lg" />
-                  </a>
+                <div className="space-y-6">
+                  {/* Tech List */}
+                  <div className="pt-6 border-t border-border">
+                    <p className="text-[10px] font-mono uppercase tracking-widest leading-relaxed text-primary">
+                      Tech: {project.techStack.join(" • ")}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                    <Link
+                      href={`/case-study/${project.id}`}
+                      className="border border-border px-6 py-3 text-xs uppercase tracking-widest font-mono text-primary hover:bg-primary hover:text-primary-foreground transition-colors text-center"
+                    >
+                      View Case Study
+                    </Link>
+                    <a
+                      href={project.liveDemoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="border border-border px-6 py-3 text-xs uppercase tracking-widest font-mono text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors text-center flex justify-center items-center gap-2"
+                    >
+                      Live Site <Icon icon="lucide:external-link" />
+                    </a>
+                  </div>
                 </div>
               </div>
 
               {/* Image Column */}
               <div
-                className={`lg:col-span-7 ${
+                className={`relative p-8 md:p-12 flex items-center justify-center min-h-[500px] ${
                   isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"
                 }`}
               >
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="relative p-2 bg-card border border-border shadow-sm overflow-hidden"
-                >
+                {/* Decorative Red Circle */}
+                {isEven ? (
+                  <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 mix-blend-multiply z-0"></div>
+                ) : (
+                  <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-accent rounded-full translate-x-1/4 translate-y-1/4 mix-blend-multiply z-0"></div>
+                )}
+                
+                <div className="relative z-10 w-full p-2 bg-card border border-border">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-4/3 object-cover grayscale-15 transition-all duration-700"
+                    className="w-full aspect-video object-cover grayscale"
                   />
-                </motion.div>
+                </div>
               </div>
             </div>
           );

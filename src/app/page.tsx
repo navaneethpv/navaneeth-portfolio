@@ -15,20 +15,20 @@ export default function Home() {
   const { personal, projects, techStack, experience, testimonials } = portfolioData;
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
+    <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-accent selection:text-accent-foreground p-4 md:p-8">
 
-      <div className="mx-[5%] lg:mx-[5%]">
-        {/* Floating Navbar */}
+      {/* Main bordered container framing the portfolio */}
+      <div className="max-w-[1600px] mx-auto border border-border bg-card shadow-2xl relative">
         <Navbar personal={personal} />
 
         {/* Hero Section */}
         <HeroSection personal={personal} />
 
-        {/* Featured Projects */}
-        <ProjectsSection projects={projects} />
-
         {/* About Section */}
         <AboutSection personal={personal} />
+
+        {/* Featured Projects */}
+        <ProjectsSection projects={projects} />
 
         {/* Tech Stack */}
         <TechStackSection techStack={techStack} />

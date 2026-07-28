@@ -17,62 +17,44 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
   };
 
   return (
-    <footer className="py-12 px-6 border-t border-border mt-24">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="flex items-center gap-4">
-          <div className="w-8 h-8 bg-primary flex items-center justify-center text-primary-foreground font-heading font-medium text-sm">
-            {personal.logoLetter}
-          </div>
-          <span className="text-[10px] font-mono text-secondary tracking-widest uppercase">
-            {personal.name} © {personal.copyrightYear}
+    <footer className="w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+        {/* Left: Copyright */}
+        <div className="p-6 md:p-8 flex items-center justify-center md:justify-start">
+          <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
+            © {personal.copyrightYear} {personal.name}
           </span>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 text-[10px] font-mono text-secondary uppercase tracking-widest">
+        {/* Middle: Links */}
+        <div className="p-6 md:p-8 flex flex-wrap justify-center items-center gap-8 text-[10px] font-mono text-primary font-bold uppercase tracking-widest">
           {isCaseStudy ? (
             <>
-              <Link href="/" className="hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/#projects" className="hover:text-primary transition-colors">
-                Projects
-              </Link>
-              <Link href="/#about" className="hover:text-primary transition-colors">
-                About
-              </Link>
-              <Link href="/#contact" className="hover:text-primary transition-colors">
-                Contact
-              </Link>
+              <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+              <Link href="/#projects" className="hover:text-accent transition-colors">Work</Link>
+              <Link href="/#contact" className="hover:text-accent transition-colors">Contact</Link>
             </>
           ) : (
             <>
-              <a href="#projects" className="hover:text-primary transition-colors">
-                Projects
-              </a>
-              <a href="#about" className="hover:text-primary transition-colors">
-                About
-              </a>
-              <a href="#skills" className="hover:text-primary transition-colors">
-                Skills
-              </a>
-              <a href="#experience" className="hover:text-primary transition-colors">
-                Experience
-              </a>
+              <a href="#projects" className="hover:text-accent transition-colors">Work</a>
+              <a href="#about" className="hover:text-accent transition-colors">About</a>
+              <a href="#skills" className="hover:text-accent transition-colors">Skills</a>
+              <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
             </>
           )}
         </div>
 
-        <a
-          href="#hero"
-          onClick={scrollToTop}
-          className="flex items-center gap-2 text-[10px] font-mono text-secondary uppercase tracking-widest hover:text-primary transition-colors group"
-        >
-          Back to Top
-          <Icon
-            icon="lucide:arrow-up"
-            className="text-sm group-hover:-translate-y-1 transition-transform"
-          />
-        </a>
+        {/* Right: Back to top */}
+        <div className="p-6 md:p-8 flex items-center justify-center md:justify-end">
+          <a
+            href="#hero"
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-[10px] font-mono text-primary font-bold uppercase tracking-widest hover:text-accent transition-colors group"
+          >
+            Back to Top
+            <Icon icon="lucide:arrow-up" className="text-sm group-hover:-translate-y-1 transition-transform" />
+          </a>
+        </div>
       </div>
     </footer>
   );

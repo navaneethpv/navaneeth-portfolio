@@ -10,53 +10,45 @@ interface ExperienceSectionProps {
 
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience }) => {
   return (
-    <section id="experience" className="w-full px-6 py-32 md:py-48 max-w-7xl mx-auto border-t border-border">
-      <div className="space-y-24">
-        {/* Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-border pb-12">
-          <div className="space-y-4">
-            <div className="text-[10px] font-mono text-secondary uppercase tracking-widest">
-              [ 04 / JOURNEY ]
+    <section id="experience" className="w-full border-b border-border">
+      {/* Title */}
+      <div className="p-8 md:p-12 border-b border-border">
+        <h2 className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary relative">
+          Experience
+          <span className="font-script text-5xl md:text-7xl text-accent absolute left-1/3 top-full -translate-y-1/2 -rotate-6 z-20">
+            History
+          </span>
+        </h2>
+      </div>
+
+      {/* Minimal Vertical List */}
+      <div className="flex flex-col divide-y divide-border">
+        {experience.map((item, idx) => (
+          <div
+            key={idx}
+            className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border"
+          >
+            {/* Period & Company side */}
+            <div className="p-8 md:p-12 md:col-span-1 flex flex-col justify-between">
+              <span className="text-xs font-mono uppercase tracking-widest text-primary bg-primary text-primary-foreground px-3 py-1 w-fit mb-4">
+                {item.period}
+              </span>
+              <p className="text-sm font-bold uppercase tracking-widest text-primary">
+                {item.company}
+              </p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-light tracking-tight text-primary">
-              Experience
-            </h2>
+
+            {/* Title & Description */}
+            <div className="p-8 md:p-12 md:col-span-3 space-y-6">
+              <h3 className="text-3xl md:text-5xl font-heading font-bold uppercase tracking-tighter text-primary">
+                {item.role}
+              </h3>
+              <div className="text-sm text-secondary leading-relaxed font-sans max-w-2xl whitespace-pre-line border-l-2 border-accent pl-4">
+                {item.description.replace(/\n\n/g, "\n").replace(/\n/g, "\n\n")}
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Minimal Vertical List */}
-        <div className="max-w-4xl space-y-24">
-          {experience.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start border-b border-border/50 pb-16 last:border-0"
-            >
-              {/* Period side */}
-              <div className="md:col-span-3">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-secondary">
-                  {item.period}
-                </span>
-              </div>
-
-              {/* Title & Description */}
-              <div className="md:col-span-9 space-y-4">
-                <h3 className="text-2xl font-heading font-light text-primary">
-                  {item.role}
-                </h3>
-                <p className="text-xs text-primary font-mono uppercase tracking-widest mb-6 block">
-                  {item.company}
-                </p>
-                <div className="text-sm text-secondary leading-relaxed font-sans font-light max-w-2xl whitespace-pre-line">
-                  {item.description.replace(/\n\n/g, "\n").replace(/\n/g, "\n\n")}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        ))}
       </div>
     </section>
   );
