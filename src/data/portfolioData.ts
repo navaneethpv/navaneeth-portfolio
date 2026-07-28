@@ -154,8 +154,7 @@ export const portfolioData: PortfolioData = {
     socials: [
       { name: "GitHub", icon: "lucide:github", url: "https://github.com/navaneethpv-dev" },
       { name: "LinkedIn", icon: "lucide:linkedin", url: "https://www.linkedin.com/in/navaneethpv-dev" },
-      { name: "Email", icon: "lucide:mail", url: "mailto:navaneethpv550@gmail.com" },
-      { name: "Website", icon: "lucide:globe", url: "#" },
+      { name: "Email", icon: "lucide:mail", url: "mailto:navaneethpv.dev@gmail.com" },
     ],
   },
   projects: [
@@ -316,58 +315,6 @@ export const portfolioData: PortfolioData = {
       },
     },
     {
-      id: "malabar-heritage",
-      number: "04",
-      category: "Cultural Website",
-      title: "Malabar Heritage",
-      summary:
-        "A website highlighting the cultural heritage and tourism of Malabar.",
-      techStack: ["Next.js", "React", "CSS"],
-      image:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80",
-      liveDemoUrl: "#",
-      githubUrl: "#",
-      caseStudy: {
-        breadcrumbCategory: "04 / MALABAR HERITAGE",
-        keyMetric: {
-          value: "Engaging",
-          label: "Immersive storytelling experience.",
-        },
-        role: "Frontend Developer",
-        timeline: "2024",
-        client: "Cultural Board",
-        deliverables: "Website",
-        challenge: {
-          title: "Storytelling through web.",
-          paragraphs: [
-            "We needed to convey the rich history of the Malabar region interactively."
-          ],
-        },
-        solution: {
-          title: "Interactive timelines.",
-          paragraphs: [
-            "Implemented scrolling animations and interactive elements."
-          ],
-        },
-        codeSnippet: {
-          filename: "timeline.tsx",
-          code: `const Timeline = () => {
-  // Timeline animations
-};`,
-        },
-        interactiveSandbox: [],
-        keyFeatures: [
-          {
-            icon: "lucide:map",
-            title: "Interactive Maps",
-            description: "Explore the region digitally.",
-          }
-        ],
-        nextCaseStudySlug: "event-planner-website",
-        nextCaseStudyTitle: "Event Planner Website",
-      },
-    },
-    {
       id: "event-planner-website",
       number: "05",
       category: "Business Website",
@@ -376,7 +323,7 @@ export const portfolioData: PortfolioData = {
         "A professional platform for an event planning business.",
       techStack: ["React", "TypeScript", "Tailwind"],
       image:
-        "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80",
+        "https://i.pinimg.com/736x/7d/40/cc/7d40cc042aed2a57eee48d98cb1b0258.jpg?auto=format&fit=crop&w=800&q=80",
       liveDemoUrl: "#",
       githubUrl: "#",
       caseStudy: {

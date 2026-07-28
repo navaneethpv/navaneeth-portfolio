@@ -68,7 +68,7 @@ export { MyComponent, type MyComponentProps };`;
         <div className="flex flex-col items-center text-center w-full relative z-10">
           <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-4 py-1.5 bg-card rounded-full mb-6 inline-flex items-center gap-2 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Developer Portfolio &bull; React &amp; Next.js
+            Developer Portfolio
           </span>
 
           {/* Layered Title & Script Name Below */}
@@ -187,25 +187,25 @@ export { MyComponent, type MyComponentProps };`;
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                   className="w-full h-full"
                 >
-                  <div className="w-full h-full border-2 border-accent bg-accent/5 p-6 md:p-7 rounded-lg shadow-[10px_10px_0px_0px_rgba(225,29,72,0.15)] flex flex-col justify-between gap-6 relative overflow-hidden">
+                  <div className="w-full h-full border-2 border-primary bg-card p-6 md:p-7 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.15)] flex flex-col justify-between gap-6 relative overflow-hidden">
                     
                     {/* Header Output Status Bar */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-accent/20">
+                    <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border">
                       <div className="flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span className="text-xs font-mono font-bold text-accent uppercase tracking-widest">
+                        <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">
                           Component Rendered (200 OK)
                         </span>
                       </div>
 
-                      <span className="text-[10px] font-mono text-muted-foreground bg-card border border-border px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-mono text-muted-foreground bg-background border border-border px-2.5 py-0.5 rounded">
                         Command: <code className="text-primary font-bold">{lastCommand}</code>
                       </span>
                     </div>
 
                     {/* Main Rendered Output Content */}
                     <div className="space-y-4">
-                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/30 rounded text-xs font-mono font-bold text-accent">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">
                         <Icon icon="lucide:code-2" className="text-sm" />
                         <span>{personal.name}&apos;s Space</span>
                       </div>
@@ -232,7 +232,7 @@ export { MyComponent, type MyComponentProps };`;
                     </div>
 
                     {/* Footer Actions */}
-                    <div className="pt-4 border-t border-accent/20 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="pt-4 border-t border-border grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <a
                         href="#projects"
                         className="px-5 py-3 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-wider font-bold hover:bg-accent hover:text-accent-foreground transition-all duration-300 border border-primary flex items-center justify-between group shadow-sm text-center"
@@ -243,7 +243,7 @@ export { MyComponent, type MyComponentProps };`;
 
                       <a
                         href="#contact"
-                        className="px-5 py-3 bg-card text-primary font-mono text-xs uppercase tracking-wider font-bold hover:bg-secondary/10 transition-colors border border-border text-center"
+                        className="px-5 py-3 bg-background text-primary font-mono text-xs uppercase tracking-wider font-bold hover:bg-secondary/10 transition-colors border border-border text-center"
                       >
                         Get In Touch
                       </a>
@@ -257,26 +257,6 @@ export { MyComponent, type MyComponentProps };`;
 
         </div>
 
-      </div>
-
-      {/* Bottom Bar inside Hero */}
-      <div className="flex justify-between items-end px-6 py-4 border-t border-border bg-card/50">
-        <div className="flex flex-col gap-2">
-          <div className="flex gap-1 h-8">
-            {[2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1].map((w, i) => (
-              <div key={i} className={`bg-primary ${w === 2 ? "w-2" : "w-1"} h-full`}></div>
-            ))}
-          </div>
-          <p className="text-[9px] font-mono uppercase text-secondary max-w-50">
-            {personal.tagline} &bull; {personal.location}
-          </p>
-        </div>
-
-        <div className="flex gap-1">
-          <div className="w-2 h-2 rounded-full bg-accent"></div>
-          <div className="w-2 h-2 rounded-full bg-accent"></div>
-          <div className="w-2 h-2 rounded-full bg-accent"></div>
-        </div>
       </div>
     </section>
   );
