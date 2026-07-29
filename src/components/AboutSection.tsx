@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Icon } from "@iconify/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { PersonalInfo } from "@/data/portfolioData";
 
 interface AboutSectionProps {
@@ -9,6 +10,19 @@ interface AboutSectionProps {
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const photoRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!photoRef.current) return;
+    const rect = photoRef.current.getBoundingClientRect();
+    setCursorPos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <section id="about" className="w-full border-b border-border bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-border">
@@ -24,7 +38,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
 
           {/* Heading */}
           <div className="space-y-2">
-            <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
+            <h2 className="text-5xl sm:text-7xl md:text-8xl font-heading font-extrabold uppercase tracking-tighter text-primary">
               {personal.bioTitle}
             </h2>
             <p className="text-sm font-mono text-accent uppercase tracking-wider font-bold">
@@ -106,17 +120,46 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
 
         </div>
 
-        {/* Right side: High-Impact Profile Frame & Status Badge (5 cols) */}
+        {/* Right side: High-Impact Profile Frame (5 cols) */}
         <div className="lg:col-span-5 px-8 sm:px-14 md:px-20 lg:px-24 py-8 sm:py-12 md:py-16 relative flex flex-col items-center justify-center bg-card/20 min-h-125 gap-8">
           
-          {/* Main Photo Card Frame */}
-          <div className="relative w-full max-w-lg aspect-3/4 border-2 border-primary p-2.5 bg-card shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden group">
+          {/* Main Photo Card Frame with Hover Floating Tooltip */}
+          <div
+            ref={photoRef}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onMouseMove={handleMouseMove}
+            className="relative w-full max-w-lg aspect-3/4 border-2 border-primary p-2.5 bg-card shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden group cursor-pointer select-none"
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={personal.bioImage}
               alt={personal.name}
-              className="w-full h-full object-cover rounded-xs transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover rounded-xs transition-transform duration-700 group-hover:scale-105"
             />
+
+            {/* Animated Floating Tooltip following mouse cursor */}
+            <AnimatePresence>
+              {isHovered && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.6 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    x: cursorPos.x + 16,
+                    y: cursorPos.y + 16,
+                  }}
+                  exit={{ opacity: 0, scale: 0.6 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25, mass: 0.4 }}
+                  className="pointer-events-none absolute top-0 left-0 z-30"
+                >
+                  <div className="px-3 py-1.5 bg-primary text-primary-foreground font-mono text-[11px] font-bold uppercase tracking-wider rounded-md shadow-2xl border border-background/20 whitespace-nowrap flex items-center gap-2 backdrop-blur-md">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    <span>Navaneeth PV &bull; Frontend Dev</span>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Floating Availability Badge */}

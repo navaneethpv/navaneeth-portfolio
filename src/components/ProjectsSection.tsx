@@ -53,7 +53,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     </span>
                   </div>
 
-                  <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-heading font-bold uppercase tracking-tighter text-primary mb-6">
+                  <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl 2xl:text-7xl font-heading font-bold uppercase tracking-tighter text-primary mb-6">
                     {project.title}
                   </h3>
 
