@@ -32,7 +32,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
           
           {/* Top Pill Badge */}
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full shadow-xs font-bold">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span>01 &bull; Biography &amp; Focus</span>
           </div>
 
@@ -135,7 +134,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             <img
               src={personal.bioImage}
               alt={personal.name}
-              className="w-full h-full object-cover rounded-xs transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover rounded-xs"
             />
 
             {/* Animated Floating Tooltip following mouse cursor */}
@@ -154,7 +153,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                   className="pointer-events-none absolute top-0 left-0 z-30"
                 >
                   <div className="px-3 py-1.5 bg-primary text-primary-foreground font-mono text-[11px] font-bold uppercase tracking-wider rounded-md shadow-2xl border border-background/20 whitespace-nowrap flex items-center gap-2 backdrop-blur-md">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                     <span>Navaneeth PV &bull; Frontend Dev</span>
                   </div>
                 </motion.div>
@@ -165,7 +163,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
           {/* Floating Availability Badge */}
           <div className="w-full max-w-lg p-4 bg-card border border-border rounded-md shadow-xs flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
               <div className="flex flex-col">
                 <span className="text-xs font-mono font-bold uppercase text-primary">
                   Status: Available

@@ -67,7 +67,7 @@ export { MyComponent, type MyComponentProps };`;
         {/* Top Centered Header & Script Overlay */}
         <div className="flex flex-col items-center text-center w-full relative z-10">
           <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-4 py-1.5 bg-card rounded-full mb-6 inline-flex items-center gap-2 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
             Developer Portfolio
           </span>
 
@@ -192,7 +192,7 @@ export { MyComponent, type MyComponentProps };`;
                     {/* Header Output Status Bar */}
                     <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border">
                       <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                         <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">
                           Component Rendered (200 OK)
                         </span>
