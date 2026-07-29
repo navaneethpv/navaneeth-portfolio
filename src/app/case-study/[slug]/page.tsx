@@ -23,7 +23,7 @@ export async function generateMetadata({
     };
   }
 
-  const siteUrl = "https://navaneeth-portfolio.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://navaneethpv.me";
 
   return {
     title: `${project.title} — ${project.category} Case Study`,

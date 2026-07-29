@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { portfolioData } from "@/data/portfolioData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://navaneethpv.me";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://navaneethpv.me";
 
   // Base routes
   const routes = [

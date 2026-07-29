@@ -28,7 +28,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://navaneethpv.me";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://navaneethpv.me";
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0a",
@@ -151,14 +151,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`light ${inter.variable} ${oswald.variable} ${caveat.variable} ${ibmPlexMono.variable}`}>
-      <head>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`light ${inter.variable} ${oswald.variable} ${caveat.variable} ${ibmPlexMono.variable}`}
+    >
+      <body className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground antialiased">
         <script
+          id="json-ld-structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
         />
-      </head>
-      <body className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground antialiased">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
