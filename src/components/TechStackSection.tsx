@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Icon } from "@iconify/react";
-import { TechItem } from "@/data/portfolioData";
 
 interface SkillItem {
   name: string;
@@ -17,11 +16,7 @@ interface SkillCategory {
   skills: SkillItem[];
 }
 
-interface TechStackSectionProps {
-  techStack?: TechItem[];
-}
-
-export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack }) => {
+export const TechStackSection: React.FC = () => {
   const categories: SkillCategory[] = [
     {
       title: "Frontend",
@@ -29,7 +24,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
       badgeColor: "text-primary border-primary bg-primary/5 dark:bg-primary/10",
       skills: [
         { name: "React", icon: "logos:react" },
-        { name: "Next.js", icon: "devicon:nextjs" },
+        { name: "Next.js", icon: "logos:nextjs-icon" },
         { name: "TypeScript", icon: "logos:typescript-icon" },
         { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
       ],
@@ -40,7 +35,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
       badgeColor: "text-primary border-primary bg-primary/5 dark:bg-primary/10",
       skills: [
         { name: "Node.js", icon: "logos:nodejs-icon", status: "Learning" },
-        { name: "Express.js", icon: "devicon:express", status: "Learning" },
+        { name: "Express.js", icon: "logos:express", status: "Learning" },
         { name: "MongoDB", icon: "logos:mongodb-icon", status: "Learning" },
       ],
     },
@@ -72,7 +67,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
       {/* 3-Column Minimalist Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 lg:divide-x divide-border">
         {categories.map((category, idx) => (
-          <div key={idx} className="px-5 sm:px-8 md:px-12 lg:px-14 py-8 md:py-12 space-y-6 flex flex-col justify-between">
+          <div key={idx} className="px-5 sm:px-8 md:px-12 lg:px-14 py-8 md:py-12 space-y-6 flex flex-col justify-between h-full">
             <div>
               {/* Category Header with High-Contrast Badge */}
               <div className="flex items-center justify-between gap-2 mb-6 pb-4 border-b border-border">

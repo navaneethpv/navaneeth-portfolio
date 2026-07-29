@@ -46,11 +46,12 @@ export { MyComponent, type MyComponentProps };`;
     if (!trimmed) return;
 
     setIsRunning(true);
-    setLastCommand(trimmed);
-
+    setHasExecuted(false);
+    
     setTimeout(() => {
       setIsRunning(false);
       setHasExecuted(true);
+      setLastCommand(trimmed);
       setExecutionCount((prev) => prev + 1);
     }, 350);
   };
@@ -76,7 +77,8 @@ export { MyComponent, type MyComponentProps };`;
             <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] xl:text-[11rem] 2xl:text-[12rem] font-heading font-extrabold text-primary leading-none tracking-tighter uppercase select-none">
               PORTFOLIO<span className="text-xl sm:text-2xl md:text-4xl text-accent align-top">&reg;</span>
             </h1>
-            <span className="font-script text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl text-accent -mt-2 sm:-mt-6 md:-mt-8 lg:-mt-10 z-20 pointer-events-none -rotate-3 leading-none drop-shadow-sm">
+            
+            <span className="font-script text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl text-accent -mt-2 sm:-mt-6 md:-mt-8 lg:-mt-10 z-20 pointer-events-none -rotate-3 leading-none drop-shadow-sm block">
               {personal.name}
             </span>
           </div>

@@ -11,45 +11,42 @@ interface ProjectsSectionProps {
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   return (
-    <section id="projects" className="w-full border-b border-border">
-      {/* Header */}
-      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border flex justify-between items-end relative overflow-hidden">
-        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-bold uppercase tracking-tighter text-primary relative z-10">
-          The Work
-        </h2>
-        <span className="font-script text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-accent -rotate-6 absolute left-1/4 top-1/3 z-20 pointer-events-none">
-          Portfolio
+    <section id="projects" className="w-full border-b border-border bg-background">
+      {/* Section Title */}
+      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border">
+        <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full mb-3 inline-block font-bold">
+          Featured Work &bull; Case Studies
         </span>
-        <div className="hidden md:flex flex-col text-right z-10">
-          <span className="font-mono text-xs uppercase tracking-widest">Est. 2024</span>
-        </div>
+        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
+          Projects
+        </h2>
       </div>
 
-      {/* Project List */}
-      <div className="grid grid-cols-1 divide-y divide-border">
+      {/* Projects List */}
+      <div className="divide-y divide-border">
         {projects.map((project, index) => {
           const isEven = index % 2 === 0;
 
           return (
             <div
               key={project.id}
-              className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 divide-border"
+              className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 divide-border overflow-hidden"
             >
-              {/* Content Column */}
+              {/* Info Column */}
               <div
-                className={`px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-12 ${
+                className={`px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-8 ${
                   isEven
                     ? "order-2 lg:order-1 lg:border-r border-border"
-                    : "order-2 lg:order-2 lg:border-r-0"
+                    : "order-2 lg:order-2"
                 }`}
               >
                 <div>
-                  <div className="flex items-center gap-4 mb-8">
-                    <span className="text-xs font-mono text-secondary">
-                      {project.number}
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <span className="text-xs font-mono font-bold text-accent uppercase tracking-widest">
+                      {project.number} &bull; {project.category}
                     </span>
-                    <span className="text-xs uppercase tracking-widest text-primary font-mono bg-primary text-primary-foreground px-2 py-1">
-                      {project.category}
+                    <span className="text-xs font-mono font-bold text-primary border border-border px-2.5 py-0.5 bg-card rounded">
+                      2024
                     </span>
                   </div>
 
@@ -57,35 +54,60 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     {project.title}
                   </h3>
 
-                  <p className="text-secondary text-sm md:text-base leading-relaxed max-w-md">
+                  <p className="text-secondary text-sm md:text-base leading-relaxed font-sans mb-8 max-w-xl">
                     {project.summary}
                   </p>
+
+                  {/* Tech Badges */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-card border border-border text-xs font-mono font-bold text-primary rounded shadow-xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="space-y-6">
-                  {/* Tech List */}
-                  <div className="pt-6 border-t border-border">
-                    <p className="text-[10px] sm:text-xs font-mono uppercase tracking-widest leading-relaxed text-primary">
-                      Tech: {project.techStack.join(" • ")}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                {/* Actions */}
+                <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-border">
+                  {project.caseStudy ? (
                     <Link
                       href={`/case-study/${project.id}`}
-                      className="border border-border px-6 py-3 text-xs uppercase tracking-widest font-mono text-primary hover:bg-primary hover:text-primary-foreground transition-colors text-center"
+                      className="px-6 py-3 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-wider font-bold hover:bg-accent hover:text-accent-foreground transition-all duration-300 border border-primary flex items-center gap-2 group shadow-sm"
                     >
-                      View Case Study
+                      <span>Read Case Study</span>
+                      <Icon
+                        icon="lucide:arrow-right"
+                        className="text-sm group-hover:translate-x-1 transition-transform"
+                      />
                     </Link>
+                  ) : null}
+
+                  {project.liveDemoUrl && project.liveDemoUrl !== "#" && (
                     <a
                       href={project.liveDemoUrl}
                       target="_blank"
-                      rel="noreferrer"
-                      className="border border-border px-6 py-3 text-xs uppercase tracking-widest font-mono text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors text-center flex justify-center items-center gap-2"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 bg-background text-primary font-mono text-xs uppercase tracking-wider font-bold hover:bg-secondary/10 transition-colors border border-border flex items-center gap-2"
                     >
-                      Live Site <Icon icon="lucide:external-link" />
+                      <Icon icon="lucide:external-link" className="text-sm" />
+                      <span>Live Demo</span>
                     </a>
-                  </div>
+                  )}
+
+                  {project.githubUrl && project.githubUrl !== "#" && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-3 bg-background text-primary font-mono text-xs uppercase tracking-wider font-bold hover:bg-secondary/10 transition-colors border border-border flex items-center gap-2"
+                    >
+                      <Icon icon="lucide:github" className="text-base" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -97,14 +119,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     : "order-1 lg:order-1 lg:border-r border-border"
                 }`}
               >
-                {/* Decorative Red Circle */}
-                {isEven ? (
-                  <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 mix-blend-multiply z-0"></div>
-                ) : (
-                  <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-accent rounded-full translate-x-1/4 translate-y-1/4 mix-blend-multiply z-0"></div>
-                )}
-                
-                <div className="relative z-10 w-full p-2 bg-card border border-border">
+                <div className="relative z-10 w-full p-2 bg-card border border-border shadow-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}
