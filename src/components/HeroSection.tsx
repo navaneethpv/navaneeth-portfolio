@@ -82,11 +82,15 @@ export { MyComponent, type MyComponentProps };`;
             Developer Portfolio
           </motion.span>
 
-          {/* Layered Title & Script Name Below */}
-          <div className="relative flex flex-col items-center">
-            <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] xl:text-[11rem] 2xl:text-[12rem] font-heading font-extrabold text-primary leading-none tracking-tighter uppercase select-none">
+          {/* Layered Title & Script Name inside H1 for SEO */}
+          <h1 className="relative flex flex-col items-center">
+            <span className="sr-only">
+              Navaneeth PV &ndash; Frontend Developer | React &amp; Next.js Developer
+            </span>
+
+            <span className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] xl:text-[11rem] 2xl:text-[12rem] font-heading font-extrabold text-primary leading-none tracking-tighter uppercase select-none block">
               PORTFOLIO<span className="text-xl sm:text-2xl md:text-4xl text-accent align-top">&reg;</span>
-            </h1>
+            </span>
             
             <motion.span
               initial={{ opacity: 0, y: 15, rotate: -6 }}
@@ -96,7 +100,7 @@ export { MyComponent, type MyComponentProps };`;
             >
               {personal.name}
             </motion.span>
-          </div>
+          </h1>
         </motion.div>
 
         {/* 2-Column Grid: Left Terminal (6 cols), Right Output Card (6 cols) */}
