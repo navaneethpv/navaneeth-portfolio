@@ -28,7 +28,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://navaneeth-portfolio.vercel.app";
+const siteUrl = "https://navaneethpv.me";
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0a",
@@ -39,11 +39,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Navaneeth PV — Full-Stack & Frontend Developer Portfolio",
+    default: "Navaneeth PV — Frontend Developer Portfolio",
     template: "%s | Navaneeth PV",
   },
   description:
-    "Navaneeth PV is a Full-Stack & Frontend Developer specializing in Next.js, React, TypeScript, Node.js, and modern UI engineering. View interactive web applications, case studies, and engineering principles.",
+    "Navaneeth PV is a Frontend Developer specializing in Next.js, React, TypeScript, Node.js, and modern UI engineering. View interactive web applications, case studies, and engineering principles.",
   keywords: [
     "Navaneeth PV",
     "Navaneeth PV Portfolio",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+        url: "./image1.png",
         width: 1200,
         height: 630,
         alt: "Navaneeth PV - Frontend Developer Portfolio",
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     description:
       "Interactive Developer Portfolio of Navaneeth PV specializing in React, Next.js, TypeScript & Node.js.",
     creator: "@navaneethpv",
-    images: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80"],
+    images: ["./image1.png"],
   },
 };
 
@@ -113,7 +113,7 @@ const jsonLdSchema = {
       name: "Navaneeth PV",
       jobTitle: "Frontend Developer & Full-Stack Engineer",
       url: siteUrl,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      image: "./image1.png",
       sameAs: [
         "https://github.com/navaneethpv",
         "https://www.linkedin.com/in/navaneethpv",
@@ -130,7 +130,7 @@ const jsonLdSchema = {
         "Web Vitals & Performance",
       ],
       description:
-        "Full-Stack & Frontend Developer specializing in React, Next.js, TypeScript, and modern web application development.",
+        "Frontend Developer specializing in React, Next.js, TypeScript, and modern web application development.",
     },
     {
       "@type": "WebSite",
