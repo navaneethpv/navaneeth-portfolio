@@ -48,6 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
         <div className="px-8 sm:px-12 md:px-16 py-6 md:py-8 flex items-center justify-center md:justify-end">
           <a
             href="#hero"
+            aria-label="Scroll Back to Top"
             onClick={scrollToTop}
             className="flex items-center gap-2 text-[10px] font-mono text-primary font-bold uppercase tracking-widest hover:text-accent transition-colors group"
           >

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { Project } from "@/data/portfolioData";
@@ -134,12 +135,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     : "order-1 lg:order-1 lg:border-r border-border"
                 }`}
               >
-                <div className="relative z-10 w-full p-2 bg-card border border-border shadow-2xl">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="relative z-10 w-full aspect-video p-2 bg-card border border-border shadow-2xl overflow-hidden">
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-video object-cover transition-transform duration-500 hover:scale-105"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading="lazy"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               </motion.div>

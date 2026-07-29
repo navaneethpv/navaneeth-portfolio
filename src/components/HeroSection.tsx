@@ -175,6 +175,7 @@ export { MyComponent, type MyComponentProps };`;
                 </span>
                 <input
                   type="text"
+                  aria-label="CLI Command Input"
                   value={inputCommand}
                   onChange={(e) => setInputCommand(e.target.value)}
                   placeholder="Type command and press Enter..."

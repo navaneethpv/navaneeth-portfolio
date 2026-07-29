@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PersonalInfo } from "@/data/portfolioData";
@@ -167,11 +168,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             onMouseMove={handleMouseMove}
             className="relative w-full max-w-lg aspect-3/4 border-2 border-primary p-2.5 bg-card shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden group cursor-pointer select-none"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={personal.bioImage}
               alt={personal.name}
-              className="w-full h-full object-cover rounded-xs"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+              className="object-cover rounded-xs"
             />
 
             {/* Animated Floating Tooltip following mouse cursor */}

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { Project, PersonalInfo, InteractiveTask } from "@/data/portfolioData";
 import { Navbar } from "./Navbar";
@@ -132,12 +133,14 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
         {/* Large Immersive Mockup Image Section */}
         <section className="w-full border-b border-border bg-card/30 py-12 md:py-16 px-5 sm:px-10 md:px-16 lg:px-24">
           <div className="max-w-7xl mx-auto">
-            <div className="border-2 border-primary bg-card p-2 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative z-10 w-full aspect-video border-2 border-primary bg-card p-2 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden">
+              <Image
                 src={project.image}
                 alt={project.title}
-                className="w-full aspect-video object-cover rounded-sm transition-transform duration-500 hover:scale-[1.02]"
+                fill
+                sizes="(max-width: 1280px) 100vw, 1200px"
+                priority
+                className="object-cover rounded-sm transition-transform duration-500 hover:scale-[1.02]"
               />
             </div>
           </div>

@@ -104,10 +104,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
+                <label htmlFor="contact-name" className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
                   Name
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   required
                   value={formData.name}
@@ -117,10 +118,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
+                <label htmlFor="contact-email" className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
                   Email
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   required
                   value={formData.email}
@@ -132,10 +134,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
+              <label htmlFor="contact-subject" className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
                 Subject
               </label>
               <input
+                id="contact-subject"
                 type="text"
                 required
                 value={formData.subject}
@@ -146,10 +149,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
+              <label htmlFor="contact-message" className="text-xs font-mono text-primary font-bold uppercase tracking-widest">
                 Message
               </label>
               <textarea
+                id="contact-message"
                 rows={5}
                 required
                 value={formData.message}

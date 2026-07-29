@@ -50,7 +50,11 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
         {/* Main Nav */}
         <nav className="px-5 sm:px-10 md:px-16 lg:px-24 py-5 sm:py-6 flex items-center justify-between border-b-4 border-border bg-card">
           <div className="flex items-center gap-4">
-            <Link href="/" className="w-10 h-10 bg-primary flex items-center justify-center text-primary-foreground font-heading font-bold text-xl hover:bg-accent transition-colors">
+            <Link
+              href="/"
+              aria-label={`${personal.name} Home Logo`}
+              className="w-10 h-10 bg-primary flex items-center justify-center text-primary-foreground font-heading font-bold text-xl hover:bg-accent transition-colors"
+            >
               {personal.logoLetter}
             </Link>
             <span className="hidden sm:block text-xs font-mono uppercase tracking-widest text-primary font-bold">
@@ -83,6 +87,8 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
 
           {/* Mobile menu toggle */}
           <button
+            type="button"
+            aria-label="Open Mobile Navigation Menu"
             className="md:hidden text-primary hover:text-accent transition-colors p-2 border border-border"
             onClick={() => setMobileMenuOpen(true)}
           >
@@ -96,6 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
         <div className="fixed inset-0 z-100 bg-background flex flex-col justify-center p-8 space-y-8 animate-in fade-in duration-200">
           <button
             type="button"
+            aria-label="Close Mobile Navigation Menu"
             className="absolute top-8 right-8 text-primary border border-border p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
