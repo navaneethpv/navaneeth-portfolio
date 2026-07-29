@@ -71,5 +71,59 @@ export default async function CaseStudySlugPage({
     notFound();
   }
 
-  return <CaseStudyView project={project} personal={portfolioData.personal} />;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://navaneethpv.me";
+
+  const caseStudyLdSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": `${siteUrl}/case-study`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": project.title,
+            "item": `${siteUrl}/case-study/${project.id}`,
+          },
+        ],
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": project.title,
+        "description": project.summary,
+        "url": `${siteUrl}/case-study/${project.id}`,
+        "image": project.image,
+        "programmingLanguage": project.techStack.join(", "),
+        "author": {
+          "@type": "Person",
+          "name": "Navaneeth PV",
+          "url": siteUrl,
+        },
+        "keywords": project.techStack.join(", "),
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        id={`case-study-schema-${project.id}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyLdSchema) }}
+      />
+      <CaseStudyView project={project} personal={portfolioData.personal} />
+    </>
+  );
 }

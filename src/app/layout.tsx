@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "./image1.png",
+        url: `${siteUrl}/image1.png`,
         width: 1200,
         height: 630,
         alt: "Navaneeth PV - Frontend Developer Portfolio",
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     description:
       "Interactive Developer Portfolio of Navaneeth PV specializing in React, Next.js, TypeScript & Node.js.",
     creator: "@navaneethpv",
-    images: ["./image1.png"],
+    images: [`${siteUrl}/image1.png`],
   },
 };
 
@@ -116,7 +116,17 @@ const jsonLdSchema = {
       name: "Navaneeth PV",
       jobTitle: "Frontend Developer & Full-Stack Engineer",
       url: siteUrl,
-      image: "./image1.png",
+      image: `${siteUrl}/image1.png`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Wayanad",
+        addressRegion: "Kerala",
+        addressCountry: "India",
+      },
+      worksFor: {
+        "@type": "Organization",
+        name: "Exouzia Technologies",
+      },
       sameAs: [
         "https://github.com/navaneethpv",
         "https://www.linkedin.com/in/navaneethpv",
