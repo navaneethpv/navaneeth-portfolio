@@ -32,7 +32,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
 
       <main className="w-full">
         {/* Case Study Header / Hero */}
-        <section className="w-full border-b border-border bg-background pt-12 pb-16 px-4 md:px-8">
+        <section className="w-full border-b border-border bg-background pt-12 pb-16 px-5 sm:px-10 md:px-16 lg:px-24">
           <div className="max-w-7xl mx-auto space-y-10">
             
             {/* Top Pill Category Badge */}
@@ -54,7 +54,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
             {/* Main Title & Key Metric 2-Column Lockup */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
               <div className="lg:col-span-8 space-y-6">
-                <h1 className="text-5xl sm:text-7xl md:text-8xl font-heading font-extrabold tracking-tighter leading-none text-primary uppercase">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl font-heading font-extrabold tracking-tighter leading-none text-primary uppercase">
                   {project.title}
                 </h1>
                 <p className="text-base md:text-xl text-secondary max-w-2xl leading-relaxed font-sans">
@@ -130,7 +130,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
         </section>
 
         {/* Large Immersive Mockup Image Section */}
-        <section className="w-full border-b border-border bg-card/30 py-12 md:py-16 px-4 md:px-8">
+        <section className="w-full border-b border-border bg-card/30 py-12 md:py-16 px-5 sm:px-10 md:px-16 lg:px-24">
           <div className="max-w-7xl mx-auto">
             <div className="border-2 border-primary bg-card p-2 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -147,7 +147,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
         <section className="w-full border-b border-border bg-background">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
             {/* Challenge */}
-            <div className="p-8 md:p-12 space-y-6">
+            <div className="p-6 md:p-12 space-y-6">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent border border-accent/30 px-3 py-1 bg-accent/10 rounded-full inline-block">
                 01 &bull; The Challenge
               </span>
@@ -164,7 +164,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
             </div>
 
             {/* Solution */}
-            <div className="p-8 md:p-12 space-y-6">
+            <div className="p-6 md:p-12 space-y-6">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 px-3 py-1 bg-emerald-500/10 rounded-full inline-block">
                 02 &bull; The Solution
               </span>
@@ -184,7 +184,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
 
         {/* Interactive Code & Implementation Section */}
         {caseStudy.codeSnippet && (
-          <section className="w-full border-b border-border bg-background py-16 px-4 md:px-8">
+          <section className="w-full border-b border-border bg-background py-16 px-5 sm:px-10 md:px-16 lg:px-24">
             <div className="max-w-7xl mx-auto space-y-10">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full inline-block font-bold">

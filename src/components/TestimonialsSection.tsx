@@ -16,16 +16,16 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
   return (
     <section className="w-full border-b border-border">
       {/* Title */}
-      <div className="p-8 md:p-12 border-b border-border">
-        <h2 className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary">
-          Testimonial
+      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-bold uppercase tracking-tighter text-primary">
+          Testimonials
         </h2>
       </div>
 
       {/* Testimonials List */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 lg:divide-x divide-border">
         {testimonials.map((item, idx) => (
-          <div key={idx} className="p-8 md:p-12 space-y-8 flex flex-col justify-between">
+          <div key={idx} className="px-5 sm:px-8 md:px-12 lg:px-14 py-8 md:py-12 space-y-8 flex flex-col justify-between">
             <div className="space-y-6">
               <Icon icon="lucide:quote" className="text-border text-4xl" />
               <p className="text-sm md:text-base text-secondary leading-relaxed font-sans">

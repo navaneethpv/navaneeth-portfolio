@@ -29,12 +29,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
   return (
     <section id="contact" className="w-full border-b border-border">
       {/* Title */}
-      <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8">
-        <h2 className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary">
+      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-bold uppercase tracking-tighter text-primary">
           Contact Us
         </h2>
         <div className="text-right hidden md:block">
-          <span className="font-script text-5xl text-accent -rotate-6 inline-block">
+          <span className="font-script text-3xl sm:text-5xl md:text-6xl text-accent -rotate-6 inline-block pointer-events-none">
             Let&apos;s Talk
           </span>
         </div>
@@ -42,9 +42,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border">
         {/* Left: Info */}
-        <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 space-y-12 flex flex-col justify-between">
+        <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 space-y-12 flex flex-col justify-between">
           <div className="space-y-6">
-            <h3 className="text-3xl md:text-5xl font-heading font-bold uppercase tracking-tighter text-primary leading-none max-w-md">
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-heading font-bold uppercase tracking-tighter text-primary leading-none max-w-md">
               {personal.contactTitle}
             </h3>
             <p className="text-secondary text-sm md:text-base leading-relaxed font-sans max-w-sm">
@@ -75,7 +75,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         </div>
 
         {/* Right: Form */}
-        <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 bg-card">
+        <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 bg-card">
           <form onSubmit={handleSubmit} className="space-y-8">
             {submitted && (
               <div className="p-4 bg-primary text-primary-foreground text-xs font-mono uppercase tracking-widest text-center border border-primary">
@@ -93,7 +93,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none transition-colors rounded-none shadow-none"
+                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-base sm:text-sm text-primary focus:outline-none transition-colors rounded-none shadow-none"
                   placeholder="John Doe"
                 />
               </div>
@@ -106,7 +106,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none focus:border-accent transition-colors rounded-none shadow-none placeholder:text-muted-foreground"
+                  className="w-full h-12 px-4 bg-background border-b-2 border-border text-base sm:text-sm text-primary focus:outline-none focus:border-accent transition-colors rounded-none shadow-none placeholder:text-muted-foreground"
                   placeholder="john@example.com"
                 />
               </div>
@@ -121,7 +121,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 required
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full h-12 px-4 bg-background border-b-2 border-border text-sm text-primary focus:outline-none focus:border-accent transition-colors rounded-none shadow-none placeholder:text-muted-foreground"
+                className="w-full h-12 px-4 bg-background border-b-2 border-border text-base sm:text-sm text-primary focus:outline-none focus:border-accent transition-colors rounded-none shadow-none placeholder:text-muted-foreground"
                 placeholder="Collaboration Inquiry"
               />
             </div>

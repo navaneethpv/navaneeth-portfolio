@@ -60,19 +60,19 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
   return (
     <section id="skills" className="w-full border-b border-border bg-background">
       {/* Section Title */}
-      <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 border-b border-border">
+      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border">
         <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full mb-3 inline-block font-bold">
           Tech Stack &bull; Capabilities
         </span>
-        <h2 className="text-5xl md:text-8xl font-heading font-extrabold uppercase tracking-tighter text-primary">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
           Capabilities
         </h2>
       </div>
 
       {/* 3-Column Minimalist Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 lg:divide-x divide-border">
         {categories.map((category, idx) => (
-          <div key={idx} className="px-8 sm:px-12 md:px-14 lg:px-16 py-8 md:py-12 space-y-6 flex flex-col justify-between">
+          <div key={idx} className="px-5 sm:px-8 md:px-12 lg:px-14 py-8 md:py-12 space-y-6 flex flex-col justify-between">
             <div>
               {/* Category Header with High-Contrast Badge */}
               <div className="flex items-center justify-between gap-2 mb-6 pb-4 border-b border-border">

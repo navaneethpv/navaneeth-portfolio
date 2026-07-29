@@ -13,11 +13,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
   return (
     <section id="projects" className="w-full border-b border-border">
       {/* Header */}
-      <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 border-b border-border flex justify-between items-end relative overflow-hidden">
-        <h2 className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary relative z-10">
+      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border flex justify-between items-end relative overflow-hidden">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-bold uppercase tracking-tighter text-primary relative z-10">
           The Work
         </h2>
-        <span className="font-script text-5xl md:text-7xl text-accent -rotate-6 absolute left-1/4 top-1/3 z-20">
+        <span className="font-script text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-accent -rotate-6 absolute left-1/4 top-1/3 z-20 pointer-events-none">
           Portfolio
         </span>
         <div className="hidden md:flex flex-col text-right z-10">
@@ -37,7 +37,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             >
               {/* Content Column */}
               <div
-                className={`px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-12 ${
+                className={`px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-12 ${
                   isEven
                     ? "order-2 lg:order-1 lg:border-r border-border"
                     : "order-2 lg:order-2 lg:border-r-0"
@@ -53,11 +53,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     </span>
                   </div>
 
-                  <h3 className="text-4xl md:text-6xl font-heading font-bold uppercase tracking-tighter text-primary mb-6">
+                  <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-heading font-bold uppercase tracking-tighter text-primary mb-6">
                     {project.title}
                   </h3>
 
-                  <p className="text-secondary text-sm leading-relaxed max-w-sm">
+                  <p className="text-secondary text-sm md:text-base leading-relaxed max-w-md">
                     {project.summary}
                   </p>
                 </div>
@@ -65,7 +65,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                 <div className="space-y-6">
                   {/* Tech List */}
                   <div className="pt-6 border-t border-border">
-                    <p className="text-[10px] font-mono uppercase tracking-widest leading-relaxed text-primary">
+                    <p className="text-[10px] sm:text-xs font-mono uppercase tracking-widest leading-relaxed text-primary">
                       Tech: {project.techStack.join(" • ")}
                     </p>
                   </div>
@@ -91,7 +91,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
               {/* Image Column */}
               <div
-                className={`relative px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 flex items-center justify-center min-h-[500px] ${
+                className={`relative px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex items-center justify-center min-h-[280px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px] ${
                   isEven
                     ? "order-1 lg:order-2 lg:border-r-0"
                     : "order-1 lg:order-1 lg:border-r border-border"

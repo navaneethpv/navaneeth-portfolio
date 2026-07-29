@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
         </div>
 
         {/* Main Nav */}
-        <nav className="p-6 md:p-8 flex items-center justify-between border-b-4 border-border bg-card">
+        <nav className="px-5 sm:px-10 md:px-16 lg:px-24 py-5 sm:py-6 flex items-center justify-between border-b-4 border-border bg-card">
           <div className="flex items-center gap-4">
             <Link href="/" className="w-10 h-10 bg-primary flex items-center justify-center text-primary-foreground font-heading font-bold text-xl hover:bg-accent transition-colors">
               {personal.logoLetter}

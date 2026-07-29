@@ -73,10 +73,10 @@ export { MyComponent, type MyComponentProps };`;
 
           {/* Layered Title & Script Name Below */}
           <div className="relative flex flex-col items-center">
-            <h1 className="text-6xl sm:text-8xl md:text-[9rem] font-heading font-extrabold text-primary leading-none tracking-tighter uppercase select-none">
-              PORTFOLIO<span className="text-2xl md:text-4xl text-accent align-top">&reg;</span>
+            <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] xl:text-[11rem] 2xl:text-[12rem] font-heading font-extrabold text-primary leading-none tracking-tighter uppercase select-none">
+              PORTFOLIO<span className="text-xl sm:text-2xl md:text-4xl text-accent align-top">&reg;</span>
             </h1>
-            <span className="font-script text-5xl sm:text-7xl md:text-8xl text-accent -mt-4 sm:-mt-8 md:-mt-10 z-20 pointer-events-none -rotate-3 leading-none drop-shadow-sm">
+            <span className="font-script text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl text-accent -mt-2 sm:-mt-6 md:-mt-8 lg:-mt-10 z-20 pointer-events-none -rotate-3 leading-none drop-shadow-sm">
               {personal.name}
             </span>
           </div>
@@ -156,7 +156,7 @@ export { MyComponent, type MyComponentProps };`;
                   value={inputCommand}
                   onChange={(e) => setInputCommand(e.target.value)}
                   placeholder="Type command and press Enter..."
-                  className="flex-1 min-w-0 bg-transparent outline-none font-mono text-xs text-foreground placeholder:text-muted-foreground/60 px-1 py-1"
+                  className="flex-1 min-w-0 bg-transparent outline-none font-mono text-base sm:text-xs text-foreground placeholder:text-muted-foreground/60 px-1 py-1"
                 />
                 <button
                   type="submit"

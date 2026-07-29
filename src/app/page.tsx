@@ -17,7 +17,7 @@ export default function Home() {
     <div className="min-h-screen w-full bg-background text-foreground font-sans relative overflow-x-hidden selection:bg-accent selection:text-accent-foreground">
 
       {/* Main container framing the portfolio */}
-      <div className="w-full bg-card relative">
+      <div className="w-full max-w-[2200px] mx-auto bg-card relative shadow-2xl border-x border-border">
         <Navbar personal={personal} />
 
         {/* Hero Section */}

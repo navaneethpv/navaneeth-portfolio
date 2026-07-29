@@ -24,7 +24,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
 
           {/* Heading */}
           <div className="space-y-2">
-            <h2 className="text-5xl sm:text-7xl md:text-8xl font-heading font-extrabold uppercase tracking-tighter text-primary">
+            <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
               {personal.bioTitle}
             </h2>
             <p className="text-sm font-mono text-accent uppercase tracking-wider font-bold">
