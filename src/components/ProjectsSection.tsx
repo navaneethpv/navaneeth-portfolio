@@ -33,12 +33,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
           return (
             <div
               key={project.id}
-              className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border"
+              className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 divide-border"
             >
               {/* Content Column */}
               <div
                 className={`px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-12 ${
-                  isEven ? "order-2 lg:order-1" : "order-2 lg:order-2"
+                  isEven
+                    ? "order-2 lg:order-1 lg:border-r border-border"
+                    : "order-2 lg:order-2 lg:border-r-0"
                 }`}
               >
                 <div>
@@ -90,7 +92,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               {/* Image Column */}
               <div
                 className={`relative px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 flex items-center justify-center min-h-[500px] ${
-                  isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"
+                  isEven
+                    ? "order-1 lg:order-2 lg:border-r-0"
+                    : "order-1 lg:order-1 lg:border-r border-border"
                 }`}
               >
                 {/* Decorative Red Circle */}
