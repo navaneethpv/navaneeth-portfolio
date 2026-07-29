@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter, Oswald, Caveat } from "next/font/google";
+import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -39,9 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`light scroll-smooth ${inter.variable} ${oswald.variable} ${caveat.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={`light ${inter.variable} ${oswald.variable} ${caveat.variable} ${ibmPlexMono.variable}`}>
       <body className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground antialiased">
-        {children}
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );
