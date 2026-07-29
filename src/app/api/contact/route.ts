@@ -153,7 +153,7 @@ export async function POST(req: NextRequest) {
 
     const data = await resend.emails.send({
       from: "Portfolio Contact Form <onboarding@resend.dev>",
-      to: ["navaneethpv.dev@gmail.com"],
+      to: ["navaneethpv550@gmail.com"],
       subject: `New Portfolio Contact Submission: ${cleanSubject}`,
       replyTo: cleanEmail,
       html: emailHtml,
