@@ -17,13 +17,9 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
   return (
     <>
       <div className="w-full flex flex-col relative z-50">
-        {/* Infinite Marquee Ticker Tape Carousel */}
+        {/* Infinite Marquee Ticker Tape Carousel (GPU-Accelerated CSS) */}
         <div className="w-full bg-primary text-primary-foreground overflow-hidden py-2 border-b border-border flex whitespace-nowrap select-none">
-          <motion.div
-            className="flex items-center text-[10px] font-mono uppercase tracking-[0.2em] font-bold shrink-0"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
-          >
+          <div className="animate-marquee items-center text-[10px] font-mono uppercase tracking-[0.2em] font-bold shrink-0">
             <div className="flex items-center shrink-0">
               <span className="mx-4">OPEN FOR NEW OPPORTUNITIES</span> &bull; 
               <span className="mx-4">AVAILABLE FOR FREELANCE</span> &bull; 
@@ -44,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
               <span className="mx-4 text-accent">FRONTEND DEVELOPER</span> &bull; 
               <span className="mx-4">REACT &amp; NEXT.JS SPECIALIST</span> &bull;&nbsp;
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Main Nav */}
