@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Icon } from "@iconify/react";
+import { TechItem } from "@/data/portfolioData";
 
 interface SkillItem {
   name: string;
@@ -16,7 +17,11 @@ interface SkillCategory {
   skills: SkillItem[];
 }
 
-export const TechStackSection: React.FC = () => {
+interface TechStackSectionProps {
+  techStack?: TechItem[];
+}
+
+export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack }) => {
   const categories: SkillCategory[] = [
     {
       title: "Frontend",
