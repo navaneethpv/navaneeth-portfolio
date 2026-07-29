@@ -161,7 +161,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
 
             <button
               type="submit"
-              className="w-full h-16 inline-flex items-center justify-center bg-primary text-primary-foreground font-heading font-bold uppercase tracking-widest text-lg hover:bg-accent hover:text-accent-foreground transition-colors border border-primary group"
+              className="w-full h-16 inline-flex items-center justify-center bg-primary text-primary-foreground font-heading font-bold uppercase tracking-widest text-lg hover:bg-accent hover:text-accent-foreground transition-colors border border-primary group hover:cursor-pointer"
             >
               Send Message
               <Icon icon="lucide:arrow-right" className="ml-2 group-hover:translate-x-1 transition-transform" />

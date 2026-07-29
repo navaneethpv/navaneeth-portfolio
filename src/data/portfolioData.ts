@@ -178,7 +178,7 @@ export const portfolioData: PortfolioData = {
           label: "Digitized institutional workflows & dynamic portal administration.",
         },
         role: "Full Stack Developer",
-        timeline: "2024",
+        timeline: "2025",
         client: "CM College",
         deliverables: "Web Application, Admin Dashboard, Resource Hub",
         challenge: {
@@ -269,7 +269,7 @@ export default clerkMiddleware(async (auth, req) => {
           label: "Real-time AI visual search & structured tagging across 44,000+ catalog items.",
         },
         role: "Full Stack Developer & AI Engineer",
-        timeline: "2024 – 2025",
+        timeline: "2026",
         client: "Self Project / Production Showcase",
         deliverables: "Monorepo Web App, RESTful API, AI Visual Search Engine, Admin Dashboard",
         challenge: {
@@ -354,7 +354,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
           label: "Member business profiles indexed with sub-millisecond search & gesture navigation.",
         },
         role: "Frontend Developer Intern @ Exouzia",
-        timeline: "2024",
+        timeline: "2026",
         client: "JCOM Pattambi",
         deliverables: "Internship Project, Web Application, Digital Profile Cards",
         challenge: {
@@ -431,7 +431,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
           label: "Of real estate management legacy digitized with GSAP scroll triggers & inertia scroll engine.",
         },
         role: "Frontend Developer Intern @ Exouzia",
-        timeline: "2024",
+        timeline: "2026",
         client: "Asset Homes LLC, Abu Dhabi",
         deliverables: "Web Application, Interactive Asset Showcase, Operational Roadmap",
         challenge: {
