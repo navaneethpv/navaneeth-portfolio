@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+import { TechItem } from "@/data/portfolioData";
 
 interface SkillItem {
   name: string;
@@ -16,7 +18,11 @@ interface SkillCategory {
   skills: SkillItem[];
 }
 
-export const TechStackSection: React.FC = () => {
+interface TechStackSectionProps {
+  techStack?: TechItem[];
+}
+
+export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack }) => {
   const categories: SkillCategory[] = [
     {
       title: "Frontend",
@@ -54,20 +60,33 @@ export const TechStackSection: React.FC = () => {
 
   return (
     <section id="skills" className="w-full border-b border-border bg-background">
-      {/* Section Title */}
-      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border">
+      {/* Section Title - Scroll Slide-In */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ amount: 0.3 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border"
+      >
         <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full mb-3 inline-block font-bold">
           Tech Stack &bull; Capabilities
         </span>
         <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
           Capabilities
         </h2>
-      </div>
+      </motion.div>
 
-      {/* 3-Column Minimalist Grid */}
+      {/* 3-Column Minimalist Grid with Progressive Staggered Scroll Entrance */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 lg:divide-x divide-border">
         {categories.map((category, idx) => (
-          <div key={idx} className="px-5 sm:px-8 md:px-12 lg:px-14 py-8 md:py-12 space-y-6 flex flex-col justify-between h-full">
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ amount: 0.2 }}
+            transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="px-5 sm:px-8 md:px-12 lg:px-14 py-8 md:py-12 space-y-6 flex flex-col justify-between h-full"
+          >
             <div>
               {/* Category Header with High-Contrast Badge */}
               <div className="flex items-center justify-between gap-2 mb-6 pb-4 border-b border-border">
@@ -79,12 +98,16 @@ export const TechStackSection: React.FC = () => {
                 </span>
               </div>
 
-              {/* Skills List with Icons & High Contrast Text */}
+              {/* Skills List with Staggered Item Entrance */}
               <ul className="space-y-3.5 font-sans">
                 {category.skills.map((skill, sIdx) => (
-                  <li
+                  <motion.li
                     key={sIdx}
-                    className="flex items-center justify-between p-3.5 rounded-md bg-card border-2 border-border/80 hover:border-primary transition-all group shadow-xs"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 + sIdx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center justify-between p-3.5 rounded-md bg-card border-2 border-border/80 hover:border-primary transition-all group shadow-xs hover:shadow-md"
                   >
                     <div className="flex items-center gap-3.5">
                       <div className="w-9 h-9 rounded bg-background border border-border flex items-center justify-center p-1.5 shrink-0 group-hover:scale-110 transition-transform">
@@ -100,11 +123,11 @@ export const TechStackSection: React.FC = () => {
                         {skill.status}
                       </span>
                     )}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

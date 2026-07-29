@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 import { Project } from "@/data/portfolioData";
 
 interface ProjectsSectionProps {
@@ -12,15 +13,21 @@ interface ProjectsSectionProps {
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   return (
     <section id="projects" className="w-full border-b border-border bg-background">
-      {/* Section Title */}
-      <div className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border">
+      {/* Section Title - Scroll Slide-In */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ amount: 0.3 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border"
+      >
         <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full mb-3 inline-block font-bold">
           Featured Work &bull; Case Studies
         </span>
         <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
           Projects
         </h2>
-      </div>
+      </motion.div>
 
       {/* Projects List */}
       <div className="divide-y divide-border">
@@ -32,8 +39,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               key={project.id}
               className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 divide-border overflow-hidden"
             >
-              {/* Info Column */}
-              <div
+              {/* Info Column - Progressive Scroll Slide-In */}
+              <motion.div
+                initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ amount: 0.2 }}
+                transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
                 className={`px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-8 ${
                   isEven
                     ? "order-2 lg:order-1 lg:border-r border-border"
@@ -109,10 +120,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     </a>
                   )}
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Image Column */}
-              <div
+              {/* Image Column - Progressive Scroll Slide-In with Scale */}
+              <motion.div
+                initial={{ opacity: 0, x: isEven ? 50 : -50, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ amount: 0.2 }}
+                transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className={`relative px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex items-center justify-center min-h-[280px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px] ${
                   isEven
                     ? "order-1 lg:order-2 lg:border-r-0"
@@ -127,7 +142,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     className="w-full aspect-video object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           );
         })}
