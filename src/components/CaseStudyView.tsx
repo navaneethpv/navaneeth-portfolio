@@ -135,7 +135,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, personal 
           <div className="max-w-7xl mx-auto">
             <div className="relative z-10 w-full aspect-video border-2 border-primary bg-card p-2 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden">
               <Image
-                src={project.image}
+                src={project.image?.startsWith("./") ? project.image.replace("./", "/") : project.image || "/image.png"}
                 alt={project.title}
                 fill
                 sizes="(max-width: 1280px) 100vw, 1200px"

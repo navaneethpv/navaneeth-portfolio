@@ -117,7 +117,7 @@ export const portfolioData: PortfolioData = {
     description:
       "Crafting pixel-perfect, high-performance web applications with React, Next.js, and modern TypeScript architecture. Dedicated to building smooth, interactive user experiences with clean, scalable code.",
     portraitImage:
-      "./profile.png",
+      "/profile.png",
     location: "Wayanad, Kerala, India",
     bioTitle: "About Me",
     bioParagraphs: [
@@ -126,7 +126,7 @@ export const portfolioData: PortfolioData = {
       "As I continue growing as a developer, I'm expanding my knowledge into backend technologies while staying committed to writing clean, scalable, and maintainable code."
     ],
     bioImage:
-      "./image.png",
+      "/image.png",
     stats: [
       { label: "Projects", value: "10+" },
       { label: "Technologies", value: "12+" },

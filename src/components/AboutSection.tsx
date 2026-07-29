@@ -169,7 +169,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             className="relative w-full max-w-lg aspect-3/4 border-2 border-primary p-2.5 bg-card shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden group cursor-pointer select-none"
           >
             <Image
-              src={personal.bioImage}
+              src={personal.bioImage?.startsWith("./") ? personal.bioImage.replace("./", "/") : personal.bioImage || "/image.png"}
               alt={personal.name}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

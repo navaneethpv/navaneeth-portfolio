@@ -137,7 +137,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               >
                 <div className="relative z-10 w-full aspect-video p-2 bg-card border border-border shadow-2xl overflow-hidden">
                   <Image
-                    src={project.image}
+                    src={project.image?.startsWith("./") ? project.image.replace("./", "/") : project.image || "/image.png"}
                     alt={project.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
