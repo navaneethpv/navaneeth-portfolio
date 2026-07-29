@@ -56,7 +56,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
             <p className="text-xs font-mono text-primary uppercase tracking-widest font-bold">
               Connect Elsewhere
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-3 md:gap-4">
               {personal.socials.map((social, idx) => (
                 <a
                   key={idx}

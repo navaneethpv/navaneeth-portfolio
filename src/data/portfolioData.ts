@@ -66,7 +66,7 @@ export interface Project {
   techStack: string[];
   image: string;
   liveDemoUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
   caseStudy: CaseStudyData;
 }
 
@@ -152,9 +152,10 @@ export const portfolioData: PortfolioData = {
     versionTag: "PORTFOLIO v1.0",
     accoladeTag: "FRONTEND DEVELOPER",
     socials: [
-      { name: "GitHub", icon: "lucide:github", url: "https://github.com/navaneethpv-dev" },
+      { name: "GitHub", icon: "lucide:github", url: "https://github.com/navaneethpv" },
       { name: "LinkedIn", icon: "lucide:linkedin", url: "https://www.linkedin.com/in/navaneethpv-dev" },
       { name: "Email", icon: "lucide:mail", url: "mailto:navaneethpv.dev@gmail.com" },
+      { name: "Whatsapp", icon: "ri:whatsapp-fill", url: "https://wa.me/+916282592895" },
     ],
   },
   projects: [
@@ -344,7 +345,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
       techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "React Router"],
       image:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      liveDemoUrl: "#",
+      liveDemoUrl: "https://www.contacts.jcompattambi.com",
       githubUrl: "#",
       caseStudy: {
         breadcrumbCategory: "03 / EXOUZIA INTERNSHIP - JCOM",
