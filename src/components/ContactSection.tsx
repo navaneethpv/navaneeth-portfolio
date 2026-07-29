@@ -10,7 +10,9 @@ interface ContactSectionProps {
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,13 +20,36 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setLoading(true);
+    setSubmitted(false);
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to send message. Please try again.");
+      }
+
+      setSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 4000);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 6000);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "An unexpected error occurred.";
+      setErrorMessage(msg);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -101,6 +126,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 Message received. We will be in touch.
               </div>
             )}
+
+            {errorMessage && (
+              <div className="p-4 bg-destructive text-accent-foreground text-xs font-mono uppercase tracking-widest text-center border border-destructive">
+                {errorMessage}
+              </div>
+            )}
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="space-y-2">
@@ -165,10 +196,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
 
             <button
               type="submit"
-              className="w-full h-16 inline-flex items-center justify-center bg-primary text-primary-foreground font-heading font-bold uppercase tracking-widest text-lg hover:bg-accent hover:text-accent-foreground transition-colors border border-primary group hover:cursor-pointer"
+              disabled={loading}
+              className="w-full h-16 inline-flex items-center justify-center bg-primary text-primary-foreground font-heading font-bold uppercase tracking-widest text-lg hover:bg-accent hover:text-accent-foreground transition-colors border border-primary group hover:cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              Send Message
-              <Icon icon="lucide:arrow-right" className="ml-2 group-hover:translate-x-1 transition-transform" />
+              {loading ? (
+                <>
+                  <Icon icon="lucide:loader-2" className="animate-spin text-xl mr-2" />
+                  <span>Sending Message...</span>
+                </>
+              ) : (
+                <>
+                  <span>Send Message</span>
+                  <Icon icon="lucide:arrow-right" className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </button>
           </form>
         </motion.div>
