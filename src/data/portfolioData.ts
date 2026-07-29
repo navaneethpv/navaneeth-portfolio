@@ -126,7 +126,7 @@ export const portfolioData: PortfolioData = {
       "As I continue growing as a developer, I'm expanding my knowledge into backend technologies while staying committed to writing clean, scalable, and maintainable code."
     ],
     bioImage:
-      "./profile1.jpeg",
+      "./profile.png",
     stats: [
       { label: "Projects", value: "10+" },
       { label: "Technologies", value: "12+" },
