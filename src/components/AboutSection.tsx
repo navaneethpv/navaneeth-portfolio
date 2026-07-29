@@ -31,34 +31,57 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
         <div className="lg:col-span-7 px-8 sm:px-14 md:px-20 lg:px-24 py-8 sm:py-12 md:py-16 space-y-10">
           
           {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full shadow-xs font-bold">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full shadow-xs font-bold"
+          >
             <span>01 &bull; Biography &amp; Focus</span>
-          </div>
+          </motion.div>
 
-          {/* Heading */}
-          <div className="space-y-2">
+          {/* Heading & Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-2"
+          >
             <h2 className="text-5xl sm:text-7xl md:text-8xl font-heading font-extrabold uppercase tracking-tighter text-primary">
               {personal.bioTitle}
             </h2>
             <p className="text-sm font-mono text-accent uppercase tracking-wider font-bold">
               Frontend Developer &bull; Building Pixel-Perfect Digital Experiences
             </p>
-          </div>
+          </motion.div>
 
-          {/* Bio Text Paragraphs */}
+          {/* Bio Text Paragraphs - Staggered Scroll Slide-In */}
           <div className="space-y-4 text-sm sm:text-base text-secondary leading-relaxed font-sans max-w-2xl">
             {personal.bioParagraphs.map((para, idx) => (
-              <p key={idx} className="border-l-2 border-primary/20 pl-4 py-0.5">
+              <motion.p
+                key={idx}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ amount: 0.3 }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="border-l-2 border-primary/20 pl-4 py-0.5"
+              >
                 {para}
-              </p>
+              </motion.p>
             ))}
           </div>
 
-          {/* Quick Stats Grid */}
+          {/* Quick Stats Grid - Staggered Scroll Reveal */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-border">
             {personal.stats.map((stat, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.3 }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className="p-3.5 bg-card border border-border rounded-md shadow-xs flex flex-col justify-between"
               >
                 <span className="text-2xl sm:text-3xl font-heading font-extrabold text-primary">
@@ -67,20 +90,26 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                 <span className="text-[10px] font-mono text-secondary uppercase tracking-widest font-bold mt-1">
                   {stat.label}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          {/* Engineering Principles & Core Strengths */}
+          {/* Engineering Principles & Core Strengths - Progressive Scroll Cards */}
           <div className="space-y-4 pt-6 border-t border-border">
-            <div className="flex items-center justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.3 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="flex items-center justify-between"
+            >
               <h3 className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
                 Core Strengths &amp; Principles
               </h3>
               <span className="text-[10px] font-mono text-muted-foreground">
                 6 PRINCIPLES
               </span>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
@@ -93,8 +122,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
               ].map((item, idx) => {
                 const numStr = String(idx + 1).padStart(2, "0");
                 return (
-                  <div
+                  <motion.div
                     key={idx}
+                    initial={{ opacity: 0, y: 25, x: -20 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: (idx % 2) * 0.1, ease: [0.22, 1, 0.36, 1] }}
                     className="p-3 bg-card border border-border rounded-md hover:border-primary transition-all flex items-start gap-3 group shadow-xs"
                   >
                     <span className="text-[10px] font-mono text-muted-foreground font-bold mt-0.5">
@@ -111,7 +144,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                         {item.desc}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
@@ -120,11 +153,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
         </div>
 
         {/* Right side: High-Impact Profile Frame (5 cols) */}
-        <div className="lg:col-span-5 px-8 sm:px-14 md:px-20 lg:px-24 py-8 sm:py-12 md:py-16 relative flex flex-col items-center justify-center bg-card/20 min-h-125 gap-8">
+        <div className="lg:col-span-5 px-8 sm:px-14 md:px-20 lg:px-24 py-8 sm:py-12 md:py-16 relative flex flex-col items-center justify-center bg-card/20 min-h-125 gap-8 overflow-hidden">
           
-          {/* Main Photo Card Frame with Hover Floating Tooltip */}
-          <div
+          {/* Main Photo Card Frame with Hover Floating Tooltip & Progressive Scroll Reveal */}
+          <motion.div
             ref={photoRef}
+            initial={{ opacity: 0, scale: 0.95, x: 40 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ amount: 0.25 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onMouseMove={handleMouseMove}
@@ -158,10 +195,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
 
-          {/* Floating Availability Badge */}
-          <div className="w-full max-w-lg p-4 bg-card border border-border rounded-md shadow-xs flex items-center justify-between">
+          {/* Floating Availability Badge - Progressive Scroll Reveal */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full max-w-lg p-4 bg-card border border-border rounded-md shadow-xs flex items-center justify-between"
+          >
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
               <div className="flex flex-col">
@@ -180,7 +223,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             >
               Hire Me
             </a>
-          </div>
+          </motion.div>
 
         </div>
       </div>

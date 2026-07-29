@@ -65,12 +65,22 @@ export { MyComponent, type MyComponentProps };`;
     <section id="hero" className="relative w-full border-b border-border overflow-hidden bg-background">
       <div className="relative w-full max-w-7xl mx-auto pt-12 pb-20 px-8 sm:px-14 md:px-20 lg:px-24 space-y-12">
         
-        {/* Top Centered Header & Script Overlay */}
-        <div className="flex flex-col items-center text-center w-full relative z-10">
-          <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-4 py-1.5 bg-card rounded-full mb-6 inline-flex items-center gap-2 shadow-xs">
+        {/* Top Centered Header & Script Overlay with Smooth Landing Fade-In */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center w-full relative z-10"
+        >
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-4 py-1.5 bg-card rounded-full mb-6 inline-flex items-center gap-2 shadow-xs"
+          >
             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
             Developer Portfolio
-          </span>
+          </motion.span>
 
           {/* Layered Title & Script Name Below */}
           <div className="relative flex flex-col items-center">
@@ -78,17 +88,27 @@ export { MyComponent, type MyComponentProps };`;
               PORTFOLIO<span className="text-xl sm:text-2xl md:text-4xl text-accent align-top">&reg;</span>
             </h1>
             
-            <span className="font-script text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl text-accent -mt-2 sm:-mt-6 md:-mt-8 lg:-mt-10 z-20 pointer-events-none -rotate-3 leading-none drop-shadow-sm block">
+            <motion.span
+              initial={{ opacity: 0, y: 15, rotate: -6 }}
+              animate={{ opacity: 1, y: 0, rotate: -3 }}
+              transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="font-script text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl text-accent -mt-2 sm:-mt-6 md:-mt-8 lg:-mt-10 z-20 pointer-events-none leading-none drop-shadow-sm block"
+            >
               {personal.name}
-            </span>
+            </motion.span>
           </div>
-        </div>
+        </motion.div>
 
         {/* 2-Column Grid: Left Terminal (6 cols), Right Output Card (6 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
           
           {/* Left Column: CLI Code Editor Window (6 cols) */}
-          <div className="lg:col-span-6 w-full border-2 border-primary bg-card shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 w-full border-2 border-primary bg-card shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden flex flex-col justify-between"
+          >
             
             <div>
               {/* Terminal Title Bar */}
@@ -175,10 +195,15 @@ export { MyComponent, type MyComponentProps };`;
               </form>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Animated Rendered Component Output Card (6 cols) */}
-          <div className="lg:col-span-6 w-full flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 w-full flex flex-col"
+          >
             <AnimatePresence mode="wait">
               {hasExecuted && (
                 <motion.div
@@ -255,7 +280,7 @@ export { MyComponent, type MyComponentProps };`;
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
 
         </div>
 
