@@ -18,7 +18,15 @@ export const metadata: Metadata = {
     description:
       "Explore detailed case studies and technical breakdowns of frontend web applications.",
     url: `${siteUrl}/case-study`,
+    siteName: "Navaneeth PV Portfolio",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies & Production Projects | Navaneeth PV",
+    description:
+      "Explore detailed case studies and technical breakdowns of frontend web applications.",
   },
 };
 

@@ -76,6 +76,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  verification: {
+    google: "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
+  },
   openGraph: {
     title: "Navaneeth PV — Full-Stack & Frontend Developer Portfolio",
     description:
