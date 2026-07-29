@@ -20,14 +20,14 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
     <footer className="w-full">
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
         {/* Left: Copyright */}
-        <div className="p-6 md:p-8 flex items-center justify-center md:justify-start">
+        <div className="px-8 sm:px-12 md:px-16 py-6 md:py-8 flex items-center justify-center md:justify-start">
           <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
             © {personal.copyrightYear} {personal.name}
           </span>
         </div>
 
         {/* Middle: Links */}
-        <div className="p-6 md:p-8 flex flex-wrap justify-center items-center gap-8 text-[10px] font-mono text-primary font-bold uppercase tracking-widest">
+        <div className="px-8 sm:px-12 md:px-16 py-6 md:py-8 flex flex-wrap justify-center items-center gap-8 text-[10px] font-mono text-primary font-bold uppercase tracking-widest">
           {isCaseStudy ? (
             <>
               <Link href="/" className="hover:text-accent transition-colors">Home</Link>
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
         </div>
 
         {/* Right: Back to top */}
-        <div className="p-6 md:p-8 flex items-center justify-center md:justify-end">
+        <div className="px-8 sm:px-12 md:px-16 py-6 md:py-8 flex items-center justify-center md:justify-end">
           <a
             href="#hero"
             onClick={scrollToTop}

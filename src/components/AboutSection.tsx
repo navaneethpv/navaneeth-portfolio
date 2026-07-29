@@ -14,7 +14,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-border">
         
         {/* Left side: Bio, Stats & Competencies Grid (7 cols) */}
-        <div className="lg:col-span-7 p-8 sm:p-12 md:p-16 space-y-10">
+        <div className="lg:col-span-7 px-8 sm:px-14 md:px-20 lg:px-24 py-8 sm:py-12 md:py-16 space-y-10">
           
           {/* Top Pill Badge */}
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full shadow-xs font-bold">
@@ -107,7 +107,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
         </div>
 
         {/* Right side: High-Impact Profile Frame & Status Badge (5 cols) */}
-        <div className="lg:col-span-5 p-8 sm:p-12 md:p-16 relative flex flex-col items-center justify-center bg-card/20 min-h-125 gap-8">
+        <div className="lg:col-span-5 px-8 sm:px-14 md:px-20 lg:px-24 py-8 sm:py-12 md:py-16 relative flex flex-col items-center justify-center bg-card/20 min-h-125 gap-8">
           
           {/* Main Photo Card Frame */}
           <div className="relative w-full max-w-lg aspect-3/4 border-2 border-primary p-2.5 bg-card shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden group">

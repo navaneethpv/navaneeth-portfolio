@@ -13,7 +13,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
   return (
     <section id="projects" className="w-full border-b border-border">
       {/* Header */}
-      <div className="p-8 md:p-12 border-b border-border flex justify-between items-end relative overflow-hidden">
+      <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 border-b border-border flex justify-between items-end relative overflow-hidden">
         <h2 className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary relative z-10">
           The Work
         </h2>
@@ -37,7 +37,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             >
               {/* Content Column */}
               <div
-                className={`p-8 md:p-12 flex flex-col justify-between space-y-12 ${
+                className={`px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-12 ${
                   isEven ? "order-2 lg:order-1" : "order-2 lg:order-2"
                 }`}
               >
@@ -89,7 +89,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
               {/* Image Column */}
               <div
-                className={`relative p-8 md:p-12 flex items-center justify-center min-h-[500px] ${
+                className={`relative px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 flex items-center justify-center min-h-[500px] ${
                   isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"
                 }`}
               >

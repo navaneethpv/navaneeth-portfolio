@@ -29,7 +29,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
   return (
     <section id="contact" className="w-full border-b border-border">
       {/* Title */}
-      <div className="p-8 md:p-12 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8">
         <h2 className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary">
           Contact Us
         </h2>
@@ -42,7 +42,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border">
         {/* Left: Info */}
-        <div className="p-8 md:p-12 space-y-12 flex flex-col justify-between">
+        <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 space-y-12 flex flex-col justify-between">
           <div className="space-y-6">
             <h3 className="text-3xl md:text-5xl font-heading font-bold uppercase tracking-tighter text-primary leading-none max-w-md">
               {personal.contactTitle}
@@ -75,7 +75,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         </div>
 
         {/* Right: Form */}
-        <div className="p-8 md:p-12 bg-card">
+        <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 bg-card">
           <form onSubmit={handleSubmit} className="space-y-8">
             {submitted && (
               <div className="p-4 bg-primary text-primary-foreground text-xs font-mono uppercase tracking-widest text-center border border-primary">

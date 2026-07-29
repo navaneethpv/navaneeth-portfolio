@@ -62,7 +62,7 @@ export { MyComponent, type MyComponentProps };`;
 
   return (
     <section id="hero" className="relative w-full border-b border-border overflow-hidden bg-background">
-      <div className="relative w-full max-w-7xl mx-auto pt-12 pb-20 px-4 md:px-8 space-y-12">
+      <div className="relative w-full max-w-7xl mx-auto pt-12 pb-20 px-8 sm:px-14 md:px-20 lg:px-24 space-y-12">
         
         {/* Top Centered Header & Script Overlay */}
         <div className="flex flex-col items-center text-center w-full relative z-10">

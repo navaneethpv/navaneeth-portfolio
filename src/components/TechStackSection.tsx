@@ -60,7 +60,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
   return (
     <section id="skills" className="w-full border-b border-border bg-background">
       {/* Section Title */}
-      <div className="p-8 md:p-12 border-b border-border">
+      <div className="px-8 sm:px-14 md:px-20 lg:px-24 py-8 md:py-12 border-b border-border">
         <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full mb-3 inline-block font-bold">
           Tech Stack &bull; Capabilities
         </span>
@@ -72,7 +72,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
       {/* 3-Column Minimalist Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
         {categories.map((category, idx) => (
-          <div key={idx} className="p-6 md:p-10 space-y-6 flex flex-col justify-between">
+          <div key={idx} className="px-8 sm:px-12 md:px-14 lg:px-16 py-8 md:py-12 space-y-6 flex flex-col justify-between">
             <div>
               {/* Category Header with High-Contrast Badge */}
               <div className="flex items-center justify-between gap-2 mb-6 pb-4 border-b border-border">
