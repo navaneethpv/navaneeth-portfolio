@@ -9,7 +9,9 @@ function isRateLimited(ip: string): boolean {
   const windowMs = 10 * 60 * 1000; // 10 minutes
   const limit = 5;
 
-  const timestamps = (rateLimitMap.get(ip) || []).filter((time) => now - time < windowMs);
+  const timestamps = (rateLimitMap.get(ip) || []).filter(
+    (time) => now - time < windowMs,
+  );
   if (timestamps.length >= limit) {
     return true;
   }
@@ -32,11 +34,17 @@ function sanitizeInput(text: string): string {
 export async function POST(req: NextRequest) {
   try {
     // Rate limiting check
-    const clientIp = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "anonymous";
+    const clientIp =
+      req.headers.get("x-forwarded-for") ||
+      req.headers.get("x-real-ip") ||
+      "anonymous";
     if (isRateLimited(clientIp)) {
       return NextResponse.json(
-        { error: "Too many requests. Please wait a few minutes before trying again." },
-        { status: 429 }
+        {
+          error:
+            "Too many requests. Please wait a few minutes before trying again.",
+        },
+        { status: 429 },
       );
     }
 
@@ -48,29 +56,50 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name is required." }, { status: 400 });
     }
     if (name.length > 100) {
-      return NextResponse.json({ error: "Name must be less than 100 characters." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Name must be less than 100 characters." },
+        { status: 400 },
+      );
     }
 
     if (!email || typeof email !== "string" || !email.trim()) {
-      return NextResponse.json({ error: "Email is required." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Email is required." },
+        { status: 400 },
+      );
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
-      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Please enter a valid email address." },
+        { status: 400 },
+      );
     }
 
     if (!subject || typeof subject !== "string" || !subject.trim()) {
-      return NextResponse.json({ error: "Subject is required." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Subject is required." },
+        { status: 400 },
+      );
     }
     if (subject.length > 150) {
-      return NextResponse.json({ error: "Subject must be less than 150 characters." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Subject must be less than 150 characters." },
+        { status: 400 },
+      );
     }
 
     if (!message || typeof message !== "string" || !message.trim()) {
-      return NextResponse.json({ error: "Message is required." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Message is required." },
+        { status: 400 },
+      );
     }
     if (message.length > 5000) {
-      return NextResponse.json({ error: "Message must be less than 5000 characters." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Message must be less than 5000 characters." },
+        { status: 400 },
+      );
     }
 
     // Sanitize inputs for HTML email body
@@ -88,8 +117,11 @@ export async function POST(req: NextRequest) {
     if (!apiKey || apiKey === "re_xxxxxxxxx") {
       console.warn("RESEND_API_KEY is not configured properly.");
       return NextResponse.json(
-        { error: "Server email service is not configured. Please set RESEND_API_KEY." },
-        { status: 500 }
+        {
+          error:
+            "Server email service is not configured. Please set RESEND_API_KEY.",
+        },
+        { status: 500 },
       );
     }
 
@@ -151,11 +183,20 @@ export async function POST(req: NextRequest) {
       </html>
     `;
 
+    const plainText = `
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}
+Timestamp: ${timestamp}
+    `.trim();
+
     const data = await resend.emails.send({
-      from: "Portfolio Contact Form <onboarding@resend.dev>",
+      from: "Navaneeth PV Portfolio <contact@navaneethpv.me>",
       to: ["navaneethpv.dev@gmail.com"],
       subject: `New Portfolio Contact Submission: ${cleanSubject}`,
       replyTo: cleanEmail,
+      text: plainText,
       html: emailHtml,
     });
 
@@ -163,7 +204,7 @@ export async function POST(req: NextRequest) {
       console.error("Resend API Error:", data.error);
       return NextResponse.json(
         { error: data.error.message || "Failed to send email via Resend API." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -174,7 +215,10 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: unknown) {
     console.error("Contact API Route Error:", err);
-    const errorMessage = err instanceof Error ? err.message : "An unexpected server error occurred.";
+    const errorMessage =
+      err instanceof Error
+        ? err.message
+        : "An unexpected server error occurred.";
     return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
