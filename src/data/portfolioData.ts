@@ -169,7 +169,7 @@ export const portfolioData: PortfolioData = {
       techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Clerk", "Framer Motion", "ImageKit"],
       image:
         "https://ik.imagekit.io/1yxtj9qun/About/Untitled%20design.png?updatedAt=1768755140239?auto=format&fit=crop&w=800&q=80",
-      liveDemoUrl: "https://www.cmcollege.in",
+      liveDemoUrl: "https://www.cmcollege.edu.in",
       githubUrl: "#",
       caseStudy: {
         breadcrumbCategory: "01 / CM COLLEGE",
