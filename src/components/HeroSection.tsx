@@ -89,7 +89,7 @@ export { MyComponent, type MyComponentProps };`;
             </span>
 
             <span className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] xl:text-[11rem] 2xl:text-[12rem] font-heading font-extrabold text-primary leading-none tracking-tighter uppercase select-none block">
-              PORTFOLIO<span className="text-xl sm:text-2xl md:text-4xl text-accent align-top">&reg;</span>
+              PORTFOLIO<span className="text-xl sm:text-2xl md:text-4xl text-accent align-top">&trade;</span>
             </span>
             
             <motion.span

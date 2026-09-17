@@ -27,7 +27,7 @@ export default function Home() {
         <AboutSection personal={personal} />
 
         {/* Featured Projects */}
-        <ProjectsSection projects={projects} />
+        <ProjectsSection projects={projects} limit={5} showViewAll={true} />
 
         {/* Tech Stack */}
         <TechStackSection techStack={techStack} />

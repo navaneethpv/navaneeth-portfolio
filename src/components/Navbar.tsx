@@ -58,27 +58,33 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-10 text-xs font-mono uppercase tracking-widest text-primary font-bold">
+          <div className="hidden md:flex items-center gap-8 lg:gap-10 text-xs font-mono uppercase tracking-widest text-primary font-bold">
             <Link href={isCaseStudy ? "/" : "#hero"} className="hover:text-accent transition-colors relative group">
               Home
               <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
             </Link>
+            <a href={isCaseStudy ? "/#about" : "#about"} className="hover:text-accent transition-colors relative group">
+              About
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
+            </a>
+            <a href={isCaseStudy ? "/#projects" : "#projects"} className="hover:text-accent transition-colors relative group">
+              Work
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
+            </a>
+            <Link href="/projects" className="hover:text-accent transition-colors relative group">
+              Projects
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
+            </Link>
             {!isCaseStudy && (
-              <>
-                <a href="#about" className="hover:text-accent transition-colors relative group">
-                  About
-                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
-                </a>
-                <a href="#projects" className="hover:text-accent transition-colors relative group">
-                  Work
-                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
-                </a>
-                <a href="#contact" className="hover:text-accent transition-colors relative group">
-                  Contact
-                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
-                </a>
-              </>
+              <a href="#skills" className="hover:text-accent transition-colors relative group">
+                Skills
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
+              </a>
             )}
+            <a href={isCaseStudy ? "/#contact" : "#contact"} className="hover:text-accent transition-colors relative group">
+              Contact
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all"></span>
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -94,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
       </div>
 
       {/* Mobile Menu */}
-      {!isCaseStudy && mobileMenuOpen && (
+      {mobileMenuOpen && (
         <div className="fixed inset-0 z-100 bg-background flex flex-col justify-center p-8 space-y-8 animate-in fade-in duration-200">
           <button
             type="button"
@@ -105,20 +111,38 @@ export const Navbar: React.FC<NavbarProps> = ({ personal, isCaseStudy = false })
             <Icon icon="lucide:x" className="text-2xl" />
           </button>
           
-          <div className="flex flex-col space-y-8 text-center border-y border-border py-12">
-            {["home", "about", "projects", "skills", "experience", "contact"].map((item) => (
-              <a
-                key={item}
-                href={item === "home" ? "#hero" : `#${item}`}
-                className="font-heading text-5xl uppercase font-bold text-primary hover:text-accent transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item}
-              </a>
+          <div className="flex flex-col space-y-6 text-center border-y border-border py-10">
+            {[
+              { label: "Home", href: isCaseStudy ? "/" : "#hero", isExternal: isCaseStudy },
+              { label: "About", href: isCaseStudy ? "/#about" : "#about", isExternal: isCaseStudy },
+              { label: "Work", href: isCaseStudy ? "/#projects" : "#projects", isExternal: isCaseStudy },
+              { label: "Projects", href: "/projects", isExternal: true },
+              { label: "Skills", href: isCaseStudy ? "/#skills" : "#skills", isExternal: isCaseStudy },
+              { label: "Contact", href: isCaseStudy ? "/#contact" : "#contact", isExternal: isCaseStudy },
+            ].map((item) => (
+              item.isExternal ? (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="font-heading text-4xl sm:text-5xl uppercase font-bold text-primary hover:text-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="font-heading text-4xl sm:text-5xl uppercase font-bold text-primary hover:text-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              )
             ))}
           </div>
           
-          <div className="text-center pt-8">
+          <div className="text-center pt-4">
             <span className="text-[10px] font-mono text-secondary uppercase tracking-widest">
               {personal.name} © {personal.copyrightYear}
             </span>
