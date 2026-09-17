@@ -18,7 +18,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border"
       >
@@ -44,7 +44,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               <motion.div
                 initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
                 className={`px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-8 ${
                   isEven
@@ -58,7 +58,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                       {project.number} &bull; {project.category}
                     </span>
                     <span className="text-xs font-mono font-bold text-primary border border-border px-2.5 py-0.5 bg-card rounded">
-                      2024
+                      {project.caseStudy?.timeline || "2026"}
                     </span>
                   </div>
 
@@ -127,7 +127,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               <motion.div
                 initial={{ opacity: 0, x: isEven ? 50 : -50, scale: 0.95 }}
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className={`relative px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex items-center justify-center min-h-[280px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px] ${
                   isEven

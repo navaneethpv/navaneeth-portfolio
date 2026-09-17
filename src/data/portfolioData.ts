@@ -117,7 +117,7 @@ export const portfolioData: PortfolioData = {
     description:
       "Crafting pixel-perfect, high-performance web applications with React, Next.js, and modern TypeScript architecture. Dedicated to building smooth, interactive user experiences with clean, scalable code.",
     portraitImage:
-      "/profile.png",
+      "/profile.webp",
     location: "Wayanad, Kerala, India",
     bioTitle: "About Me",
     bioParagraphs: [
@@ -126,7 +126,7 @@ export const portfolioData: PortfolioData = {
       "As I continue growing as a developer, I'm expanding my knowledge into backend technologies while staying committed to writing clean, scalable, and maintainable code."
     ],
     bioImage:
-      "/image.png",
+      "/image.webp",
     stats: [
       { label: "Projects", value: "10+" },
       { label: "Technologies", value: "12+" },
@@ -160,8 +160,110 @@ export const portfolioData: PortfolioData = {
   },
   projects: [
     {
-      id: "cm-college",
+      id: "protech-academy",
       number: "01",
+      category: "Web Application",
+      title: "ProTech Academy",
+      summary:
+        "Rebuilt the existing ProTech Academy WordPress website as a modern Next.js application while preserving its structure, visual design, responsive behavior, animations, and interactions.",
+      techStack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      liveDemoUrl: "https://protech.exouzia.com/",
+      githubUrl: "",
+      caseStudy: {
+        breadcrumbCategory: "01 / PROTECH ACADEMY",
+        keyMetric: {
+          value: "01",
+          label: "Complete website rebuilt from WordPress to Next.js."
+        },
+        role: "Frontend Developer",
+        timeline: "2026",
+        client: "ProTech Academy — Exouzia Client Project",
+        deliverables: "Website Rebuild, Responsive UI, Reusable Components",
+        challenge: {
+          title:
+            "Rebuilding an existing website while maintaining its original experience.",
+          paragraphs: [
+            "The existing ProTech Academy website was built using WordPress. The challenge was to move the website to a modern Next.js architecture without unnecessarily changing the existing design, content, responsive behavior, animations, and interactions.",
+            "The project required careful analysis of the existing implementation before rebuilding each page and component."
+          ],
+        },
+        solution: {
+          title:
+            "A component-based Next.js implementation based on the existing website.",
+          paragraphs: [
+            "The website was rebuilt using Next.js, React, TypeScript, and Tailwind CSS. Existing layouts, typography, spacing, colors, responsive behavior, animations, forms, and interactive elements were carefully analyzed and recreated.",
+            "The implementation was organized around reusable React components and consistent UI patterns across the different pages, resulting in a maintainable frontend while keeping the original user experience intact."
+          ],
+        },
+        codeSnippet: {
+          filename: "page.tsx",
+          code: `export default function HomePage() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <AboutSection />
+      <CoursesSection />
+      <BlogSection />
+      <ContactSection />
+      <Footer />
+    </>
+  );
+};`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:layout",
+            title: "Responsive Website",
+            description:
+              "Rebuilt the website with responsive layouts designed to work across desktop, tablet, and mobile devices.",
+          },
+          {
+            icon: "lucide:layers",
+            title: "Reusable Components",
+            description:
+              "Created reusable React components and consistent UI patterns across the website.",
+          },
+          {
+            icon: "lucide:move",
+            title: "Interactive Experience",
+            description:
+              "Recreated the existing animations, sliders, interactions, forms, and navigation behavior.",
+          },
+          {
+            icon: "lucide:graduation-cap",
+            title: "Course & Program Pages",
+            description:
+              "Implemented pages for the BCA program and short courses with structured content presentation.",
+          },
+          {
+            icon: "lucide:newspaper",
+            title: "Blog System",
+            description:
+              "Rebuilt the blog listing and individual blog pages as part of the Next.js application.",
+          },
+          {
+            icon: "lucide:smartphone",
+            title: "Mobile-Friendly UI",
+            description:
+              "Adapted the complete interface for a consistent experience across different screen sizes.",
+          },
+        ],
+        nextCaseStudySlug: "cm-college",
+        nextCaseStudyTitle: "CM College",
+      },
+    },
+    {
+      id: "cm-college",
+      number: "02",
       category: "Educational Web Platform",
       title: "CM College",
       summary:
@@ -172,7 +274,7 @@ export const portfolioData: PortfolioData = {
       liveDemoUrl: "https://www.cmcollege.edu.in",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "01 / CM COLLEGE",
+        breadcrumbCategory: "02 / CM COLLEGE",
         keyMetric: {
           value: "100%",
           label: "Digitized institutional workflows & dynamic portal administration.",
@@ -241,7 +343,7 @@ export default clerkMiddleware(async (auth, req) => {
     },
     {
       id: "eyoris-fashion",
-      number: "02",
+      number: "03",
       category: "AI-Powered E-Commerce Platform",
       title: "Eyoris Fashion",
       summary:
@@ -263,7 +365,7 @@ export default clerkMiddleware(async (auth, req) => {
       liveDemoUrl: "https://eyoris-fashion.vercel.app",
       githubUrl: "https://github.com/navaneethpv/Eyoris-Fashion",
       caseStudy: {
-        breadcrumbCategory: "02 / EYORIS FASHION",
+        breadcrumbCategory: "03 / EYORIS FASHION",
         keyMetric: {
           value: "< 500ms",
           label: "Real-time AI visual search & structured tagging across 44,000+ catalog items.",
@@ -337,7 +439,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
     },
     {
       id: "jcom-member-directory",
-      number: "03",
+      number: "04",
       category: "Internship Project | Business Directory",
       title: "JCOM Member Directory",
       summary:
@@ -348,7 +450,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
       liveDemoUrl: "https://www.contacts.jcompattambi.com",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "03 / EXOUZIA INTERNSHIP - JCOM",
+        breadcrumbCategory: "04 / EXOUZIA INTERNSHIP - JCOM",
         keyMetric: {
           value: "100+",
           label: "Member business profiles indexed with sub-millisecond search & gesture navigation.",
@@ -414,7 +516,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
     },
     {
       id: "asset-homes",
-      number: "04",
+      number: "05",
       category: "Internship Project | Real Estate & Property Management",
       title: "Asset Homes Property Management",
       summary:
@@ -425,7 +527,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
       liveDemoUrl: "https://asset-homes.vercel.app/",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "04 / EXOUZIA INTERNSHIP - ASSET HOMES",
+        breadcrumbCategory: "05 / EXOUZIA INTERNSHIP - ASSET HOMES",
         keyMetric: {
           value: "15+ Years",
           label: "Of real estate management legacy digitized with GSAP scroll triggers & inertia scroll engine.",
@@ -488,8 +590,8 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
             description: "Step-by-step interactive methodology detailing property onboarding, tenant services, and maintenance operations.",
           }
         ],
-        nextCaseStudySlug: "cm-college",
-        nextCaseStudyTitle: "CM College",
+        nextCaseStudySlug: "protech-academy",
+        nextCaseStudyTitle: "ProTech Academy",
       },
     }
   ],

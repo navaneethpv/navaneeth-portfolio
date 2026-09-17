@@ -35,7 +35,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full shadow-xs font-bold"
           >
@@ -46,7 +46,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-2"
           >
@@ -65,7 +65,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                 key={idx}
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="border-l-2 border-primary/20 pl-4 py-0.5"
               >
@@ -81,7 +81,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className="p-3.5 bg-card border border-border rounded-md shadow-xs flex flex-col justify-between"
               >
@@ -100,7 +100,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="flex items-center justify-between"
             >
@@ -127,7 +127,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                     key={idx}
                     initial={{ opacity: 0, y: 25, x: -20 }}
                     whileInView={{ opacity: 1, y: 0, x: 0 }}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5, delay: (idx % 2) * 0.1, ease: [0.22, 1, 0.36, 1] }}
                     className="p-3 bg-card border border-border rounded-md hover:border-primary transition-all flex items-start gap-3 group shadow-xs"
                   >
@@ -161,7 +161,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             ref={photoRef}
             initial={{ opacity: 0, scale: 0.95, x: 40 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
-            viewport={{ amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -169,7 +169,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
             className="relative w-full max-w-lg aspect-3/4 border-2 border-primary p-2.5 bg-card shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] rounded-md overflow-hidden group cursor-pointer select-none"
           >
             <Image
-              src={personal.bioImage?.startsWith("./") ? personal.bioImage.replace("./", "/") : personal.bioImage || "/image.png"}
+              src={personal.bioImage?.startsWith("./") ? personal.bioImage.replace("./", "/") : personal.bioImage || "/image.webp"}
               alt={personal.name}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -204,7 +204,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="w-full max-w-lg p-4 bg-card border border-border rounded-md shadow-xs flex items-center justify-between"
           >

@@ -11,7 +11,7 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({ chil
   useEffect(() => {
     // Initialize Lenis smooth scroll engine
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
@@ -20,12 +20,32 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({ chil
       touchMultiplier: 1.5,
     });
 
+    let rafId: number | null = null;
+    let isRunning = true;
+
     function raf(time: number) {
+      if (!isRunning) return;
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    const rafId = requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
+
+    // Pause RAF when document is not visible to release CPU & RAM
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      } else {
+        if (!rafId && isRunning) {
+          rafId = requestAnimationFrame(raf);
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     // Global listener for smooth anchor link scrolling
     const handleAnchorClick = (e: MouseEvent) => {
@@ -38,7 +58,7 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({ chil
         const targetElement = document.querySelector(href);
         if (targetElement) {
           e.preventDefault();
-          lenis.scrollTo(targetElement as HTMLElement, { offset: 0, duration: 1.2 });
+          lenis.scrollTo(targetElement as HTMLElement, { offset: 0, duration: 1.1 });
         }
       }
     };
@@ -46,7 +66,9 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({ chil
     document.addEventListener("click", handleAnchorClick);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      isRunning = false;
+      if (rafId) cancelAnimationFrame(rafId);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       document.removeEventListener("click", handleAnchorClick);
       lenis.destroy();
     };
