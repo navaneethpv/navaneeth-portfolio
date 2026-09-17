@@ -58,7 +58,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8"
       >
@@ -77,7 +77,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 space-y-12 flex flex-col justify-between"
         >
@@ -116,7 +116,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 bg-card"
         >

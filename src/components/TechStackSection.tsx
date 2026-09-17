@@ -64,7 +64,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border"
       >
@@ -83,7 +83,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
             key={idx}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="px-5 sm:px-8 md:px-12 lg:px-14 py-8 md:py-12 space-y-6 flex flex-col justify-between h-full"
           >
@@ -105,7 +105,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ techStack })
                     key={sIdx}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5, delay: idx * 0.1 + sIdx * 0.08, ease: [0.22, 1, 0.36, 1] }}
                     className="flex items-center justify-between p-3.5 rounded-md bg-card border-2 border-border/80 hover:border-primary transition-all group shadow-xs hover:shadow-md"
                   >

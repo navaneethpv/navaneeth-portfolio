@@ -31,11 +31,13 @@ export const Footer: React.FC<FooterProps> = ({ personal, isCaseStudy = false })
           {isCaseStudy ? (
             <>
               <Link href="/" className="hover:text-accent transition-colors">Home</Link>
-              <Link href="/#projects" className="hover:text-accent transition-colors">Work</Link>
+              <Link href="/projects" className="hover:text-accent transition-colors">Projects</Link>
+              <Link href="/#about" className="hover:text-accent transition-colors">About</Link>
               <Link href="/#contact" className="hover:text-accent transition-colors">Contact</Link>
             </>
           ) : (
             <>
+              <Link href="/projects" className="hover:text-accent transition-colors">Projects</Link>
               <a href="#projects" className="hover:text-accent transition-colors">Work</a>
               <a href="#about" className="hover:text-accent transition-colors">About</a>
               <a href="#skills" className="hover:text-accent transition-colors">Skills</a>

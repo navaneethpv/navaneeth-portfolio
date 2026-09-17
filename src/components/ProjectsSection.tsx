@@ -9,30 +9,50 @@ import { Project } from "@/data/portfolioData";
 
 interface ProjectsSectionProps {
   projects: Project[];
+  limit?: number;
+  showViewAll?: boolean;
 }
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
+  projects,
+  limit,
+  showViewAll = false,
+}) => {
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+
   return (
     <section id="projects" className="w-full border-b border-border bg-background">
       {/* Section Title - Scroll Slide-In */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border"
+        className="px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 border-b border-border flex flex-col sm:flex-row sm:items-end justify-between gap-4"
       >
-        <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full mb-3 inline-block font-bold">
-          Featured Work &bull; Case Studies
-        </span>
-        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
-          Projects
-        </h2>
+        <div>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary border border-border px-3.5 py-1.5 bg-card rounded-full mb-3 inline-block font-bold">
+            Featured Work &bull; Case Studies
+          </span>
+          <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl 2xl:text-[10rem] font-heading font-extrabold uppercase tracking-tighter text-primary">
+            Projects
+          </h2>
+        </div>
+
+        {showViewAll && projects.length > 5 && (
+          <Link
+            href="/projects"
+            className="text-xs font-mono font-bold uppercase tracking-wider text-accent hover:underline inline-flex items-center gap-1.5 pb-2"
+          >
+            <span>View All ({projects.length})</span>
+            <Icon icon="lucide:arrow-up-right" className="text-sm" />
+          </Link>
+        )}
       </motion.div>
 
       {/* Projects List */}
       <div className="divide-y divide-border">
-        {projects.map((project, index) => {
+        {displayedProjects.map((project, index) => {
           const isEven = index % 2 === 0;
 
           return (
@@ -44,7 +64,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               <motion.div
                 initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
                 className={`px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex flex-col justify-between space-y-8 ${
                   isEven
@@ -58,7 +78,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                       {project.number} &bull; {project.category}
                     </span>
                     <span className="text-xs font-mono font-bold text-primary border border-border px-2.5 py-0.5 bg-card rounded">
-                      2024
+                      {project.caseStudy?.timeline || "2026"}
                     </span>
                   </div>
 
@@ -127,7 +147,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               <motion.div
                 initial={{ opacity: 0, x: isEven ? 50 : -50, scale: 0.95 }}
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className={`relative px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-12 flex items-center justify-center min-h-[280px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px] ${
                   isEven
@@ -137,7 +157,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               >
                 <div className="relative z-10 w-full aspect-video p-2 bg-card border border-border shadow-2xl overflow-hidden">
                   <Image
-                    src={project.image?.startsWith("./") ? project.image.replace("./", "/") : project.image || "/image.png"}
+                    src={project.image?.startsWith("./") ? project.image.replace("./", "/") : project.image || "/image.webp"}
                     alt={project.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -150,6 +170,40 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
           );
         })}
       </div>
+
+      {/* View All Projects Button Banner below list */}
+      {(showViewAll || (limit && projects.length > limit)) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="p-8 sm:p-12 md:p-16 border-t border-border bg-card/40 flex flex-col sm:flex-row items-center justify-between gap-6"
+        >
+          <div className="space-y-1 text-center sm:text-left">
+            <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
+              Archive &bull; Production Work
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-heading font-extrabold uppercase tracking-tight text-primary">
+              Explore All Projects &amp; Case Studies
+            </h3>
+            <p className="text-secondary text-xs sm:text-sm font-sans max-w-lg">
+              Browse the complete portfolio of web applications, client projects, and full-stack case studies.
+            </p>
+          </div>
+
+          <Link
+            href="/projects"
+            className="px-8 py-4 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-widest font-bold hover:bg-accent hover:text-accent-foreground transition-all duration-300 border-2 border-primary flex items-center gap-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.15)] group shrink-0"
+          >
+            <span>View All Projects</span>
+            <Icon
+              icon="lucide:arrow-right"
+              className="text-base group-hover:translate-x-1.5 transition-transform"
+            />
+          </Link>
+        </motion.div>
+      )}
     </section>
   );
 };

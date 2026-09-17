@@ -117,7 +117,7 @@ export const portfolioData: PortfolioData = {
     description:
       "Crafting pixel-perfect, high-performance web applications with React, Next.js, and modern TypeScript architecture. Dedicated to building smooth, interactive user experiences with clean, scalable code.",
     portraitImage:
-      "/profile.png",
+      "/profile.webp",
     location: "Wayanad, Kerala, India",
     bioTitle: "About Me",
     bioParagraphs: [
@@ -126,7 +126,7 @@ export const portfolioData: PortfolioData = {
       "As I continue growing as a developer, I'm expanding my knowledge into backend technologies while staying committed to writing clean, scalable, and maintainable code."
     ],
     bioImage:
-      "/image.png",
+      "/image.webp",
     stats: [
       { label: "Projects", value: "10+" },
       { label: "Technologies", value: "12+" },
@@ -160,19 +160,327 @@ export const portfolioData: PortfolioData = {
   },
   projects: [
     {
-      id: "cm-college",
+      id: "protech-academy",
       number: "01",
+      category: "Web Application",
+      title: "ProTech Academy",
+      summary:
+        "Rebuilt the existing ProTech Academy WordPress website as a modern Next.js application while preserving its structure, visual design, responsive behavior, animations, and interactions.",
+      techStack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      image:
+        "/projects/protech.webp",
+      liveDemoUrl: "https://protech.exouzia.com/",
+      githubUrl: "",
+      caseStudy: {
+        breadcrumbCategory: "01 / PROTECH ACADEMY",
+        keyMetric: {
+          value: "01",
+          label: "Complete website rebuilt from WordPress to Next.js."
+        },
+        role: "Frontend Developer",
+        timeline: "2026",
+        client: "ProTech Academy — Exouzia Client Project",
+        deliverables: "Website Rebuild, Responsive UI, Reusable Components",
+        challenge: {
+          title:
+            "Rebuilding an existing website while maintaining its original experience.",
+          paragraphs: [
+            "The existing ProTech Academy website was built using WordPress. The challenge was to move the website to a modern Next.js architecture without unnecessarily changing the existing design, content, responsive behavior, animations, and interactions.",
+            "The project required careful analysis of the existing implementation before rebuilding each page and component."
+          ],
+        },
+        solution: {
+          title:
+            "A component-based Next.js implementation based on the existing website.",
+          paragraphs: [
+            "The website was rebuilt using Next.js, React, TypeScript, and Tailwind CSS. Existing layouts, typography, spacing, colors, responsive behavior, animations, forms, and interactive elements were carefully analyzed and recreated.",
+            "The implementation was organized around reusable React components and consistent UI patterns across the different pages, resulting in a maintainable frontend while keeping the original user experience intact."
+          ],
+        },
+        codeSnippet: {
+          filename: "page.tsx",
+          code: `export default function HomePage() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <AboutSection />
+      <CoursesSection />
+      <BlogSection />
+      <ContactSection />
+      <Footer />
+    </>
+  );
+};`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:layout",
+            title: "Responsive Website",
+            description:
+              "Rebuilt the website with responsive layouts designed to work across desktop, tablet, and mobile devices.",
+          },
+          {
+            icon: "lucide:layers",
+            title: "Reusable Components",
+            description:
+              "Created reusable React components and consistent UI patterns across the website.",
+          },
+          {
+            icon: "lucide:move",
+            title: "Interactive Experience",
+            description:
+              "Recreated the existing animations, sliders, interactions, forms, and navigation behavior.",
+          },
+          {
+            icon: "lucide:graduation-cap",
+            title: "Course & Program Pages",
+            description:
+              "Implemented pages for the BCA program and short courses with structured content presentation.",
+          },
+          {
+            icon: "lucide:newspaper",
+            title: "Blog System",
+            description:
+              "Rebuilt the blog listing and individual blog pages as part of the Next.js application.",
+          },
+          {
+            icon: "lucide:smartphone",
+            title: "Mobile-Friendly UI",
+            description:
+              "Adapted the complete interface for a consistent experience across different screen sizes.",
+          },
+        ],
+        nextCaseStudySlug: "ia-travel-insurance",
+        nextCaseStudyTitle: "iA Travel Insurance",
+      },
+    },
+    {
+      id: "ia-travel-insurance",
+      number: "02",
+      category: "Web Application",
+      title: "iA Travel Insurance",
+      summary:
+        "Converted the existing iA Travel Insurance website into a modern Next.js application while preserving the original design, content, responsive behavior, and interactive elements.",
+      techStack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Font Awesome"
+      ],
+      image: "/projects/iatravels.webp",
+      liveDemoUrl: "#",
+      githubUrl: "",
+      caseStudy: {
+        breadcrumbCategory: "02 / IA TRAVEL INSURANCE",
+        keyMetric: {
+          value: "01",
+          label: "Existing website converted into a modern Next.js application."
+        },
+        role: "Frontend Developer",
+        timeline: "2026",
+        client: "iA Travel Insurance — Exouzia Client Project",
+        deliverables:
+          "Website Conversion, Responsive UI, Reusable Components, Static Export",
+        challenge: {
+          title:
+            "Converting an existing website while maintaining its original visual experience.",
+          paragraphs: [
+            "The project involved rebuilding the existing iA Travel Insurance website as a modern Next.js application. The main challenge was to reproduce the existing pages, layouts, content, responsive behavior, and interactions without losing the original user experience.",
+            "The existing website also contained multiple interactive sections such as the hero slider, partner content, testimonials, navigation, and fixed interface elements that needed to be recreated in the new implementation."
+          ],
+        },
+        solution: {
+          title:
+            "A modern component-based frontend built with Next.js and React.",
+          paragraphs: [
+            "The website was rebuilt using Next.js, React, TypeScript, and Tailwind CSS. The existing interface was analyzed and recreated using reusable components, responsive layouts, organized assets, and modern frontend structure.",
+            "Interactive elements including the hero slider, partner and testimonial carousels, navigation, fixed quote button, and scroll-to-top functionality were implemented as part of the new application. The project was also prepared and verified for production deployment using static export."
+          ],
+        },
+        codeSnippet: {
+          filename: "page.tsx",
+          code: `export default function HomePage() {
+  return (
+    <>
+      <Header />
+      <HeroSlider />
+      <SocialProof />
+      <Services />
+      <Partners />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </>
+  );
+};`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:refresh-cw",
+            title: "Website Conversion",
+            description:
+              "Converted the existing website into a modern Next.js and React application while maintaining the original content and overall experience.",
+          },
+          {
+            icon: "lucide:images",
+            title: "Hero Image Slider",
+            description:
+              "Recreated the homepage hero slider with responsive imagery and interactive navigation.",
+          },
+          {
+            icon: "lucide:layout",
+            title: "Responsive Design",
+            description:
+              "Implemented responsive layouts for desktop, tablet, and mobile screen sizes.",
+          },
+          {
+            icon: "lucide:mouse-pointer-click",
+            title: "Interactive Sections",
+            description:
+              "Rebuilt partner and testimonial carousels along with other interactive website elements.",
+          },
+          {
+            icon: "lucide:folder-open",
+            title: "Asset Organization",
+            description:
+              "Migrated and organized the existing website assets for use within the new frontend architecture.",
+          },
+          {
+            icon: "lucide:settings",
+            title: "Production Optimization",
+            description:
+              "Cleaned unused code and dependencies and verified the application through a successful production build.",
+          },
+        ],
+        nextCaseStudySlug: "izan-plus",
+        nextCaseStudyTitle: "IZAN PLUS",
+      },
+    },
+    {
+      id: "izan-plus",
+      number: "03",
+      category: "Web Application",
+      title: "IZAN PLUS",
+      summary:
+        "Redesigned and developed the frontend of IZAN PLUS, a digital platform for Mahall administration, with a modern responsive interface while preserving its original content and identity.",
+      techStack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Motion",
+        "Lenis"
+      ],
+      image:
+        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+      liveDemoUrl: "#",
+      githubUrl: "",
+      caseStudy: {
+        breadcrumbCategory: "03 / IZAN PLUS",
+        keyMetric: {
+          value: "2",
+          label: "Languages supported with English and Malayalam."
+        },
+        role: "Frontend Developer",
+        timeline: "2026",
+        client: "IZAN PLUS — Exouzia Client Project",
+        deliverables:
+          "UI/UX Redesign, Responsive Website, Reusable Components",
+        challenge: {
+          title:
+            "Modernizing an existing Mahall management platform while preserving its identity.",
+          paragraphs: [
+            "IZAN PLUS is a digital platform for Mahall administration, designed to provide a centralized online experience for managing and presenting Mahall-related information.",
+            "The challenge was to modernize the existing website without losing its original content and identity. The implementation also needed to provide a responsive experience across devices while keeping the interface clear and easy to navigate."
+          ],
+        },
+        solution: {
+          title:
+            "A modern responsive interface with reusable components and multilingual support.",
+          paragraphs: [
+            "The frontend was redesigned and developed using Next.js, React, TypeScript, and Tailwind CSS. The interface was structured around reusable components and separated content data to make the implementation easier to maintain.",
+            "English and Malayalam language switching was implemented alongside a responsive hero slider, redesigned feature presentation, smooth motion effects, and Lenis-based scrolling. The existing codebase was also reviewed and simplified by removing unnecessary code, duplicated logic, unused components, and unnecessary abstractions."
+          ],
+        },
+        codeSnippet: {
+          filename: "features.ts",
+          code: `export const features = [
+  {
+    title: "Feature Title",
+    description: "Feature description",
+  },
+  {
+    title: "Another Feature",
+    description: "Feature description",
+  },
+];`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:languages",
+            title: "English & Malayalam",
+            description:
+              "Implemented language switching between English and Malayalam for a more accessible experience.",
+          },
+          {
+            icon: "lucide:panels-top-left",
+            title: "Modern UI/UX",
+            description:
+              "Redesigned the existing interface with a cleaner, more modern visual structure while preserving the original identity.",
+          },
+          {
+            icon: "lucide:images",
+            title: "Responsive Hero Slider",
+            description:
+              "Built a responsive hero slider with smooth transitions and imagery adapted for different screen sizes.",
+          },
+          {
+            icon: "lucide:list",
+            title: "Editorial Feature Section",
+            description:
+              "Redesigned the 24-feature section into a structured editorial-style presentation for improved content readability.",
+          },
+          {
+            icon: "lucide:sparkles",
+            title: "Motion & Smooth Scrolling",
+            description:
+              "Added smooth animations and interactions using Motion and Lenis to create a more engaging browsing experience.",
+          },
+          {
+            icon: "lucide:code-2",
+            title: "Codebase Cleanup",
+            description:
+              "Simplified the implementation by removing unused code, duplicated logic, unnecessary components, and excessive abstractions.",
+          },
+        ],
+        nextCaseStudySlug: "cm-college",
+        nextCaseStudyTitle: "CM College",
+      },
+    },
+    {
+      id: "cm-college",
+      number: "04",
       category: "Educational Web Platform",
       title: "CM College",
       summary:
         "A full-featured web platform and administrative portal for CM College, powering digital admissions, academic resources, department hubs, and dynamic institutional content management.",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Clerk", "Framer Motion", "ImageKit"],
       image:
-        "https://ik.imagekit.io/1yxtj9qun/About/Untitled%20design.png?updatedAt=1768755140239?auto=format&fit=crop&w=800&q=80",
+        "/projects/cmcollege.webp",
       liveDemoUrl: "https://www.cmcollege.edu.in",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "01 / CM COLLEGE",
+        breadcrumbCategory: "04 / CM COLLEGE",
         keyMetric: {
           value: "100%",
           label: "Digitized institutional workflows & dynamic portal administration.",
@@ -241,7 +549,7 @@ export default clerkMiddleware(async (auth, req) => {
     },
     {
       id: "eyoris-fashion",
-      number: "02",
+      number: "05",
       category: "AI-Powered E-Commerce Platform",
       title: "Eyoris Fashion",
       summary:
@@ -259,11 +567,11 @@ export default clerkMiddleware(async (auth, req) => {
         "Framer Motion",
       ],
       image:
-        "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80",
+        "/projects/eyoris.webp",
       liveDemoUrl: "https://eyoris-fashion.vercel.app",
       githubUrl: "https://github.com/navaneethpv/Eyoris-Fashion",
       caseStudy: {
-        breadcrumbCategory: "02 / EYORIS FASHION",
+        breadcrumbCategory: "05 / EYORIS FASHION",
         keyMetric: {
           value: "< 500ms",
           label: "Real-time AI visual search & structured tagging across 44,000+ catalog items.",
@@ -337,7 +645,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
     },
     {
       id: "jcom-member-directory",
-      number: "03",
+      number: "06",
       category: "Internship Project | Business Directory",
       title: "JCOM Member Directory",
       summary:
@@ -348,7 +656,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
       liveDemoUrl: "https://www.contacts.jcompattambi.com",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "03 / EXOUZIA INTERNSHIP - JCOM",
+        breadcrumbCategory: "06 / EXOUZIA INTERNSHIP - JCOM",
         keyMetric: {
           value: "100+",
           label: "Member business profiles indexed with sub-millisecond search & gesture navigation.",
@@ -414,18 +722,18 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
     },
     {
       id: "asset-homes",
-      number: "04",
+      number: "07",
       category: "Internship Project | Real Estate & Property Management",
       title: "Asset Homes Property Management",
       summary:
         "A luxury real estate and property management web platform developed for Asset Homes LLC in Abu Dhabi & Al Ain — featuring GSAP scroll-triggered clip-path animations, Lenis inertia scrolling, interactive asset showcases, and responsive hero carousels.",
       techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Lenis", "Framer Motion"],
       image:
-        "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1200&q=80",
+        "/projects/assethomes.webp",
       liveDemoUrl: "https://asset-homes.vercel.app/",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "04 / EXOUZIA INTERNSHIP - ASSET HOMES",
+        breadcrumbCategory: "07 / EXOUZIA INTERNSHIP - ASSET HOMES",
         keyMetric: {
           value: "15+ Years",
           label: "Of real estate management legacy digitized with GSAP scroll triggers & inertia scroll engine.",
@@ -488,8 +796,8 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
             description: "Step-by-step interactive methodology detailing property onboarding, tenant services, and maintenance operations.",
           }
         ],
-        nextCaseStudySlug: "cm-college",
-        nextCaseStudyTitle: "CM College",
+        nextCaseStudySlug: "protech-academy",
+        nextCaseStudyTitle: "ProTech Academy",
       },
     }
   ],
