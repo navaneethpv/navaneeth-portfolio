@@ -380,8 +380,7 @@ export const portfolioData: PortfolioData = {
         "Motion",
         "Lenis"
       ],
-      image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+      image: "/projects/izanplus.webp",
       liveDemoUrl: "#",
       githubUrl: "",
       caseStudy: {
@@ -639,13 +638,115 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
             description: "Clerk-authenticated user management with role-based access control and live order tracking.",
           },
         ],
-        nextCaseStudySlug: "jcom-member-directory",
-        nextCaseStudyTitle: "JCOM Member Directory",
+        nextCaseStudySlug: "bukhari",
+        nextCaseStudyTitle: "Bukhari",
+      },
+    },
+    {
+      id: "bukhari",
+      number: "06",
+      category: "Web Application",
+      title: "Bukhari",
+      summary:
+        "Converted the existing Bukhari WordPress website into a modern Next.js application while preserving the original content, structure, and user experience.",
+      techStack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      image: "/projects/bukhari.webp",
+      liveDemoUrl: "https://bukhari.co.in/",
+      githubUrl: "",
+      caseStudy: {
+        breadcrumbCategory: "06 / BUKHARI",
+        keyMetric: {
+          value: "01",
+          label: "Existing WordPress website converted to Next.js."
+        },
+        role: "Frontend Developer",
+        timeline: "2026",
+        client: "Bukhari — Exouzia Client Project",
+        deliverables:
+          "WordPress to Next.js Migration, Responsive UI, Reusable Components",
+        challenge: {
+          title:
+            "Modernizing an existing WordPress website without losing its original experience.",
+          paragraphs: [
+            "The project involved converting the existing Bukhari website from WordPress into a modern Next.js application.",
+            "The challenge was to rebuild the website while maintaining its existing content, page structure, visual appearance, responsive behavior, and overall user experience."
+          ],
+        },
+        solution: {
+          title:
+            "A structured Next.js implementation using reusable React components.",
+          paragraphs: [
+            "The website was rebuilt using Next.js, React, TypeScript, and Tailwind CSS. Existing pages and interface elements were analyzed and recreated using reusable components and responsive layouts.",
+            "The implementation focused on maintaining consistency with the original website while providing a cleaner and more maintainable frontend architecture."
+          ],
+        },
+        codeSnippet: {
+          filename: "page.tsx",
+          code: `export default function HomePage() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <AboutSection />
+      <Services />
+      <ContentSections />
+      <Contact />
+      <Footer />
+    </>
+  );
+};`,
+        },
+        interactiveSandbox: [],
+        keyFeatures: [
+          {
+            icon: "lucide:refresh-cw",
+            title: "WordPress to Next.js",
+            description:
+              "Converted the existing WordPress website into a modern Next.js application while preserving its existing content and experience.",
+          },
+          {
+            icon: "lucide:layout",
+            title: "Responsive Layout",
+            description:
+              "Rebuilt the website with responsive layouts designed for desktop, tablet, and mobile devices.",
+          },
+          {
+            icon: "lucide:layers",
+            title: "Reusable Components",
+            description:
+              "Structured the frontend using reusable React components for consistency and maintainability.",
+          },
+          {
+            icon: "lucide:palette",
+            title: "UI Recreation",
+            description:
+              "Carefully recreated the existing visual structure, typography, spacing, and interface elements.",
+          },
+          {
+            icon: "lucide:smartphone",
+            title: "Cross-Device Experience",
+            description:
+              "Adapted the interface to provide a consistent experience across different screen sizes.",
+          },
+          {
+            icon: "lucide:code-2",
+            title: "Modern Frontend Architecture",
+            description:
+              "Replaced the existing implementation with a structured Next.js and React-based frontend.",
+          },
+        ],
+        nextCaseStudySlug: "dento-care",
+        nextCaseStudyTitle: "Dr. Fahad's Dento Care",
       },
     },
     {
       id: "jcom-member-directory",
-      number: "06",
+      number: "07",
       category: "Internship Project | Business Directory",
       title: "JCOM Member Directory",
       summary:
@@ -656,7 +757,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
       liveDemoUrl: "https://www.contacts.jcompattambi.com",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "06 / EXOUZIA INTERNSHIP - JCOM",
+        breadcrumbCategory: "07 / EXOUZIA INTERNSHIP - JCOM",
         keyMetric: {
           value: "100+",
           label: "Member business profiles indexed with sub-millisecond search & gesture navigation.",
@@ -722,7 +823,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
     },
     {
       id: "asset-homes",
-      number: "07",
+      number: "08",
       category: "Internship Project | Real Estate & Property Management",
       title: "Asset Homes Property Management",
       summary:
@@ -733,7 +834,7 @@ export const analyzeImageForVisualSearch = async (buffer: Buffer, mimeType: stri
       liveDemoUrl: "https://asset-homes.vercel.app/",
       githubUrl: "#",
       caseStudy: {
-        breadcrumbCategory: "07 / EXOUZIA INTERNSHIP - ASSET HOMES",
+        breadcrumbCategory: "08 / EXOUZIA INTERNSHIP - ASSET HOMES",
         keyMetric: {
           value: "15+ Years",
           label: "Of real estate management legacy digitized with GSAP scroll triggers & inertia scroll engine.",
